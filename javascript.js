@@ -228,24 +228,24 @@
 //   }
 }
 // ------------------------------
-function getTarget(arr, target, min=0, max=arr.length - 1){
-  if (min > max){
-    return 'min > max'
-  }
-  let mid = Math.floor((min+max)/2);
-  if (arr[mid] === target){
-    return mid;
-  }
-  if(arr[mid] < target){
-    return getTarget(arr, target, mid+1, max);
-  } else if (arr[mid] > target){
-    return getTarget(arr, target, min, mid-1); 
-  }
-  return mid;
-}
+// function getTarget(arr, target, min=0, max=arr.length - 1){
+//   if (min > max){
+//     return 'min > max'
+//   }
+//   let mid = Math.floor((min+max)/2);
+//   if (arr[mid] === target){
+//     return mid;
+//   }
+//   if(arr[mid] < target){
+//     return getTarget(arr, target, mid+1, max);
+//   } else if (arr[mid] > target){
+//     return getTarget(arr, target, min, mid-1); 
+//   }
+//   return mid;
+// }
 
-console.log(getTarget([-1,0,3,5,9,12],2))
-console.log(getTarget([-1,0,3,5,9,12],9))
+// console.log(getTarget([-1,0,3,5,9,12],2))
+// console.log(getTarget([-1,0,3,5,9,12],9))
 
 
 
@@ -276,6 +276,45 @@ console.log(getTarget([-1,0,3,5,9,12],9))
 // }
 
 
-console.log(getTarget([-1,0,3,5,9,12],2))
-console.log(getTarget([-1,0,3,5,9,12],9))
+// console.log(getTarget([-1,0,3,5,9,12],2))
+// console.log(getTarget([-1,0,3,5,9,12],9))
+// -------------------------------------------------------------------------------------------------------------------
+// # Your plane has just landed in England and you rent a car. You have a meeting really soon and you have to get from Heathrow Airport to London as fast as you can.
 
+// # There are two main roads going from Heathrow to London and there's a number of regional roads crossing them. It takes you a fixed amount of time to travel from one crossroads to another. It's up to you to find the optimal path to take so that you get to London as fast as you can! You start on the left side and can either cross to the other main road or go forward.
+
+// # For example:
+
+// #         |                                   |
+// #        A|___50___|___05___|___40___|___10___|
+// # AIRPORT |      30|      20|      25|        |  LONDON
+// #        B|___10___|___90___|___02___|___08___|
+// #         |                                   |
+// # Each number denotes the minutes it takes to travel on that segment. The shortest path in this example is to start on road B, take the first left to road A, then take the first right back to road B, and then stay on road B until we get to London. This results in 10 + 30 + 5 + 20 + 2 + 8 = 75 minutes.
+
+// # You need to write a function that accepts a road map and print out the shortest path. The road system will be an array of Sections for each A, B, and Crossover segment. Given the types:
+
+// # data Section = Section { getA :: Int, getB :: Int, getC :: Int } deriving (Show)  
+// # type RoadSystem = [Section]
+// # the input for the above scenario would be
+
+// # [Section 50 10 30, Section 5 90 20, Section 40 2 25, Section 10 8 0] 
+// # To have the map neatly fit into Sections, we say that there's a last crossing section that takes 0 minutes to drive over. That's because we don't care where we arrive in London, as long as we're in London.
+
+// # The function you define will return a Path where
+
+// # data Label = A | B | C deriving (Show)  
+// # type Path = [(Label, Int)]
+// # In the example above, the correct Path would be
+
+// # [(B,10),(C,30),(A,5),(C,20),(B,2),(B,8),(C,0)]
+// # It's okay if your solution includes the last (C,0) tuple.
+
+function optimalPath(roadSystem) {
+  print(roadSystem)
+  for (let i = 0; i < roadSystem.length; i++){
+    
+    
+  
+  return [];
+}
