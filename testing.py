@@ -574,15 +574,38 @@
 
 # "GCAT"  =>  "GCAU"
 # The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
-def dna_to_rna(dna):
-    return dna.replace('T','U')
+# def dna_to_rna(dna):
+#     return dna.replace('T','U')
 
 
 
 # # ---------------------------------------------------------------------------------------------
+# # In this kata, we will make a function to test whether a period is late.
+# # Our function will take three parameters:
+# # last - The Date object with the date of the last period
+# # today - The Date object with the date of the check
+# # cycleLength - Integer representing the length of the cycle in days
+# # If the today is later from last than the cycleLength, the function should return true. We consider it to be late if the number of passed days is larger than the cycleLength. Otherwise return false.
+
+# # mine
+# from datetime import date
+# from datetime import timedelta
+# def period_is_late(last,today,cycle_length):
+#     tdelta = timedelta(days=(cycle_length))
+#     print(tdelta)
+#     late = last + tdelta
+#     if today > late:
+#         return True
+#     else:
+#         return False
 
 
 
+# # best
+# def period_is_late(last, today, cycle_length):
+#     return (today - last).days > cycle_length
+
+# print(period_is_late(date(2016, 6, 13), date(2016, 7, 16), 35))
 
 
 # # # ----------------------------------------------------------------------------------------------
