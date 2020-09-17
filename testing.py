@@ -609,20 +609,113 @@
 
 
 # # # ----------------------------------------------------------------------------------------------
+# You will be given a sphere with radius(r). Imagine that sphere gets cut with flat surface, in this case the figure that is made with this cut is circle. 
+# You will also be given distance(h) between centres of sphere and circle.Your task is to return the area of the original sphere,area of circle and perimeter of circle, 
+# all of them rounded to 3 decimal places and order must be same as in the description.
+# Not correct
+# from math import pi
+# from math import sqrt
+# def stereometry(r,h):
+#     print((r , h))
+#     h2 = h**2
+#     a = 2*r*h-h2
+#     cR = sqrt(a)
+#     cA = round((3.141*(cR**2)),3)
+#     cP = round((2*3.141*cR),3)
+#     sA = round((4*3.141*r**2),3)
+#     return (sA, cA, cP)
+    
+    
+# print(stereometry(3,2))
+    
+    
+# print(stereometry(2,1))
 
 
 
+# # # ---------------------------------------------------------------------------------------------
+# SCHEDULE YOUR DA(RRA)Y
+
+# The best way to have a productive day is to plan out your work schedule. Given the following three inputs, please create an an array of time alloted to work, broken up with time alloted with breaks:
+
+# Input 1: Hours - Number of hours available to you to get your work done!
+# Input 2: Tasks - How many tasks you have to do througout the day
+# Input 3: Duration (minutes)- How long each of your tasks will take to complete
+
+# Criteria to bear in mind:
+
+# Your schedule should start with work and end with work.
+# It should also be in minutes, rounded to the nearest whole minute.
+# If your work is going to take more time than you have, return "You're not sleeping tonight!"
+# # mine:
+# def day_plan(hours, tasks, duration):
+#     #your code here
+#     at = tasks * duration
+#     tb = (hours*60) - at
+#     plan = []
+#     if tb < 0:
+#         return "You're not sleeping tonight!"
+#     elif tasks == 0:
+#         return plan
+#     elif tasks == 1:
+#         plan = [duration]
+#     else:
+#         plan = [duration]
+#         bt = round(tb/(tasks-1))
+#         for i in range(tasks-1):
+#             plan.append(bt)
+#             plan.append(duration)
+#     return plan
+
+# # Best
+# def day_plan(hours, tasks, duration):
+#     breaks = (hours * 60 - tasks * duration) / (tasks - 1) if tasks > 1 else 0
+#     if breaks < 0:
+#         return "You're not sleeping tonight!"
+#     return ([duration, round(breaks)] * tasks)[:-1]
 
 
-# # ---------------------------------------------------------------------------------------------
+# day_plan(8,5,30)
+# day_plan(3,5,60)
+# day_plan(2,2,60)
 
 
+# # # ------------------------------------------------------------------------------------------
+# def add(num1, num2):
+#     final = ''
+#     n1 = (str(num1))[::-1]
+#     n2 = (str(num2))[::-1]
 
+#     if len(n2) > len(n1):
+#         dif = len(n2)-len(n1)
+#         for  d in range(dif):
+#             n1 = n1 + "0"
+#     elif len(n1) > len(n2):
+#         dif = len(n1)-len(n2)
+#         for  d in range(dif):
+#             n2 = n2 + "0"
+#     count = n1
+#     for i in range(len(count)):
+#         final= str((int(n1[i]) + int(n2[i]))) + final
+#     print(final)
+#     return final
 
+# #------------------
+# def add(a,b):
+#     s = ""
+#     while a+b:
+#         a,p = divmod(a,10)
+#         b,q = divmod(b,10)
+#         s = str(p+q)+s
+#     return int(s or'0')
+# ----------------------
 
-
-
-# # # ----------------------------------------------------------------------------------------------
+    
+# add(2,11)
+# add(16,18)
+# add(26,39)
+# add(122,81)
+# add(13, 128)
 
 
 
