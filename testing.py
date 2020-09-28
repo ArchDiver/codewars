@@ -738,7 +738,48 @@
 # print(twoNumberSum([4, 11, -1, 6], 10))
 
 # # # ----------------------------------------------------------------------------------------------
+# # mine
+# def isValidSubsequence(a, b):
+#     if len(b) > len(a):
+#         return False        
+#     for i in range(len(b)):
+#         bVal = b[i]
+#         if a == []:
+#             return False
+#         for j in range(len(a)):
+#             if b[i] in a:
+#                 bVal = b[i]
+#                 place = a.index(b[i])
+#                 a = a[place+1:]
+#                 break
+#             else:
+#                 return False
+#     return True
 
+# # theirs1
+# def isValidSubsequence(a, s):
+#     arrIdx = 0
+#     seqIdx = 0
+#     while arrIdx < len(a) and seqIdx < len(s):
+#         if a[arrIdx] == s[seqIdx]:
+#             seqIdx += 1
+#         arrIdx +=1
+#     return seqIdx == len(s)
+
+# # theirs2
+# def isValidSubsequence(a, s):
+#     seqIdx = 0
+#     for value in array:
+#         if seqIdx == len(s):
+#             break
+#         if s[seqIdx] == value:
+#             seqIdx +=1
+#     return seqIdx == len(s)
+
+ 
+ 
+# print(isValidSubsequence( [1,1,6,1], [1,1,1,6]))
+# print(isValidSubsequence( [5, 1, 22, 25, 6, -1, 8, 10], [5, 1, 22, 22, 6, -1, 8, 10]))
 
 
 
