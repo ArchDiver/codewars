@@ -722,10 +722,20 @@
 
 
 # # ---------------------------------------------------------------------------------------------
-
-
-
-
+# def twoNumberSum(array, targetSum):
+#     # Write your code here.
+#     answer = []
+#     anser2 = []
+#     for i in range(len(array)):
+#         j = i+1
+#         for j in range((i+1),len(array)):
+#             if (array[i] + array[j]) == targetSum:
+#                 answer.append(array[i])
+#                 answer.append(array[j])
+#     return answer
+    
+# # print(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+# print(twoNumberSum([4, 11, -1, 6], 10))
 
 # # # ----------------------------------------------------------------------------------------------
 
