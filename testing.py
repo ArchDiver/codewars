@@ -809,7 +809,7 @@
 # 	return closest(tree, target, tree.value)
 
 # def closest(bst,t,c):
-#     currentNode = tree 
+#     currentNode = bst 
 #     while currentNode is not None:
 #         if abs(t - c) > abs(t - currentNode.value):
 #             c = currentNode.value
@@ -883,16 +883,86 @@
 #   "target": 100
 # }
 # # # ----------------------------------------------------------------------------------------------
+# # Mine like there's
+# def branchSums(root):
+#     # Write your code here.
+# 	sumList = []
+# 	bstSums(root, 0, sumList)
+# 	return sumList
+	
+	
+# def bstSums(node, runSum, sumList):
+# 	if node is None:
+# 		return
+# 	newRunSum = runSum + node.value
+# 	if node.left is None and node.right is None:
+# 		sumList.append(newRunSum)
+# 		return
+# 	bstSums(node.left, newRunSum, sumList)
+# 	bstSums(node.right, newRunSum, sumList)	
+
+
+# # This is the class of the input root. Do not edit it.
+# class BinaryTree:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
+# {
+#   "tree": {
+#     "nodes": [
+#       {"id": "1", "left": "2", "right": "3", "value": 1},
+#       {"id": "2", "left": "4", "right": "5", "value": 2},
+#       {"id": "3", "left": "6", "right": "7", "value": 3},
+#       {"id": "4", "left": "8", "right": "9", "value": 4},
+#       {"id": "5", "left": "10", "right": null, "value": 5},
+#       {"id": "6", "left": null, "right": null, "value": 6},
+#       {"id": "7", "left": null, "right": null, "value": 7},
+#       {"id": "8", "left": null, "right": null, "value": 8},
+#       {"id": "9", "left": null, "right": null, "value": 9},
+#       {"id": "10", "left": null, "right": null, "value": 10}
+#     ],
+#     "root": "1"
+#   }
+# }
+
+
 
 
 
 
 
 # # ---------------------------------------------------------------------------------------------
+# # mine
+# def generate_hashtag(s):
+#     if len(s) < 1:
+#         return False
+#     s = s.title()
+#     s = s.split()
+#     hashs = "#"
+#     for i in s:
+#         hashs += (i)
+#     if len(hashs) > 140:
+#         return False
+#     else:
+#         return hashs
+
+# # ans1
+# def generate_hashtag(s):
+#     ans = '#'+ str(s.title().replace(' ',''))
+#     return s and not len(ans)>140 and ans or False
+# #ans2
+# def generate_hashtag(s):
+#     output = "#"
+    
+#     for word in s.split():
+#         output += word.capitalize()
+    
+#     return False if (len(s) == 0 or len(output) > 140) else output
 
 
 
-
+# print(generate_hashtag(" Hello there thanks for trying my Kata"))
 
 # # # ----------------------------------------------------------------------------------------------
 
