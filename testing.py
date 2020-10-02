@@ -1027,32 +1027,90 @@
 # print(validBraces("[({})](]"))
 
 # # ---------------------------------------------------------------------------------------------
-# Breaking a simple cipher
-def key(code):
-    letter_count = count(code)
+# # Breaking a simple cipher
+# def key(code):
+#     letter_count = count(code)
 
 
-    cipher = ''
+#     cipher = ''
 
-    return cipher
-def count(code):
-    letter_count = {}
-    for char in code:
-        if char not in letter_count:
-            letter_count[char] = 1
-        else:
-            letter_count[char] += 1
-    print(letter_count)
-    return letter_count
+#     return cipher
+# def count(code):
+#     letter_count = {}
+#     for char in code:
+#         if char not in letter_count:
+#             letter_count[char] = 1
+#         else:
+#             letter_count[char] += 1
+#     print(letter_count)
+#     return letter_count
         
 
-passage = "Lars Porsena of Clusium, by the Nine Gods he swore That the great house of Tarquin should suffer wrong no more. By the Nine Gods he swore it, and named a trysting day, And bade his messengers ride forth, East and West and South and North, To summon his array. East and West and South and North the messengers ride fast, And tower and town and cottage have heard the trumpet's blast. Shame on the false Etruscan who lingers in his home, When Porsena of Clusium is on the march for Rome!"
-print(key(passage))
+# passage = "Lars Porsena of Clusium, by the Nine Gods he swore That the great house of Tarquin should suffer wrong no more. By the Nine Gods he swore it, and named a trysting day, And bade his messengers ride forth, East and West and South and North, To summon his array. East and West and South and North the messengers ride fast, And tower and town and cottage have heard the trumpet's blast. Shame on the false Etruscan who lingers in his home, When Porsena of Clusium is on the march for Rome!"
+# print(key(passage))
 
 
 # # ---------------------------------------------------------------------------------------------
+# Leaderboard climbers
+# In this kata you will be given a leaderboard of unique names for example:
+
+# ['John', 
+#  'Brian',
+#  'Jim',
+#  'Dave',
+#  'Fred']
+# Then you will be given a list of strings for example:
+
+# ['Dave +1', 'Fred +4', 'Brian -1']
+# Then you sort the leaderboard.
+
+# The steps for our example would be:
+
+# # Dave up 1
+# ['John',
+#  'Brian',
+#  'Dave',
+#  'Jim',
+#  'Fred']
+# # Fred up 4
+# ['Fred',
+#  'John',
+#  'Brian',
+#  'Dave',
+#  'Jim']
+# # Brian down 1
+# ['Fred',
+#  'John',
+#  'Dave',
+#  'Brian',
+#  'Jim']
+# Then once you have done this you need to return the leaderboard.
+
+# All inputs will be valid. All strings in the second list will never ask to move a name up higher or lower than possible eg. 'John +3' could not be added to the end of the second input list in the example above.
+
+# The strings in the second list will always be something in the leaderboard followed by a space and a + or - sign followed by a number.
+# mine:
+# def leaderboard_sort(leaderboard, changes):
+#     for m in changes:
+#         x  = m.split()
+#         person = x[0]
+#         if person in leaderboard:
+#             newIndex = (leaderboard.index(person))+(int(x[1])*-1)
+#             leaderboard.remove(person)
+#             leaderboard.insert(newIndex, person)            
+#     return leaderboard
+
+# codewars1:
+# def leaderboard_sort(leaderboard, changes):
+#     for change in changes:
+#         name, delta = change.split()
+#         idx = leaderboard.index(name)
+#         leaderboard.insert(idx - int(delta), leaderboard.pop(idx))
+#     return leaderboard
 
 
+
+# print(leaderboard_sort(['John', 'Brian', 'Jim', 'Dave', 'Fred'], ['Dave +1', 'Fred +4', 'Brian -1']))
 # # ---------------------------------------------------------------------------------------------
 
 # # ---------------------------------------------------------------------------------------------
