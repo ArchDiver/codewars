@@ -1112,6 +1112,28 @@
 
 # print(leaderboard_sort(['John', 'Brian', 'Jim', 'Dave', 'Fred'], ['Dave +1', 'Fred +4', 'Brian -1']))
 # # ---------------------------------------------------------------------------------------------
+# In this Kata, you will sort elements in an array by decreasing frequency of elements. If two elements have the same frequency, sort them by increasing value.
+
+# solve([2,3,5,3,7,9,5,3,7]) = [3,3,3,5,5,7,7,2,9]
+# --we sort by highest frequency to lowest frequency. If two elements have same frequency, we sort by increasing value
+# mine
+def solve(arr):
+    print(arr)
+    count = {}
+    ans = []
+    for i in arr:
+        if i not in count:
+            count[i]= 1
+        else:
+            count[i] += 1
+    count = {k: v for k, v in sorted(count.items(), key=lambda items: items[1], reverse=True)}
+    for x in count:
+        for y in range(len(arr)):
+            if arr[y] is x:
+                ans.append(x)
+    return ans
+
+
 
 # # ---------------------------------------------------------------------------------------------
 
