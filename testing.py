@@ -1116,22 +1116,25 @@
 
 # solve([2,3,5,3,7,9,5,3,7]) = [3,3,3,5,5,7,7,2,9]
 # --we sort by highest frequency to lowest frequency. If two elements have same frequency, we sort by increasing value
-# mine
-def solve(arr):
-    print(arr)
-    count = {}
-    ans = []
-    for i in arr:
-        if i not in count:
-            count[i]= 1
-        else:
-            count[i] += 1
-    count = {k: v for k, v in sorted(count.items(), key=lambda items: items[1], reverse=True)}
-    for x in count:
-        for y in range(len(arr)):
-            if arr[y] is x:
-                ans.append(x)
-    return ans
+# # mine
+# def solve(arr):
+#     print(arr)
+#     count = {}
+#     ans = []
+#     for i in arr:
+#         if i not in count:
+#             count[i]= 1
+#         else:
+#             count[i] += 1
+#     count = {k: v for k, v in sorted(count.items(), key=lambda items: items[1], reverse=True)}
+#     for x in count:
+#         for y in range(len(arr)):
+#             if arr[y] is x:
+#                 ans.append(x)
+#     return ans
+
+# print(solve([5, 9, 6, 9, 6, 5, 9, 9, 4, 4]))
+# print(solve([4, 4, 2, 5, 1, 1, 3, 3, 2, 8]))
 
 
 
@@ -1187,26 +1190,88 @@ def solve(arr):
 
 # result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
 # # result should == "apples, pears\ngrapes\nbananas"
-# mine 
-def solution(string,markers):
-    string = string.splitlines()
-    found = ''
-    for i in range(len(string)):
-        for j in range(len(markers)):
-            found = string[i].index(markers[j])
-            if found >= 0:
-                string[i][0,found]
-        string[i] = input[i].rstrip()    
+# # mine 
+# def solution(string,markers):
+#     string = string.splitlines()
+#     found = ''
+#     for i in range(len(string)):
+#         for j in range(len(markers)):
+#             x = string[i]
+#             y = markers[j]
+#             if y in x:
+#                 found = x.index(y)
+#                 # found = string[i].index(markers[j])
+#                 if found >= 0:
+#                     string[i] = (string[i][:found]).rstrip()
+#         # string[i] = string[i].rstrip()    
     
-    return string.join( '\n)
+#     return '\n'.join(string)
+
+# # mine stripped
+# def solution(string,markers):
+#     string = string.splitlines()
+#     for i in range(len(string)):
+#         for j in range(len(markers)):
+#             if markers[j] in string[i]:
+#                 found = string[i].index(markers[j])
+#                 if found >= 0:
+#                     string[i] = (string[i][:found]).rstrip()
+    
+#     return '\n'.join(string)
+
+# # codewars answer
+# def solution(string,markers):
+#     parts = string.split('\n')
+#     for s in markers:
+#         parts = [v.split(s)[0].rstrip() for v in parts]
+#     return '\n'.join(parts)
 
 
-print(solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"]))
-print(solution("a #b\nc\nd $e f g", ["#", "$"]))
+# print(solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"]))
+# print(solution("a #b\nc\nd $e f g", ["#", "$"]))
+
+
 
 
 
 # # ---------------------------------------------------------------------------------------------
+# # We want to create a function that will add numbers together when called in succession.
+
+# # add(1)(2);
+# # // returns 3
+# # We also want to be able to continue to add numbers to our chain.
+
+# # add(1)(2)(3); // 6
+# # add(1)(2)(3)(4); // 10
+# # add(1)(2)(3)(4)(5); // 15
+# # and so on.
+
+# # A single call should return the number passed in.
+
+# # add(1); // 1
+# # We should be able to store the returned values and reuse them.
+
+# # var addTwo = add(2);
+# # addTwo; // 2
+# # addTwo + 5; // 7
+# # addTwo(3); // 5
+# # addTwo(3)(5); // 10
+# # We can assume any number being passed in will be valid whole number.
+# # mine:
+# def add(*args):
+#     return sum(args)
+
+# # codewars:
+# class add(int):
+#     __call__ = lambda self, value: add(self + value)
+
+
+
+# print(add(1))
+# print(add(1)(2))
+# print(add(1)(2)(3))
+
+
 
 
 # # ---------------------------------------------------------------------------------------------
