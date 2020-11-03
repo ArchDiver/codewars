@@ -1275,7 +1275,129 @@
 
 
 # # ---------------------------------------------------------------------------------------------
+# Snail Sort
+# Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
 
+# array = [[1,2,3],
+#          [4,5,6],
+#          [7,8,9]]
+# snail(array) #=> [1,2,3,6,9,8,7,4,5]
+# For better understanding, please follow the numbers of the next array consecutively:
+
+# array = [[1,2,3],
+#          [8,9,4],
+#          [7,6,5]]
+# snail(array) #=> [1,2,3,4,5,6,7,8,9]
+# This image will illustrate things more clearly:
+
+
+# NOTE: The idea is not sort the elements from the lowest value to the highest; the idea is to traverse the 2-d array in a clockwise snailshell pattern.
+
+# NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array [[]].
+
+# mine
+def snail(array):    
+    final = []
+    n = len(array)
+    nsq = n*n
+    rLen = n
+    cLen = n
+    rStart = 0
+    cStart = 0
+    count = 0
+    n_count = 0
+    if not array[0]:
+        return []
+    while True:
+        ##  right
+        for c in range(cStart, cStart + rLen):
+            final.append(array[rStart][c])
+            count += 1
+            n_count += 1
+            if n_count >= nsq: return final
+        cStart += (count - 1)
+        rStart += 1
+        cLen -= 1
+        count = 0
+        ##  down
+        for r in range(rStart, rStart + cLen):
+            final.append(array[r][cStart])
+            count += 1
+            n_count += 1
+            if n_count >= nsq: return final
+        rStart += (count - 1)
+        cStart -= 1
+        count = 0
+        rLen -= 1
+        ## left
+        for c in range(cStart, cStart - rLen, -1):
+            final.append(array[rStart][c])
+            count += 1
+            n_count += 1
+            if n_count >= nsq: return final
+        cStart -= (count - 1)
+        rStart -= 1
+        cLen -= 1
+        count = 0
+        ## up
+        for r in range(rStart, rStart - cLen, -1):
+            final.append(array[r][cStart])
+            count += 1
+            n_count += 1
+            if n_count >= nsq: return final
+        rStart -= (count - 1)
+        cStart += 1
+        count = 0
+        rLen -= 1
+
+# # codewars 1
+# def snail(array):
+#     ret = []
+#     if array and array[0]:
+#         size = len(array)
+#         for n in xrange((size + 1) // 2):
+#             for x in xrange(n, size - n):
+#                 ret.append(array[n][x])
+#             for y in xrange(1 + n, size - n):
+#                 ret.append(array[y][-1 - n])
+#             for x in xrange(2 + n, size - n + 1):
+#                 ret.append(array[-1 - n][-x])
+#             for y in xrange(2 + n, size - n):
+#                 ret.append(array[-y][n])
+#     return ret
+
+
+# # codewars 2
+# import numpy as np
+
+# def snail(array):
+#     m = []
+#     array = np.array(array)
+#     while len(array) > 0:
+#         m += array[0].tolist()
+#         array = np.rot90(array[1:])
+#     return m
+
+# # codewars 3
+# # my implementation/explanation of the solution by foxxyz
+# def snail(array):
+#   if array:
+#     # force to list because zip returns a list of tuples
+#     top_row = list(array[0])
+#     # rotate the array by switching remaining rows & columns with zip
+#     # the * expands the remaining rows so they can be matched by column
+#     rotated_array = zip(*array[1:])
+#     # then reverse rows to make the formerly last column the next top row
+#     rotated_array = rotated_array[::-1]
+#     return top_row + snail(rotated_array)
+#   else:
+#     return []
+
+
+# array = [[1,2,3],
+#          [4,5,6],
+#          [7,8,9]]
+# print(snail(array))
 # # ---------------------------------------------------------------------------------------------
 
 
