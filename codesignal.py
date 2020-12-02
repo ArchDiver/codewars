@@ -34,6 +34,44 @@ def alternatingSort(a):
             return False
         l=a[c]
     return True
+# # ---------------------------------------------------------------------------------------------
+# def alternatingSort(a):
+#     b = []
+#     while len(a) > 0:
+#         b.append(a.pop(0))
+#         if len(a) > 0:
+#             b.append(a.pop(-1))
+#         else:
+#             break
+#     for i in range(len(b)-1):
+#         c = b[i]
+#         d = b[1+1]
+#         if b[i] > b[i+1]:
+#             return False   
+#         else:
+#             continue
+#     print(b)
+#     return True
+def alternatingSort(a):
+    b, x = 0, a[0]
+    while b != (len(a)-1)//2:
+        if b < 0:
+            b=-b
+        else:
+            b = -b-1
+        if a[b] < x:
+            return False
+        x = a[b]
+    return True
+            
+
+
+
+
+
+# a = [-92, -23, 0, 45, 89, 96, 99, 95, 89, 41, -17, -48]
+
+# alt(a)
 
 ##--------------------------------------------------------------------------------
 def mergeStrings(s1, s2):
