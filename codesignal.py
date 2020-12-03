@@ -53,13 +53,13 @@ def mutateTheArray(n,a):
     b = []
     if len(a) < 2:
         return a
-    for i in range(len(a)-1):
+    for i in range(n):
         if i == 0:
-            b[0] = 0 + a[i] + a[a+1]
-        if i == len(a):
-            b[(len(a))] = a[i-1] + a[i] + 0
-        elif i != len(a) and i != 0:
-            b[i] = a[i-1] + a[i] + a[i + 1]
+            b.append((0 + (a[i]) + (a[i+1])))
+        if i == (n-1):
+            b.append((a[i-1] + a[i] + 0))
+        elif i != n-1 and i != 0:
+            b.append((a[i-1] + a[i] + a[i + 1]))
     return b 
         
 
