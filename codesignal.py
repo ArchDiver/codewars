@@ -1,10 +1,76 @@
 ## practice answers
 ##--------------------------------------------------------------------------------
+"""
+Example
+
+For a = [10, 2], the output should be concatenationsSum(a) = 1344.
+
+a[0] ∘ a[0] = 10 ∘ 10 = 1010,
+a[0] ∘ a[1] = 10 ∘ 2 = 102,
+a[1] ∘ a[0] = 2 ∘ 10 = 210,
+a[1] ∘ a[1] = 2 ∘ 2 = 22.
+So the sum is equal to 1010 + 102 + 210 + 22 = 1344.
+
+For a = [8], the output should be concatenationsSum(a) = 88.
+
+There is only one number in a, and a[0] ∘ a[0] = 8 ∘ 8 = 88, so the answer is 88.
+
+For a = [1, 2, 3], the output should be concatenationsSum(a) = 198.
+
+a[0] ∘ a[0] = 1 ∘ 1 = 11,
+a[0] ∘ a[1] = 1 ∘ 2 = 12,
+a[0] ∘ a[2] = 1 ∘ 3 = 13,
+a[1] ∘ a[0] = 2 ∘ 1 = 21,
+a[1] ∘ a[1] = 2 ∘ 2 = 22,
+a[1] ∘ a[2] = 2 ∘ 3 = 23,
+a[2] ∘ a[0] = 3 ∘ 1 = 31,
+a[2] ∘ a[1] = 3 ∘ 2 = 32,
+a[2] ∘ a[2] = 3 ∘ 3 = 33.
+The total result is 11 + 12 + 13 + 21 + 22 + 23 + 31 + 32 + 33 = 198.
+
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+
+[input] array.integer a
+
+A non-empty array of positive integers.
+
+Guaranteed constraints:
+1 ≤ a.length ≤ 105,
+1 ≤ a[i] ≤ 106.
+
+[output] integer64
+
+The sum of all a[i] ∘ a[j]s. It's guaranteed that the answer is less than 253.
+"""
 # def concatenationsSum(a):
 #     t=sum(a)
 #     t1=t*len(a)
 #     t2=sum([t*[len(str(x))-1 for x in a].count(j)*10**(j+1) for j in range(7)])
 #     return t1+t2
+
+## my first attempt. Need to cut time.
+# def concatenationsSum(a):
+#     final = []
+#     for i in range(len(a)):
+#         j = i
+#         for j in range(len(a)):
+#             final.append(int(str(a[i])+str(a[j])))
+#     return sum(final)
+
+## my second attempt
+# def concatenationsSum(a):
+#     sum1 = sum(a)
+#     sum2 = 0
+#     sum3 = (len(a) - 1) * sum1
+#     for i in a:
+#         sum2 += int(str(sum1) + str(i))
+#     return sum2 + sum3
+##third stripped bare
+def concatenationsSum(a):
+    return sum(int(str(sum(a)) + str(i)) for i in a) + ((len(a) - 1) * sum(a))
+
 
 ##--------------------------------------------------------------------------------
 """
@@ -71,10 +137,157 @@ mutateTheArray(n,a)
 
 
 ##--------------------------------------------------------------------------------
+"""
+You are given two arrays of integers a and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y), where x is from a and y is from b. Such a pair is called tiny if the concatenation xy is strictly less than k.
+
+Your task is to return the number of tiny pairs that you'll encounter during the simultaneous iteration through a and b.
+
+Example
+
+For a = [1, 2, 3], b = [1, 2, 3], and k = 31, the output should be
+countTinyPairs(a, b, k) = 2.
+
+We're considering the following pairs during iteration:
+
+(1, 3). Their concatenation equals 13, which is less than 31, so the pair is tiny;
+(2, 2). Their concatenation equals 22, which is less than 31, so the pair is tiny;
+(3, 1). Their concatenation equals 31, which is not less than 31, so the pair is not tiny.
+As you can see, there are 2 tiny pairs during the iteration, so the answer is 2.
+
+For a = [16, 1, 4, 2, 14], b = [7, 11, 2, 0, 15], and k = 743, the output should be
+countTinyPairs(a, b, k) = 4.
+
+We're considering the following pairs during iteration:
+
+(16, 15). Their concatenation equals 1615, which is greater than 743, so the pair is not tiny;
+(1, 0). Their concatenation equals 10, which is less than 743, so the pair is tiny;
+(4, 2). Their concatenation equals 42, which is less than 743, so the pair is tiny.
+(2, 11). Their concatenation equals 211, which is less than 743, so the pair is tiny;
+(14, 7). Their concatenation equals 147, which is less than 743, so the pair is tiny.
+There are 4 tiny pairs during the iteration, so the answer is 4.
+
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+
+[input] array.integer a
+
+An array of non-negative integers.
+
+Guaranteed constraints:
+0 ≤ a.length ≤ 105,
+0 ≤ a[i] ≤ 104.
+
+[input] array.integer b
+
+An array of non-negative integers.
+
+Guaranteed constraints:
+b.length = a.length,
+0 ≤ b[i] ≤ 104.
+
+[input] integer k
+
+An integer to compare concatenated pairs with.
+
+Guaranteed constraints:
+0 ≤ k ≤ 109.
+
+[output] integer
+
+The number of tiny pairs during the iteration.
+"""
 # def countTinyPairs(a, b, k):
 #     return sum([1 if int(str(x)+str(y))<k else 0for x,y in zip(a,b[::-1])])
+def countTinyPairs(a, b, k):
+    pairs = []
+    f = len(a)
+    for i in range(len(a)):
+        x = len(b) - i -1
+        pair = int(f'{a[i]}{b[x]}')
+        
+        if pair < k:
+            pairs.append(pair)
+    return len(pairs)
+        
+        
+a= [1, 2, 3]
+b= [1, 2, 3]
+k= 31
+countTinyPairs(a, b, k)
 
 ##--------------------------------------------------------------------------------
+"""
+You are given an array of arrays a. Your task is to group the arrays a[i] by their mean values, so that arrays with equal mean values are in the same group, and arrays with different mean values are in different groups.
+
+Each group should contain a set of indices (i, j, etc), such that the corresponding arrays (a[i], a[j], etc) all have the same mean. Return the set of groups as an array of arrays, where the indices within each group are sorted in ascending order, and the groups are sorted in ascending order of their minimum element.
+
+Example
+
+For
+
+a = [[3, 3, 4, 2],
+     [4, 4],
+     [4, 0, 3, 3],
+     [2, 3],
+     [3, 3, 3]]
+the output should be
+
+meanGroups(a) = [[0, 4],
+                 [1],
+                 [2, 3]]
+mean(a[0]) = (3 + 3 + 4 + 2) / 4 = 3;
+mean(a[1]) = (4 + 4) / 2 = 4;
+mean(a[2]) = (4 + 0 + 3 + 3) / 4 = 2.5;
+mean(a[3]) = (2 + 3) / 2 = 2.5;
+mean(a[4]) = (3 + 3 + 3) / 3 = 3.
+There are three groups of means: those with mean 2.5, 3, and 4. And they form the following groups:
+
+Arrays with indices 0 and 4 form a group with mean 3;
+Array with index 1 forms a group with mean 4;
+Arrays with indices 2 and 3 form a group with mean 2.5.
+Note that neither
+
+meanGroups(a) = [[0, 4],
+                 [2, 3],
+                 [1]]
+nor
+
+meanGroups(a) = [[0, 4],
+                 [1],
+                 [3, 2]]
+will be considered as a correct answer:
+
+In the first case, the minimal element in the array at index 2 is 1, and it is less then the minimal element in the array at index 1, which is 2.
+In the second case, the array at index 2 is not sorted in ascending order.
+For
+
+a = [[-5, 2, 3],
+     [0, 0],
+     [0],
+     [-100, 100]]
+the output should be
+
+meanGroups(a) = [[0, 1, 2, 3]]
+The mean values of all of the arrays are 0, so all of them are in the same group.
+
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+
+[input] array.array.integer a
+
+An array of arrays of integers.
+
+Guaranteed constraints:
+1 ≤ a.length ≤ 100,
+1 ≤ a[i].length ≤ 100,
+-100 ≤ a[i][j] ≤ 100.
+
+[output] array.array.integer
+
+An array of arrays, representing the groups of indices.
+"""
 # def meanGroups(a):
 #     d,e=[],[]
 #     for i,j in enumerate(a):
@@ -84,6 +297,9 @@ mutateTheArray(n,a)
 #         else:
 #             d[e.index(sum(j)/len(j))]+=[i]
 #     return d
+def meanGroups(a):
+    b, c = [],[]
+    for i,j in 
 
 ##--------------------------------------------------------------------------------
 # def alternatingSort(a):
