@@ -322,9 +322,7 @@ An array of arrays, representing the groups of indices.
 #         else:
 #             d[e.index(sum(j)/len(j))]+=[i]
 #     return d
-def meanGroups(a):
-    b, c = [],[]
-    for i,j in 
+
 
 ##--------------------------------------------------------------------------------
 # def alternatingSort(a):
