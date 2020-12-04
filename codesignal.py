@@ -137,7 +137,22 @@ b[4] = a[3] + a[4] + 0 = (-2) + 3 + 0 =
 #         return b
 #     else:
 #         return a
-        
+## Third
+# def mutateTheArray(n, a):
+#     if n>1:
+#         b = [sum(a[i-1:i+2])for i in range(1,n)] 
+#         return [a[0]+a[1]] + b
+#     else:
+#         return a
+## Fourth
+# def mutateTheArray(n, a):
+    # if n>1:
+    #     return [a[0]+a[1]] + [sum(a[i-1:i+2])for i in range(1,n)] 
+    # else:
+    #     return a 
+## Final
+def mutateTheArray(n, a):
+    return [a[0]+a[1]] + [sum(a[i-1:i+2])for i in range(1,n)] if n>1 else a 
 
 
 n = 5
