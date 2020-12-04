@@ -115,18 +115,28 @@ b[4] = a[3] + a[4] + 0 = (-2) + 3 + 0 =
 # def mutateTheArray(n, a):
 #     return [a[0]+a[1]]+[sum(a[x-1:x+2])for x in range(1,len(a))]if n>1 else a
 
-def mutateTheArray(n,a):
-    b = []
-    if len(a) < 2:
-        return a
-    for i in range(n):
-        if i == 0:
-            b.append((0 + (a[i]) + (a[i+1])))
-        if i == (n-1):
-            b.append((a[i-1] + a[i] + 0))
-        elif i != n-1 and i != 0:
-            b.append((a[i-1] + a[i] + a[i + 1]))
-    return b 
+##First
+# def mutateTheArray(n,a):
+#     b = []
+#     if len(a) < 2:
+#         return a
+#     for i in range(n):
+#         if i == 0:
+#             b.append((0 + (a[i]) + (a[i+1])))
+#         if i == (n-1):
+#             b.append((a[i-1] + a[i] + 0))
+#         elif i != n-1 and i != 0:
+#             b.append((a[i-1] + a[i] + a[i + 1]))
+#     return b
+## Second
+# def mutateTheArray(n, a):
+#     if n>1:
+#         b = [a[0]]
+#         for i in range(1,n):
+#             b.append(sum(a[i-1:i+2]))
+#         return b
+#     else:
+#         return a
         
 
 
