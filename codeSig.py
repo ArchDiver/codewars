@@ -224,16 +224,25 @@ The number of tiny pairs during the iteration.
 """
 # def countTinyPairs(a, b, k):
 #     return sum([1 if int(str(x)+str(y))<k else 0for x,y in zip(a,b[::-1])])
-def countTinyPairs(a, b, k):
-    pairs = []
-    f = len(a)
-    for i in range(len(a)):
-        x = len(b) - i -1
-        pair = int(f'{a[i]}{b[x]}')
+
+##first
+# def countTinyPairs(a, b, k):
+#     pairs = []
+#     for i in range(len(a)):
+#         x = len(b) - i - 1
+#         pair = int(f'{a[i]}{b[x]}')
         
-        if pair < k:
-            pairs.append(pair)
-    return len(pairs)
+#         if pair < k:
+#             pairs.append(pair)
+#     return len(pairs)
+
+## Second
+# def countTinyPairs(a, b, k):
+#     pairs = []
+#     for i in range(len(a)):      
+#         if int(f'{a[i]}{b[(len(b)-1-i)]}') < k:
+#             pairs.append(int(f'{a[i]}{b[(len(b)-1-i)]}'))
+#     return len(pairs)
         
         
 a= [1, 2, 3]
