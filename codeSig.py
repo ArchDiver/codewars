@@ -243,6 +243,17 @@ The number of tiny pairs during the iteration.
 #         if int(f'{a[i]}{b[(len(b)-1-i)]}') < k:
 #             pairs.append(int(f'{a[i]}{b[(len(b)-1-i)]}'))
 #     return len(pairs)
+##Third
+# def countTinyPairs(a, b, k):
+#     pairs = []
+#     for i,j in zip(a,b[::-1]):      
+#         if int(f'{i}{j}') < k:
+#             pairs.append(int(f'{i}{j}'))
+#     return len(pairs)
+##Fourth
+def countTinyPairs(a, b, k):
+    pairs = sum([1 if int(f'{i}{j}')<k else 0 for i,j in zip(a,b[::-1])])     
+    return pairs
         
         
 a= [1, 2, 3]
