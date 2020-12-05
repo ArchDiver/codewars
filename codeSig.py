@@ -354,6 +354,7 @@ An array of arrays, representing the groups of indices.
 #         l=a[c]
 #     return True
 # # ---------------------------------------------------------------------------------------------
+##first
 # def alternatingSort(a):
 #     b = []
 #     while len(a) > 0:
@@ -371,6 +372,7 @@ An array of arrays, representing the groups of indices.
 #             continue
 #     print(b)
 #     return True
+## second
 def alternatingSort(a):
     b, x = 0, a[0]
     while b != (len(a)-1)//2:
@@ -406,6 +408,42 @@ def alternatingSort(a):
 
 
 ##--------------------------------------------------------------------------------
+"""
+6
+
+
+2
+I had the below problem in a coding test and I got 28/30 tests passes and 2 failed due to a time-out.
+
+Problem
+You have created a programming language and now you have decided to add hashmap support to it. It was found that in common programming languages, it is impossible to add a number to all hashmap keys/values. So, you have decided to implement your own hashmap in your new language with following operations.
+
+insert x y - insert and object with key x and value y
+get x - return the value of an object with key x
+addToKey x - add x to all keys in map
+addToValue y - add y to all values in map
+Your task is to implement this hashmap, apply the given queries, and to find the sum of all the results for get operations
+
+For Example
+
+For queryType=["insert","insert","addToValue","addToKey","get"] and query=[[1,2],[2,3],[2],[1],[3]], the output should be hashMap(queryType,query)=5.
+Explanation
+
+insert 1 2 - hashmap will be {1:2}
+insert 2 3 - hashmap will be {1:2,2:3}
+addToValue 2 - hashmap will be {1:4,2:5}
+addToKey 1 - hashmap will be {2:4,3:5}
+get 3 - value is 5
+Input/Output
+
+[execution time limit] 3 seconds (Java)
+[input] array.string queryType
+Array of query types. its is guaranteed that each queryType[i] any one of the above mentioned operation
+1<=queryType.length<=10^5
+[input] array.array.integer query
+Array of queries, where each query is mentioned by 2 numbers for insert and one number for others Key values are in range [-10^9,10^9]
+"""
+# 
 # def hashMap(queryType, query):
 #     d,s,c1,c2={},0,0,0
 #     for i,j in zip(queryType,query):
