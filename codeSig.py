@@ -380,7 +380,7 @@ def alternatingSort(a):
             b=-b
         else:
             b = -b-1
-        if a[b] < x:
+        if a[b] <= x:
             return False
         x = a[b]
     return True
@@ -395,6 +395,52 @@ def alternatingSort(a):
 # alt(a)
 
 ##--------------------------------------------------------------------------------
+"""
+You are implementing your own programming language and you've decided to add support for merging strings. A typical merge function would take two strings s1 and s2, and return the lexicographically smallest result that can be obtained by placing the symbols of s2 between the symbols of s1 in such a way that maintains the relative order of the characters in each string.
+
+For example, if s1 = "super" and s2 = "tower", the result should be merge(s1, s2) = "stouperwer".
+
+
+
+You'd like to make your language more unique, so for your merge function, instead of comparing the characters in the usual lexicographical order, you'll compare them based on how many times they occur in their respective initial strings (fewer occurrences means the character is considered smaller). If the number of occurrences are equal, then the characters should be compared in the usual lexicographical way. If both number of occurences and characters are equal, you should take the characters from the first string to the result. Note that occurrences in the initial strings are compared - they do not change over the merge process.
+
+Given two strings s1 and s2, return the result of the special merge function you are implementing.
+
+Example
+
+For s1 = "dce" and s2 = "cccbd", the output should be
+mergeStrings(s1, s2) = "dcecccbd".
+All symbols from s1 goes first, because all of them have only 1 occurrence in s1 and c has 3 occurrences in s2.
+
+
+
+For s1 = "super" and s2 = "tower", the output should be
+mergeStrings(s1, s2) = "stouperwer".
+Because in both strings all symbols occur only 1 time, strings are merged as usual. You can find explanation for this example on the image in the description.
+
+Input/Output
+
+[execution time limit] 4 seconds (py3)
+
+[input] string s1
+
+A string consisting only of lowercase English letters.
+
+Guaranteed constraints:
+1 ≤ s1.length ≤ 104.
+
+[input] string s2
+
+A string consisting only of lowercase English letters.
+
+Guaranteed constraints:
+1 ≤ s2.length ≤ 104.
+
+[output] string
+
+The string that results by merging s1 and s2 using your special merge function.
+"""
+# 
 # def mergeStrings(s1, s2):
 #     s,o1,o2='',s1,s2
 #     while len(s1)*len(s2)!=0:
@@ -409,39 +455,66 @@ def alternatingSort(a):
 
 ##--------------------------------------------------------------------------------
 """
-6
+You've created a new programming language, and now you've decided to add hashmap support to it. Actually you are quite disappointed that in common programming languages it's impossible to add a number to all hashmap keys, or all its values. So you've decided to take matters into your own hands and implement your own hashmap in your new language that has the following operations:
+
+insert x y - insert an object with key x and value y.
+get x - return the value of an object with key x.
+addToKey x - add x to all keys in map.
+addToValue y - add y to all values in map.
+To test out your new hashmap, you have a list of queries in the form of two arrays: queryTypes contains the names of the methods to be called (eg: insert, get, etc), and queries contains the arguments for those methods (the x and y values).
+
+Your task is to implement this hashmap, apply the given queries, and to find the sum of all the results for get operations.
+
+Example
+
+For queryType = ["insert", "insert", "addToValue", "addToKey", "get"] and query = [[1, 2], [2, 3], [2], [1], [3]], the output should be hashMap(queryType, query) = 5.
+
+The hashmap looks like this after each query:
+
+1 query: {1: 2}
+2 query: {1: 2, 2: 3}
+3 query: {1: 4, 2: 5}
+4 query: {2: 4, 3: 5}
+5 query: answer is 5
+The result of the last get query for 3 is 5 in the resulting hashmap.
 
 
-2
-I had the below problem in a coding test and I got 28/30 tests passes and 2 failed due to a time-out.
 
-Problem
-You have created a programming language and now you have decided to add hashmap support to it. It was found that in common programming languages, it is impossible to add a number to all hashmap keys/values. So, you have decided to implement your own hashmap in your new language with following operations.
+For queryType = ["insert", "addToValue", "get", "insert", "addToKey", "addToValue", "get"] and query = [[1, 2], [2], [1], [2, 3], [1], [-1], [3]], the output should be hashMap(queryType, query) = 6.
 
-insert x y - insert and object with key x and value y
-get x - return the value of an object with key x
-addToKey x - add x to all keys in map
-addToValue y - add y to all values in map
-Your task is to implement this hashmap, apply the given queries, and to find the sum of all the results for get operations
+The hashmap looks like this after each query:
 
-For Example
+1 query: {1: 2}
+2 query: {1: 4}
+3 query: answer is 4
+4 query: {1: 4, 2: 3}
+5 query: {2: 4, 3: 3}
+6 query: {2: 3, 3: 2}
+7 query: answer is 2
+The sum of the results for all the get queries is equal to 4 + 2 = 6.
 
-For queryType=["insert","insert","addToValue","addToKey","get"] and query=[[1,2],[2,3],[2],[1],[3]], the output should be hashMap(queryType,query)=5.
-Explanation
-
-insert 1 2 - hashmap will be {1:2}
-insert 2 3 - hashmap will be {1:2,2:3}
-addToValue 2 - hashmap will be {1:4,2:5}
-addToKey 1 - hashmap will be {2:4,3:5}
-get 3 - value is 5
 Input/Output
 
-[execution time limit] 3 seconds (Java)
+[execution time limit] 4 seconds (py3)
+
 [input] array.string queryType
-Array of query types. its is guaranteed that each queryType[i] any one of the above mentioned operation
-1<=queryType.length<=10^5
+
+Array of query types. It is guaranteed that each queryType[i] is either "addToKey", "addToValue", "get", or "insert".
+
+Guaranteed constraints:
+1 ≤ queryType.length ≤ 105.
+
 [input] array.array.integer query
-Array of queries, where each query is mentioned by 2 numbers for insert and one number for others Key values are in range [-10^9,10^9]
+
+Array of queries, where each query is represented either by two numbers for insert query or by one number for other queries. It is guaranteed that during all queries all keys and values are in the range [-109, 109].
+
+Guaranteed constraints:
+query.length = queryType.length,
+1 ≤ query[i].length ≤ 2.
+
+[output] integer64
+
+The sum of the results for all get queries.
 """
 # 
 # def hashMap(queryType, query):
@@ -456,3 +529,24 @@ Array of queries, where each query is mentioned by 2 numbers for insert and one 
 #         elif i== 'get':
 #             s+=d[j[0]-c1]+c2
 #     return s
+## first
+def hashMap(queryType,query):
+    dic, x, y, fin == {}, 0,0,0
+    for i,j in zip(queryType,query):
+        if i = 'insert':
+            dic[j[0] - x] = j[1] - y
+        if i = 'get':
+            fin += dic[j[0]-x]+y
+        if i = 'addToKey':
+            x += j[0]
+        if i = 'addToValue':
+            y += j[0]
+    return fin
+
+
+
+
+queryType=["insert","insert","addToValue","addToKey","get"]
+query=[[1,2],[2,3],[2],[1],[3]]    
+
+hashMap(queryType, query)
