@@ -1566,14 +1566,18 @@
 # almost(s)
 
 # # ---------------------------------------------------------------------------------------------
-import math
+# # Mine
+# import math
+# def get_middle(s):
+#     #your code here
+#     if len(s) % 2 ==0:
+#         return f"{s[int((len(s)/2)-1)]}{s[int((len(s)/2))]}"
+#     else:
+#         return f"{s[math.floor(len(s)/2)]}"
+## Best
 def get_middle(s):
-    #your code here
-    if len(s) % 2 ==0:
-        return f"{s[int((len(s)/2)-1)]}{s[int((len(s)/2))]}"
-    else:
-        return f"{s[math.floor(len(s)/2)]}"
-
+   return s[(len(s)-1)/2:len(s)/2+1]
+   
 s = "of"
 get_middle(s)
 
