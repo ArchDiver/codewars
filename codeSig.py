@@ -373,17 +373,17 @@ An array of arrays, representing the groups of indices.
 #     print(b)
 #     return True
 ## second
-def alternatingSort(a):
-    b, x = 0, a[0]
-    while b != (len(a)-1)//2:
-        if b < 0:
-            b=-b
-        else:
-            b = -b-1
-        if a[b] <= x:
-            return False
-        x = a[b]
-    return True
+# def alternatingSort(a):
+#     b, x = 0, a[0]
+#     while b != (len(a)-1)//2:
+#         if b < 0:
+#             b=-b
+#         else:
+#             b = -b-1
+#         if a[b] <= x:
+#             return False
+#         x = a[b]
+#     return True
             
 
 
@@ -530,18 +530,18 @@ The sum of the results for all get queries.
 #             s+=d[j[0]-c1]+c2
 #     return s
 ## first
-def hashMap(queryType,query):
-    dic, x, y, fin == {}, 0,0,0
-    for i,j in zip(queryType,query):
-        if i = 'insert':
-            dic[j[0] - x] = j[1] - y
-        if i = 'get':
-            fin += dic[j[0]-x]+y
-        if i = 'addToKey':
-            x += j[0]
-        if i = 'addToValue':
-            y += j[0]
-    return fin
+# def hashMap(queryType,query):
+#     dic, x, y, fin == {}, 0,0,0
+#     for i,j in zip(queryType,query):
+#         if i = 'insert':
+#             dic[j[0] - x] = j[1] - y
+#         if i = 'get':
+#             fin += dic[j[0]-x]+y
+#         if i = 'addToKey':
+#             x += j[0]
+#         if i = 'addToValue':
+#             y += j[0]
+#     return fin
 
 
 
@@ -549,4 +549,4 @@ def hashMap(queryType,query):
 queryType=["insert","insert","addToValue","addToKey","get"]
 query=[[1,2],[2,3],[2],[1],[3]]    
 
-hashMap(queryType, query)
+# hashMap(queryType, query)
