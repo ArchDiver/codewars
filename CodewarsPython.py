@@ -1380,24 +1380,24 @@
 
 # # codewars 3
 # # my implementation/explanation of the solution by foxxyz
-def snail(array):
-  if array:
-    # force to list because zip returns a list of tuples
-    top_row = list(array[0])
-    # rotate the array by switching remaining rows & columns with zip
-    # the * expands the remaining rows so they can be matched by column
-    rotated_array = zip(*array[1:])
-    # then reverse rows to make the formerly last column the next top row
-    rotated_array = rotated_array[::-1]
-    return top_row + snail(rotated_array)
-  else:
-    return []
+# def snail(array):
+#   if array:
+#     # force to list because zip returns a list of tuples
+#     top_row = list(array[0])
+#     # rotate the array by switching remaining rows & columns with zip
+#     # the * expands the remaining rows so they can be matched by column
+#     rotated_array = zip(*array[1:])
+#     # then reverse rows to make the formerly last column the next top row
+#     rotated_array = rotated_array[::-1]
+#     return top_row + snail(rotated_array)
+#   else:
+#     return []
 
 
-array = [[1,2,3],
-         [4,5,6],
-         [7,8,9]]
-print(snail(array))
+# array = [[1,2,3],
+#          [4,5,6],
+#          [7,8,9]]
+# print(snail(array))
 # # ---------------------------------------------------------------------------------------------
 # Alright, detective, one of our colleagues successfully observed our target person, Robby the robber. We followed him to a secret warehouse, where we assume to find all the stolen stuff. The door to this warehouse is secured by an electronic combination lock. Unfortunately our spy isn't sure about the PIN he saw, when Robby entered it.
 
