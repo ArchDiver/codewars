@@ -1491,18 +1491,18 @@
 # alt(a)
 
 # # ---------------------------------------------------------------------------------------------
-import math
-def century(y):
-    # c  = 0
-    # if y % 100 == 0:
-    #     c = math.floor(y/100)
-    # else:
-    #     c = math.(y/100)
-    return math.ceil(y/100)
+# import math
+# def century(y):
+#     # c  = 0
+#     # if y % 100 == 0:
+#     #     c = math.floor(y/100)
+#     # else:
+#     #     c = math.(y/100)
+#     return math.ceil(y/100)
     
-century(98)
-century(100)
-century(1001)
+# century(98)
+# century(100)
+# century(1001)
 
 # # ---------------------------------------------------------------------------------------------
 # def checkPalindrome(inputString):
