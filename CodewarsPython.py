@@ -1380,24 +1380,24 @@
 
 # # codewars 3
 # # my implementation/explanation of the solution by foxxyz
-# def snail(array):
-#   if array:
-#     # force to list because zip returns a list of tuples
-#     top_row = list(array[0])
-#     # rotate the array by switching remaining rows & columns with zip
-#     # the * expands the remaining rows so they can be matched by column
-#     rotated_array = zip(*array[1:])
-#     # then reverse rows to make the formerly last column the next top row
-#     rotated_array = rotated_array[::-1]
-#     return top_row + snail(rotated_array)
-#   else:
-#     return []
+def snail(array):
+  if array:
+    # force to list because zip returns a list of tuples
+    top_row = list(array[0])
+    # rotate the array by switching remaining rows & columns with zip
+    # the * expands the remaining rows so they can be matched by column
+    rotated_array = zip(*array[1:])
+    # then reverse rows to make the formerly last column the next top row
+    rotated_array = rotated_array[::-1]
+    return top_row + snail(rotated_array)
+  else:
+    return []
 
 
-# array = [[1,2,3],
-#          [4,5,6],
-#          [7,8,9]]
-# print(snail(array))
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+print(snail(array))
 # # ---------------------------------------------------------------------------------------------
 # Alright, detective, one of our colleagues successfully observed our target person, Robby the robber. We followed him to a secret warehouse, where we assume to find all the stolen stuff. The door to this warehouse is secured by an electronic combination lock. Unfortunately our spy isn't sure about the PIN he saw, when Robby entered it.
 
@@ -1426,39 +1426,39 @@
 
 
 # # mine:
-from itertools import product
+# from itertools import product
 
-def get_pins(observed):
-    near = {
-    '1': ['1', '2', '4'],
-    '2': ['1', '2', '3', '5'],
-    '3': ['2', '3', '6'],
-    '4': ['1', '4', '5', '7'],
-    '5': ['2', '4', '5', '6', '8'],
-    '6': ['3', '5','6', '9'],
-    '7': ['4','7', '8'],
-    '8': ['5', '7','8', '9', '0'],
-    '9': ['6', '8','9'],
-    '0': ['0','8']
-    }
-    x = [near [i] for i in observed]
-    y = list(product(*x))
-    combos = [''.join(i) for i in y]
-    return combos
-# codewars 1
-from itertools import product
+# def get_pins(observed):
+#     near = {
+#     '1': ['1', '2', '4'],
+#     '2': ['1', '2', '3', '5'],
+#     '3': ['2', '3', '6'],
+#     '4': ['1', '4', '5', '7'],
+#     '5': ['2', '4', '5', '6', '8'],
+#     '6': ['3', '5','6', '9'],
+#     '7': ['4','7', '8'],
+#     '8': ['5', '7','8', '9', '0'],
+#     '9': ['6', '8','9'],
+#     '0': ['0','8']
+#     }
+#     x = [near [i] for i in observed]
+#     y = list(product(*x))
+#     combos = [''.join(i) for i in y]
+#     return combos
+# # codewars 1
+# from itertools import product
 
-ADJACENTS = ('08', '124', '2135', '326', '4157', '52468', '6359', '748', '85790', '968')
+# ADJACENTS = ('08', '124', '2135', '326', '4157', '52468', '6359', '748', '85790', '968')
 
-def get_pins(observed):
-    return [''.join(p) for p in product(*(ADJACENTS[int(d)] for d in observed))]
+# def get_pins(observed):
+#     return [''.join(p) for p in product(*(ADJACENTS[int(d)] for d in observed))]
 
 
-# codewars2
-def get_pins(observed):
-  map = [['8','0'], ['1','2','4'], ['1','2','3','5'], ['2','3','6'], ['1','4','5','7'], ['2','4','5','6','8'],
-         ['3','5','6','9'], ['4','7','8'], ['5','7','8','9','0'], ['6','8','9']]
-  return map[int(observed[0])] if len(observed) == 1 else [x + y for x in map[int(observed[0])] for y in get_pins(observed[1:])]
+# # codewars2
+# def get_pins(observed):
+#   map = [['8','0'], ['1','2','4'], ['1','2','3','5'], ['2','3','6'], ['1','4','5','7'], ['2','4','5','6','8'],
+#          ['3','5','6','9'], ['4','7','8'], ['5','7','8','9','0'], ['6','8','9']]
+#   return map[int(observed[0])] if len(observed) == 1 else [x + y for x in map[int(observed[0])] for y in get_pins(observed[1:])]
 
 
 # # ---------------------------------------------------------------------------------------------
