@@ -1518,15 +1518,15 @@
 # checkPalindrome("racecar")
 
 # # ---------------------------------------------------------------------------------------------
-def ele(x):
-    output = -1000
-    for i in range(len(x)-1):
-        if x[i] * x[i+1] > output:
-            output = x[i] * x[i+1]
-    return output
+# def ele(x):
+#     output = -1000
+#     for i in range(len(x)-1):
+#         if x[i] * x[i+1] > output:
+#             output = x[i] * x[i+1]
+#     return output
     
-x = [-23, 4, -3, 8, -12]
-ele(x)
+# x = [-23, 4, -3, 8, -12]
+# ele(x)
 
 
 # # ---------------------------------------------------------------------------------------------
