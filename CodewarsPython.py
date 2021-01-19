@@ -1534,19 +1534,19 @@
 #     return ((n**2) + ((n-1)**2))
 
 # # ---------------------------------------------------------------------------------------------
-# def makeArrayConsecutive2(s):
-#     s.sort()
-#     more = 0
-#     for i in range(len(s)-1):
-#         a = s[i]
-#         b= s[i+1]
-#         if s[i]+1 != s[i+1]:
-#             more += ((s[i+1]) - (s[i]+1))
-#     return more
+def makeArrayConsecutive2(s):
+    s.sort()
+    more = 0
+    for i in range(len(s)-1):
+        a = s[i]
+        b= s[i+1]
+        if s[i]+1 != s[i+1]:
+            more += ((s[i+1]) - (s[i]+1))
+    return more
     
 
-# s = [6, 2, 3, 8]
-# makeArrayConsecutive2(s)
+s = [6, 2, 3, 8]
+makeArrayConsecutive2(s)
 
 
 # # ---------------------------------------------------------------------------------------------
