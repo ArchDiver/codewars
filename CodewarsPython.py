@@ -1550,20 +1550,20 @@
 
 
 # # ---------------------------------------------------------------------------------------------
-# def almost(s):
-#     count = 0
-#     for i in range(len(s)-1):
-#         if s[i] >= s[i+1]:
-#             count +=1
-#             a = bool((i + 2 < len(s)) and (s[i+2] <= s[i]))
-#             b = bool((i -1 >= 0) and (s[i+1] <= s[i-1]))
-#             if (a and b) or (count > 1):
-#                 return False
-#     return True
+def almost(s):
+    count = 0
+    for i in range(len(s)-1):
+        if s[i] >= s[i+1]:
+            count +=1
+            a = bool((i + 2 < len(s)) and (s[i+2] <= s[i]))
+            b = bool((i -1 >= 0) and (s[i+1] <= s[i-1]))
+            if (a and b) or (count > 1):
+                return False
+    return True
     
-# s= [1, 1, 2, 3, 4, 4]
+s= [1, 1, 2, 3, 4, 4]
 
-# almost(s)
+almost(s)
 
 # # ---------------------------------------------------------------------------------------------
 # # Mine
