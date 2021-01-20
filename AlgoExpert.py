@@ -17,7 +17,8 @@ def isValidSequence(a, b):
         bVal = b[i]
         if a == []:
             return False
-        for j in range()
+        for j in range(len(a)):
+            if b[i] in a:
 
 # # ---------------------------------------------------------------------------------------------
 
