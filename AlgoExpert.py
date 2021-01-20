@@ -13,6 +13,11 @@ def twoNumberSum(array, targetSum):
 def isValidSequence(a, b):
     if len(b) > len(a):
         return False
+    for i in range(len(a)):
+        bVal = b[i]
+        if a == []:
+            return False
+        for j in range()
 
 # # ---------------------------------------------------------------------------------------------
 
