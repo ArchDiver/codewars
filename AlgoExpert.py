@@ -19,6 +19,8 @@ def isValidSequence(a, b):
             return False
         for j in range(len(a)):
             if b[i] in a:
+                bVal = b[i]
+                place = a.index(b[i])
 
 # # ---------------------------------------------------------------------------------------------
 
