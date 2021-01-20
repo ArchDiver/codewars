@@ -10,7 +10,9 @@ def twoNumberSum(array, targetSum):
     return answer
 
 # # Validate Subsequence---------------------------------------------------------------------------------------------
-
+def isValidSequence(a, b):
+    if len(b) > len(a):
+        return False
 
 # # ---------------------------------------------------------------------------------------------
 
