@@ -22,6 +22,10 @@ def isValidSequence(a, b):
                 bVal = b[i]
                 place = a.index(b[i])
                 a = a[place+1:]
+                break
+            else:
+                return False
+    
 
 # # ---------------------------------------------------------------------------------------------
 
