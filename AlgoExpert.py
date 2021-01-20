@@ -11,6 +11,7 @@ def twoNumberSum(array, targetSum):
 
 # # Validate Subsequence---------------------------------------------------------------------------------------------
 def isValidSequence(a, b):
+    # Write your code here.
     if len(b) > len(a):
         return False
     for i in range(len(a)):
