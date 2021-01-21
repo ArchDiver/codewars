@@ -1,13 +1,13 @@
 # # Two Number Sum---------------------------------------------------------------------------------------------
-# def twoNumberSum(array, targetSum):
-#     # Write your code here.
-#     answer = []
-#     for i in range(len(array)):
-#         for j in range((i+1),len(array)):
-#             if (array[i] + array[j]) == targetSum:
-#                 answer.append(array[i])
-#                 answer.append(array[j])
-#     return answer
+def twoNumberSum(array, targetSum):
+    # Write your code here.
+    answer = []
+    for i in range(len(array)):
+        for j in range((i+1),len(array)):
+            if (array[i] + array[j]) == targetSum:
+                answer.append(array[i])
+                answer.append(array[j])
+    return answer
 
 # # Validate Subsequence---------------------------------------------------------------------------------------------
 def isValidSequence(a, b):
