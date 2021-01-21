@@ -310,29 +310,29 @@
 // # [(B,10),(C,30),(A,5),(C,20),(B,2),(B,8),(C,0)]
 // # It's okay if your solution includes the last (C,0) tuple.
 
-// function optimalPath(road) {
-//   print(road);
-//   let path = [];
-//   let taken = 0;
-//   let notTaken = 1;
-//   let cross = 0;
-//   for (let i = 0; i < road.length; i++){
-//     print(road[i][0]);
-//     print(road[i][1]);
-//     print(road[i][2]);
-//     if ((road[i][notTaken] + cross) < road[i][taken]){
-//       path.append((road[i][notTaken] + cross))
-//       swap = taken;
-//       taken = notTaken;
-//       notTaken = swap;
-//       cross = road[i][2];
-//     }else{
-//       path.append(road[i][taken]);
-//       cross = road[i][2];
-//     }
-//   }
-//   return path;
-// }
+function optimalPath(road) {
+  print(road);
+  let path = [];
+  let taken = 0;
+  let notTaken = 1;
+  let cross = 0;
+  for (let i = 0; i < road.length; i++){
+    print(road[i][0]);
+    print(road[i][1]);
+    print(road[i][2]);
+    if ((road[i][notTaken] + cross) < road[i][taken]){
+      path.append((road[i][notTaken] + cross))
+      swap = taken;
+      taken = notTaken;
+      notTaken = swap;
+      cross = road[i][2];
+    }else{
+      path.append(road[i][taken]);
+      cross = road[i][2];
+    }
+  }
+  return path;
+}
 
 // print(optimalPath([ [50,10,30], [5,90,20], [40,2,25], [10,8,0] ]))
 
