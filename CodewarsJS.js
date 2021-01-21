@@ -253,27 +253,27 @@
 
 // ------------------------------
 
-  let index;
-  let arrLen = arr.length
-  let midLen = Math.floor(arrLen/2);
-  let mid = arr[midLen];
-  let max = arrLen;
-  let min = 0
-  console.log(mid)
-  while (target > min && target < max {
-    if(target == mid){
-      return 
-    } else if (target > mid){
-      low = midLen;
-      mid = (Math.floor(max-mid))+ mid;
-    }else{
+//   let index;
+//   let arrLen = arr.length
+//   let midLen = Math.floor(arrLen/2);
+//   let mid = arr[midLen];
+//   let max = arrLen;
+//   let min = 0
+//   console.log(mid)
+//   while (target > min && target < max {
+//     if(target == mid){
+//       return 
+//     } else if (target > mid){
+//       low = midLen;
+//       mid = (Math.floor(max-mid))+ mid;
+//     }else{
 
-    }
+//     }
 
 
 
-  }
-}
+//   }
+// }
 
 
 // console.log(getTarget([-1,0,3,5,9,12],2))
