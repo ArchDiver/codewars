@@ -48,7 +48,7 @@ def closest(bst, t, c):
         return c
     
 
-# This is the class of the input tree. 
+# This is the class of the input tree. Do not edit.
 
 # # ---------------------------------------------------------------------------------------------
 
