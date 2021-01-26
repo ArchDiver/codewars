@@ -32,7 +32,7 @@ def isValidSequence(a, b):
 # # Find Closest Value in BST---------------------------------------------------------------------------------------------
 def findClosestValueinBst(tree, target):
     #write code here
-       #float('inf') gives an infinite value. This helps to find the lowest value of something.
+    #float('inf') gives an infinite value. This helps to find the lowest value of something.
     close = float('inf')
     return closest(tree, target,close)
 def closest(bst, t, c):
