@@ -42,7 +42,7 @@ def closest(bst, t, c):
         c = bst.value
     if t < bst.value:
         return closest(bst.left)
-    elif 
+    elif t > bst.value:
 
 # # ---------------------------------------------------------------------------------------------
 
