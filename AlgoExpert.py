@@ -12,6 +12,7 @@ def twoNumberSum(array, targetSum):
 # # Validate Subsequence---------------------------------------------------------------------------------------------
 def isValidSequence(a, b):
     # Write your code here.
+ 
     if len(b) > len(a):
         return False
     for i in range(len(a)):
@@ -29,8 +30,12 @@ def isValidSequence(a, b):
     return True
 
 # # Find Closest Value in BST---------------------------------------------------------------------------------------------
-def findClosestValueinBst:
-    
+def findClosestValueinBst(tree, target):
+    #write code here
+       #float('inf') gives an infinite value. This helps to find the lowest value of something.
+    close = float('inf')
+    return closest(tree, target,close)
+
 # # ---------------------------------------------------------------------------------------------
 
 
