@@ -48,7 +48,7 @@ def closest(bst, t, c):
     
 
 # This is the class of the input tree. Do not edit.
-#Only use
+#Only use if you are bringing in 
 class BST:
     def __int__(self, value):
         self.value = value
