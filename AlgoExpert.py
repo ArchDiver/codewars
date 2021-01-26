@@ -35,6 +35,13 @@ def findClosestValueinBst(tree, target):
        #float('inf') gives an infinite value. This helps to find the lowest value of something.
     close = float('inf')
     return closest(tree, target,close)
+def closest(bst, t, c):
+    if bst is None:
+        return c
+    if abs(t-c) > abs(t-bst.value):
+        c = bst.value
+    if t < bst.value:
+        return closest(bst.left)
 
 # # ---------------------------------------------------------------------------------------------
 
