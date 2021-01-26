@@ -44,6 +44,8 @@ def closest(bst, t, c):
         return closest(bst.left, t, c)
     elif t > bst.value:
         return closest(bst.right, t, c)
+    else:
+        return c
 
 # # ---------------------------------------------------------------------------------------------
 
