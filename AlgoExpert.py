@@ -47,13 +47,13 @@ def closest(bst, t, c):
         return c
     
 
-# This is the class of the input tree. Do not edit.
-#Only use if you are bringing in a tree
-class BST:
-    def __int__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+# # This is the class of the input tree. Do not edit.
+# #Only use if you are bringing in a tree
+# class BST:
+#     def __int__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
 
 # # ---------------------------------------------------------------------------------------------
 
