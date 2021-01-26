@@ -41,9 +41,9 @@ def closest(bst, t, c):
     if abs(t-c) > abs(t-bst.value):
         c = bst.value
     if t < bst.value:
-        return closest(bst.left)
+        return closest(bst.left, t, c)
     elif t > bst.value:
-        return closest(bst.right)
+        return closest(bst.right, t, c)
 
 # # ---------------------------------------------------------------------------------------------
 
