@@ -64,11 +64,17 @@ class BinaryTree:
         self.left = None
         self.right = None
 
-def bstSums(node, runSum, sumList):
+def branchSums(root):
     #write your code here.
     sumList = []
     bstSums(root, 0, sumList)
     return sumList
+
+def bstSums(node, runSum, sumList):
+    
+
+
+
 
 # # ---------------------------------------------------------------------------------------------
 
