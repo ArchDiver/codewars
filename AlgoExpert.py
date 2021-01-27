@@ -71,7 +71,8 @@ def branchSums(root):
     return sumList
 
 def bstSums(node, runSum, sumList):
-    
+    if node is None:
+        
 
 
 
