@@ -66,7 +66,9 @@ class BinaryTree:
 
 def bstSums(node, runSum, sumList):
     #write your code here.
-    
+    sumList = []
+    bstSums(root, 0, sumList)
+    return sumList
 
 # # ---------------------------------------------------------------------------------------------
 
