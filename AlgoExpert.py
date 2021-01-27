@@ -58,7 +58,7 @@ def closest(bst, t, c):
 # # Branch Sums---------------------------------------------------------------------------------------------
 # This is the class input root. Do not edit it.
 class BinaryTree:
-    
+    def bstSums(node, runSum, sumList):
 
 # # ---------------------------------------------------------------------------------------------
 
