@@ -65,7 +65,8 @@ class BinaryTree:
         self.right = None
 
 def bstSums(node, runSum, sumList):
-    #
+    #write your code here.
+    
 
 # # ---------------------------------------------------------------------------------------------
 
