@@ -74,7 +74,9 @@ def bstSums(node, runSum, sumList):
     if node is None:
         return
     newRunSum = runSum + node.value
-    
+    if node.left is None and node.right is None:
+        sumList.append(newRunSum)
+        
 
 
 
