@@ -90,7 +90,7 @@ def nodeDepth(root, depth=0):
     return depth + nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
 
 
-#Option 2 (iterative=same run time just less pretty) 
+#Option 2 (iterative=same run time just less pretty) O(n) time | O(h) space
 def nodeDepths(root):
     depthsSum = 0
     stack = [{"node": root, "depth": 0}]
