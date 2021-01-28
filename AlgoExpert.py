@@ -104,7 +104,7 @@ def nodeDepths(root):
         stack.append({"node": node.right, "depth": depth + 1})
     return depthsSum
 
-# # Only use this when 
+# # Only use this when bringing in from somewhere
 # #This is the class off the input binary tree
 # class BinaryTree:
 #     def __init__(self, value):
