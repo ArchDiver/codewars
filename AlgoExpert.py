@@ -82,11 +82,18 @@ def bstSums(node, runSum, sumList):
 
 
 # # Node Depths---------------------------------------------------------------------------------------------
+# Option 1 (recursive=clean)
 def nodeDepth(root, depth=0):
     # Write your code here.
     if root is None:
         return 0
     return depth + nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
+
+
+#Option 2 (iterative=same run time just less pretty)
+def nodeDepths(root):
+    depthsSum = 0
+    stack = [{"node": root, "depth": 0}]
 
 #This is the class off the input binary tree
 class BinaryTree:
