@@ -82,8 +82,11 @@ def bstSums(node, runSum, sumList):
 
 
 # # Node Depths---------------------------------------------------------------------------------------------
-def nodeDepth(root):
+def nodeDepth(root, depth=0):
     # Write your code here.
+    if root is None:
+        return 0
+    return nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
 
 
 # # ---------------------------------------------------------------------------------------------
