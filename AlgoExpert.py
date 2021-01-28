@@ -82,7 +82,7 @@ def bstSums(node, runSum, sumList):
 
 
 # # Node Depths---------------------------------------------------------------------------------------------
-# Option 1 (recursive=clean)
+# Option 1 (recursive=clean) O(n) time | O(h) space
 def nodeDepth(root, depth=0):
     # Write your code here.
     if root is None:
