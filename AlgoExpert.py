@@ -88,6 +88,8 @@ def nodeDepth(root, depth=0):
         return 0
     return nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
 
+#This is the class off the input binary tree
+
 
 # # ---------------------------------------------------------------------------------------------
 
