@@ -90,10 +90,20 @@ def nodeDepth(root, depth=0):
     return depth + nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
 
 
-#Option 2 (iterative=same run time just less pretty)
+#Option 2 (iterative=same run time just less pretty) 
 def nodeDepths(root):
     depthsSum = 0
     stack = [{"node": root, "depth": 0}]
+    while len(stack) > 0:
+        nodeInfo = stack.pop()
+        node, depth = nodeInfo["node"], nodeInfor["depth"]
+        if node is None:
+            continue
+        depthsSum += depth
+        stack.append({"node": node.left, "depth": depth + 1})
+        stack.append({"node": node.right, "depth": depth + 1})
+    return depthsSum
+
 
 #This is the class off the input binary tree
 class BinaryTree:
