@@ -86,10 +86,14 @@ def nodeDepth(root, depth=0):
     # Write your code here.
     if root is None:
         return 0
-    return nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
+    return depth + nodeDepth(root.left, depth + 1) + nodeDepth(root.right, depth + 1)
 
 #This is the class off the input binary tree
-
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
 # # ---------------------------------------------------------------------------------------------
 
