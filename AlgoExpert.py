@@ -105,12 +105,12 @@ def nodeDepths(root):
     return depthsSum
 
 
-#This is the class off the input binary tree
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+# #This is the class off the input binary tree
+# class BinaryTree:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
 
 # # ---------------------------------------------------------------------------------------------
 
