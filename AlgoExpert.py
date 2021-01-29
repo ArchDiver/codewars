@@ -127,7 +127,7 @@ class Node:
         return self
     
     #This is where most of the action happens.
-    # Time = O(Vertices + Edges) Space =
+    # Time = O(v(ertices) + e(dges)) Space = O(v)
     def depthFirstSearch(self, array):
         # Write your code here.
         array.append(self.name)
