@@ -122,9 +122,10 @@ class Node:
         self.children = []
         self.name = name
 
-    def addChild(self, name):
-        self.children.append(Node(name))
-        return self
+    # # Not sure this is needed
+    # def addChild(self, name):
+    #     self.children.append(Node(name))
+    #     return self
     
     #This is where most of the action happens.
     # Time = O(v(ertices) + e(dges)) Space = O(v)
