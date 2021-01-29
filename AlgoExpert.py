@@ -131,7 +131,7 @@ class Node:
         array.append(self.name)
         for child in self.children:
             child.depthFirstSearch(array)
-        re
+        return 
         pass
 
 # # ---------------------------------------------------------------------------------------------
