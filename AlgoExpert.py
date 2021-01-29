@@ -125,7 +125,9 @@ class Node:
     def addChild(self, name):
         self.children.append(Node(name))
         return self
-
+    
+    #This is where most of the action happens.
+    # Time = O(Vertices + Edges) Space =
     def depthFirstSearch(self, array):
         # Write your code here.
         array.append(self.name)
