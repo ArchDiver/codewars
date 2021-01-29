@@ -140,10 +140,11 @@ class Node:
 # # Min Wait Time---------------------------------------------------------------------------------------------
 # Time = O(nlogn) , space = O(1)
 def minimumWaitingTime(queries):
-    
-
-
-
+    queries.sort()
+    waitTime = 0
+    for idx, val in enumerate(queries):
+        waitTime += val * (len(queries) - (idx + 1)) 
+    return waitTime
 
 # # ---------------------------------------------------------------------------------------------
 
