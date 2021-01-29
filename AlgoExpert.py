@@ -142,8 +142,15 @@ class Node:
 def minimumWaitingTime(queries):
     queries.sort()
     waitTime = 0
-    for idx, val in enumerate(queries):
-        waitTime += val * (len(queries) - (idx + 1)) 
+    
+    # for idx, val in enumerate(queries):
+    #     waitTime += val * (len(queries) - (idx + 1)) 
+    # return waitTime
+
+    left = len(queries)
+    for dog in queries:
+        left -= 1
+        waitTime += dog * left
     return waitTime
 
 # # ---------------------------------------------------------------------------------------------
