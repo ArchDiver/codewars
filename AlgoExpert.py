@@ -144,9 +144,9 @@ def minimumWaitingTime(queries):
     waitTime = 0
 
     # Theirs
-    # for idx, val in enumerate(queries):
-    #     waitTime += val * (len(queries) - (idx + 1)) 
-    # return waitTime
+    for idx, val in enumerate(queries):
+        waitTime += val * (len(queries) - (idx + 1)) 
+    return waitTime
 
     # Mine
     left = len(queries)
