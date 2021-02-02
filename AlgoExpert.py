@@ -149,11 +149,11 @@ def minimumWaitingTime(queries):
     return waitTime
 
     # Mine
-    # left = len(queries)
-    # for dog in queries:
-    #     left -= 1
-    #     waitTime += dog * left
-    # return waitTime
+    left = len(queries)
+    for dog in queries:
+        left -= 1
+        waitTime += dog * left
+    return waitTime
 
 # # ---------------------------------------------------------------------------------------------
 
