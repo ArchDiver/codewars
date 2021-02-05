@@ -96,7 +96,7 @@ def nodeDepths(root):
     stack = [{"node": root, "depth": 0}]
     while len(stack) > 0:
         nodeInfo = stack.pop()
-        node, depth = nodeInfo["node"], nodeInfor["depth"]
+        node, depth = nodeInfo["node"], nodeInfo["depth"]
         if node is None:
             continue
         depthsSum += depth
@@ -155,8 +155,19 @@ def minimumWaitingTime(queries):
         waitTime += dog * left
     return waitTime
 
-# # ---------------------------------------------------------------------------------------------
-
+# # Nth Fibinacci---------------------------------------------------------------------------------------------
+def getNthFib(n):
+    # Write your code here.
+    ##weak
+    if n == 1:
+        return 1
+    elif n == 0:
+        return 0
+    else:
+        return getNthFib(n-1) + getNthFib(n-2)
+    
+		
+    
 
 # # ---------------------------------------------------------------------------------------------
 
