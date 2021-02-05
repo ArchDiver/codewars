@@ -158,13 +158,13 @@ def minimumWaitingTime(queries):
 # # Nth Fibinacci---------------------------------------------------------------------------------------------
 def getNthFib(n):
     # Write your code here.
-    ##weak
-    if n == 1:
-        return 1
-    elif n == 0:
-        return 0
-    else:
-        return getNthFib(n-1) + getNthFib(n-2)
+    # ##weak time=O(2^n), space=O(n)
+    # if n == 1:
+    #     return 1
+    # elif n == 0:
+    #     return 0
+    # else:
+    #     return getNthFib(n-1) + getNthFib(n-2)
     
 		
     
