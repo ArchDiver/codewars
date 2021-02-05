@@ -174,6 +174,7 @@ def minimumWaitingTime(queries):
 #     else:
 #         nums[n] = getNthFib(n-1, nums) + getNthFib(n-2, nums)
 #         return nums[n]
+# # Best time=O(n)
 def getNthFib(n):
     fib = [0,1]
     counter = 3
