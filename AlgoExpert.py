@@ -165,7 +165,11 @@ def getNthFib(n):
     #     return 0
     # else:
     #     return getNthFib(n-1) + getNthFib(n-2)
-    
+    ## better
+    if n in nums:
+        return nums[n]
+    else:
+        nums[n] = getNthFib(n-1, nums)
 		
     
 
