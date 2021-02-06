@@ -157,34 +157,34 @@ def minimumWaitingTime(queries):
 
 # # Nth Fibinacci---------------------------------------------------------------------------------------------
 
-# ##weak time=O(2^n), space=O(n)
-# def getNthFib(n):
-    # Write your code here.
+##weak time=O(2^n), space=O(n)
+def getNthFib(n):
+    Write your code here.
 
-    # if n == 1:
-    #     return 1
-    # elif n == 0:
-    #     return 0
-    # else:
-        # # This section runs all of the branches over and over
-    #     return getNthFib(n-1) + getNthFib(n-2)
-#  ## better time=O(n) space=O(n)
-# def getNthFib(n, nums={1:0, 2:1}):
-#     if n in nums:
-#         return nums[n]
-#     else:
-#         nums[n] = getNthFib(n-1, nums) + getNthFib(n-2, nums)
-#         return nums[n]
-# # Best time=O(n) space= o(1)
-# def getNthFib(n):
-#     fib = [0,1]
-#     counter = 3
-#     while counter <= n:
-#         next = fib[1] + fib[0]
-#         fib[0] = fib[1]
-#         fib[1] = next
-#         counter += 1
-#     return fib[1] if n > 1 else fib[0]
+    if n == 1:
+        return 1
+    elif n == 0:
+        return 0
+    else:
+        # This section runs all of the branches over and over
+        return getNthFib(n-1) + getNthFib(n-2)
+ ## better time=O(n) space=O(n)
+def getNthFib(n, nums={1:0, 2:1}):
+    if n in nums:
+        return nums[n]
+    else:
+        nums[n] = getNthFib(n-1, nums) + getNthFib(n-2, nums)
+        return nums[n]
+# Best time=O(n) space= o(1)
+def getNthFib(n):
+    fib = [0,1]
+    counter = 3
+    while counter <= n:
+        next = fib[1] + fib[0]
+        fib[0] = fib[1]
+        fib[1] = next
+        counter += 1
+    return fib[1] if n > 1 else fib[0]
 
 
 		
