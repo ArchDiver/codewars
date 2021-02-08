@@ -176,15 +176,15 @@ def minimumWaitingTime(queries):
 #         nums[n] = getNthFib(n-1, nums) + getNthFib(n-2, nums)
 #         return nums[n]
 # Best time=O(n) space= o(1)
-def getNthFib(n):
-    fib = [0,1]
-    counter = 3
-    while counter <= n:
-        next = fib[1] + fib[0]
-        fib[0] = fib[1]
-        fib[1] = next
-        counter += 1
-    return fib[1] if n > 1 else fib[0]
+# def getNthFib(n):
+#     fib = [0,1]
+#     counter = 3
+#     while counter <= n:
+#         next = fib[1] + fib[0]
+#         fib[0] = fib[1]
+#         fib[1] = next
+#         counter += 1
+#     return fib[1] if n > 1 else fib[0]
 
 # # ---------------------------------------------------------------------------------------------
 
