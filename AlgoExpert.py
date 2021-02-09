@@ -191,6 +191,9 @@ def minimumWaitingTime(queries):
 def productSum(array, depth=0):
     sum = 0
     for item in array:
+        if type(item) is list:
+            sum += productSum(item, depth + 1)
+        
 
 
 # # ---------------------------------------------------------------------------------------------
