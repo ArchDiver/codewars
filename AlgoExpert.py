@@ -188,7 +188,7 @@ def minimumWaitingTime(queries):
 
 # # Product Sum with a "special" array ---------------------------------------------------------------------------------------------
 # # e.g. [x,[y,z]] = x + 2*(y+z) or [x[y[z]]] = x+ 2 * (y + 3 * (z)
-def productSum(array, depth=0)
+def productSum(array, depth=0):
 
 
 # # ---------------------------------------------------------------------------------------------
