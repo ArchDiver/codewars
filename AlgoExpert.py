@@ -190,6 +190,7 @@ def minimumWaitingTime(queries):
 # # e.g. [x,[y,z]] = x + 2*(y+z) or [x[y[z]]] = x+ 2 * (y + 3 * (z)
 def productSum(array, depth=0):
     sum = 0
+    for item in array:
 
 
 # # ---------------------------------------------------------------------------------------------
