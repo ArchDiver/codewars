@@ -200,8 +200,8 @@ def productSum(array, depth=1):
 
 # # Bianary Tree Search---------------------------------------------------------------------------------------------
 #  # time = O(log(n)) space = O(log(n))
-def binarySearch(array, target):
-    return helper(array, target, 0, len(array)-1)
+# def binarySearch(array, target):
+#     return helper(array, target, 0, len(array)-1)
 
 # def helper(a, t, l, r):
 #     if l > r:
@@ -215,6 +215,7 @@ def binarySearch(array, target):
 #     else:
 #         return helper(a, t, l , mid -1)
 
+# # time = O(log(n)) space = O(1)
 def 
 
 # # ---------------------------------------------------------------------------------------------
