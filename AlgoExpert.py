@@ -203,17 +203,19 @@ def productSum(array, depth=1):
 def binarySearch(array, target):
     return helper(array, target, 0, len(array)-1)
 
-def helper(a, t, l, r):
-    if l > r:
-        return -1
-    mid = (l + r ) // 2
-    match = a[mid]
-    if t == match:
-        return mid
-    elif t > match:
-        return helper(a, t, mid +1, r)
-    else:
-        return helper(a, t, l , mid -1)
+# def helper(a, t, l, r):
+#     if l > r:
+#         return -1
+#     mid = (l + r ) // 2
+#     match = a[mid]
+#     if t == match:
+#         return mid
+#     elif t > match:
+#         return helper(a, t, mid +1, r)
+#     else:
+#         return helper(a, t, l , mid -1)
+
+def 
 
 # # ---------------------------------------------------------------------------------------------
 
