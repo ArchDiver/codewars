@@ -216,7 +216,8 @@ def productSum(array, depth=1):
 #         return helper(a, t, l , mid -1)
 
 # # time = O(log(n)) space = O(1)
-def 
+def binarySearch(array, target):
+    return helper(array, target, 0, len(array)-1)
 
 # # ---------------------------------------------------------------------------------------------
 
