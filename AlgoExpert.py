@@ -222,13 +222,14 @@ def helper(a, t, r, l):
     while l <= r:
         mid = (l+r) //2
         match = a[mid]
-        if t = match:
+        if t == match:
             return mid
         elif t < match:
             r = mid - 1
         elif t > match:
             left = mid + 1
-        
+        else:
+            return -1
 
 # # ---------------------------------------------------------------------------------------------
 
