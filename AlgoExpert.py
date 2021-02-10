@@ -218,6 +218,17 @@ def productSum(array, depth=1):
 # # time = O(log(n)) space = O(1)
 def binarySearch(array, target):
     return helper(array, target, 0, len(array)-1)
+def helper(a, t, r, l):
+    while l <= r:
+        mid = (l+r) //2
+        match = a[mid]
+        if t = match:
+            return mid
+        elif t < match:
+            r = mid - 1
+        elif t > match:
+            left = mid + 1
+        
 
 # # ---------------------------------------------------------------------------------------------
 
