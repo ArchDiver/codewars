@@ -231,6 +231,13 @@ def productSum(array, depth=1):
 #         else:
 #             return -1
 
+def binarySearch(array, target):
+    return helper(array, target, 0, len(array)-1)
+
+def helper(a, t, l, r):
+    while l <= r:
+        mid = 
+
 # # ---------------------------------------------------------------------------------------------
 
 
