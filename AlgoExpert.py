@@ -246,6 +246,12 @@ def helper(a, t, l, r):
     #         l = mid + 1
     #     else:
     #         return -1
+    if l > r:
+        return -1
+    elif t < mid:
+        return helper(array, target, 0, mid - 1)
+    else:
+        return helper(array, target, mid + 1, r)
 
 # # ---------------------------------------------------------------------------------------------
 
