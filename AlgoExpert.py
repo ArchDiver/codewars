@@ -236,7 +236,16 @@ def binarySearch(array, target):
 
 def helper(a, t, l, r):
     while l <= r:
-        mid = 
+        mid = (l + r) // 2
+        centerVal = a[mid]
+        if t == centerVal:
+            return mid
+        elif t < centerVal:
+            right = mid - 1
+        elif t > centerVal:
+            l = mid + 1
+        else:
+            return -1
 
 # # ---------------------------------------------------------------------------------------------
 
