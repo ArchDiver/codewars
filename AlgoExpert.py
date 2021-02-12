@@ -255,11 +255,13 @@ def productSum(array, depth=1):
 
 # # Find Three Largest Numbers---------------------------------------------------------------------------------------------
 def findThreeLargestNumbers(array):
-	last = []
+	last = [None, None, None]
     for num in array:
         checkNum(last, num)
     return last
 def checkNum(last, num):
+    if last[2] is None or last[2] < num:
+        updateLast()
 
 
 
