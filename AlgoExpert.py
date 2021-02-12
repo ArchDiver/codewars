@@ -261,7 +261,12 @@ def findThreeLargestNumbers(array):
     return last
 def checkNum(last, num):
     if last[2] is None or last[2] < num:
-        updateLast()
+        updateLast(last, num, 2)
+    if last[1] is None or last[1] < num:
+        updateLast(last, num, 1)
+    if last[0] is None or last[0] < num:
+        updateLast(last, num, 0)
+def update
 
 
 
