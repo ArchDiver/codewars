@@ -255,24 +255,24 @@ def productSum(array, depth=1):
 
 # # Find Three Largest Numbers---------------------------------------------------------------------------------------------
 def findThreeLargestNumbers(array):
+    # Write your code here.
 	last = [None, None, None]
     for num in array:
         checkNum(last, num)
     return last
 def checkNum(last, num):
-    if last[2] is None or last[2] < num:
-        updateLast(last, num, 2)
-    elif last[1] is None or last[1] < num:
-        updateLast(last, num, 1)
-    elif last[0] is None or last[0] < num:
-        updateLast(last, num, 0)
-
+	if last[2] is None or num > last[2]:
+		updateLast(last, num, 2)
+	elif last[1] is None or num > last[1]:
+		updateLast(last, num, 1)
+	elif last[0] is None or num > last[0]:
+		updateLast(last, num, 0)
+		
 def updateLast(last, num, idx):
-    for i in range(idx + 1):
-        if i == idx:
-            last[i] == num
-        else:
-            last[i] = last[i + 1]
+	for i in range(idx + 1):
+		if i == idx:
+			last[i] = num
+		else:last[i] = last[i + 1]
 
 
 
