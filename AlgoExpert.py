@@ -256,8 +256,12 @@ def productSum(array, depth=1):
 # # Find Three Largest Numbers---------------------------------------------------------------------------------------------
 def findThreeLargestNumbers(array):
 	last = []
-
+    for num in array:
+        checkNum(last, num)
     return last
+def checkNum(last, num):
+
+
 
 # # ---------------------------------------------------------------------------------------------
 
