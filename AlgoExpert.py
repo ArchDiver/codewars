@@ -282,6 +282,7 @@ def bubbleSort(array):
     swap = False
     while not swap:
         swap = True
+        for i in range(len(array) - 1):
 
 
 # # ---------------------------------------------------------------------------------------------
