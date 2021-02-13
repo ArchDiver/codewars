@@ -286,7 +286,11 @@ def bubbleSort(array):
             b = array[i + 1]
             array[i + 1] = array[i]
             array[i] = b
-            
+            swap = False
+        else:
+            continue
+    return array
+
 
 
 
