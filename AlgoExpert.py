@@ -308,18 +308,18 @@ def switch(i, j, array):
 
 
 
-# # Tournamaent Winner---------------------------------------------------------------------------------------------
-def tournamentWinner(competitions, results):
-    win = ''
-    rank = {win:0}
-    for teams, result in zip(competitions, results):
-        team = teams[0] if result == 1 else teams[1]
-        if team not in rank:
-            rank[team] = 0
-        rank[team] +=3
-        if rank[team] > rank[win]:
-            win = team
-    return win
+# # # Tournamaent Winner---------------------------------------------------------------------------------------------
+# def tournamentWinner(competitions, results):
+#     win = ''
+#     rank = {win:0}
+#     for teams, result in zip(competitions, results):
+#         team = teams[0] if result == 1 else teams[1]
+#         if team not in rank:
+#             rank[team] = 0
+#         rank[team] +=3
+#         if rank[team] > rank[win]:
+#             win = team
+#     return win
 
 
 # # ---------------------------------------------------------------------------------------------
