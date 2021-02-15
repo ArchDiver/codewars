@@ -139,21 +139,21 @@ class Node:
 
 # # Min Wait Time---------------------------------------------------------------------------------------------
 # Time = O(nlogn) , space = O(1)
-def minimumWaitingTime(queries):
-    queries.sort()
-    waitTime = 0
+# def minimumWaitingTime(queries):
+#     queries.sort()
+#     waitTime = 0
 
     # Theirs
     # for idx, val in enumerate(queries):
     #     waitTime += val * (len(queries) - (idx + 1)) 
     # return waitTime
 
-    # Mine
-    left = len(queries)
-    for dog in queries:
-        left -= 1
-        waitTime += dog * left
-    return waitTime
+    # # Mine
+    # left = len(queries)
+    # for dog in queries:
+    #     left -= 1
+    #     waitTime += dog * left
+    # return waitTime
 
 # # Nth Fibinacci---------------------------------------------------------------------------------------------
 
