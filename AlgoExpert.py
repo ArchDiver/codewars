@@ -312,7 +312,7 @@ def switch(i, j, array):
 def tournamentWinner(competitions, results):
     win = ''
     rank = {win:0}
-    
+    for teams, result in zip(competitions, results):
 
 
 # # ---------------------------------------------------------------------------------------------
