@@ -10,23 +10,23 @@ def twoNumberSum(array, targetSum):
     return answer
 
 # # Validate Subsequence---------------------------------------------------------------------------------------------
-def isValidSequence(a, b):
-    # Write your code here. 
-    if len(b) > len(a):
-        return False
-    for i in range(len(a)):
-        bVal = b[i]
-        if a == []:
-            return False
-        for j in range(len(a)):
-            if b[i] in a:
-                bVal = b[i]
-                place = a.index(b[i])
-                a = a[place+1:]
-                break
-            else:
-                return False
-    return True
+# def isValidSequence(a, b):
+#     # Write your code here. 
+#     if len(b) > len(a):
+#         return False
+#     for i in range(len(a)):
+#         bVal = b[i]
+#         if a == []:
+#             return False
+#         for j in range(len(a)):
+#             if b[i] in a:
+#                 bVal = b[i]
+#                 place = a.index(b[i])
+#                 a = a[place+1:]
+#                 break
+#             else:
+#                 return False
+#     return True
 
 # # Find Closest Value in BST---------------------------------------------------------------------------------------------
 # def findClosestValueinBst(tree, target):
