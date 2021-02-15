@@ -64,21 +64,21 @@ def closest(bst, t, c):
 #         self.left = None
 #         self.right = None
 
-def branchSums(root):
-    #write your code here.
-    sumList = []
-    bstSums(root, 0, sumList)
-    return sumList
+# def branchSums(root):
+#     #write your code here.
+#     sumList = []
+#     bstSums(root, 0, sumList)
+#     return sumList
 
-def bstSums(node, runSum, sumList):
-    if node is None:
-        return
-    newRunSum = runSum + node.value
-    if node.left is None and node.right is None:
-        sumList.append(newRunSum)
-        return
-    bstSums(node.left, newRunSum, sumList)
-    bstSums(node.right, newRunSum, sumList)
+# def bstSums(node, runSum, sumList):
+#     if node is None:
+#         return
+#     newRunSum = runSum + node.value
+#     if node.left is None and node.right is None:
+#         sumList.append(newRunSum)
+#         return
+#     bstSums(node.left, newRunSum, sumList)
+#     bstSums(node.right, newRunSum, sumList)
 
 
 # # Node Depths---------------------------------------------------------------------------------------------
