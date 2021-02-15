@@ -117,10 +117,10 @@ def nodeDepths(root):
 # for the depthFirstSearch method.
 # Feel free to add new properties
 # and methods to the class.
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+# class Node:
+#     def __init__(self, name):
+#         self.children = []
+#         self.name = name
 
     # # Not sure this is needed
     # def addChild(self, name):
