@@ -313,6 +313,7 @@ def tournamentWinner(competitions, results):
     win = ''
     rank = {win:0}
     for teams, result in zip(competitions, results):
+        team = teams[0] if result == 1 else teams[1]
 
 
 # # ---------------------------------------------------------------------------------------------
