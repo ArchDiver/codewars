@@ -291,19 +291,19 @@ def productSum(array, depth=1):
 #             continue
 #     return array
 
-# # Algo's edits
-def bubbleSort(array):
-    swap = False
-    counter = 0
-    while not swap:
-        swap = True
-        for i in range(len(array) - 1 - counter):
-            if array[i] > array[i + 1]:
-                switch(i, i+1, array)
-    return array
+# # # Algo's edits
+# def bubbleSort(array):
+#     swap = False
+#     counter = 0
+#     while not swap:
+#         swap = True
+#         for i in range(len(array) - 1 - counter):
+#             if array[i] > array[i + 1]:
+#                 switch(i, i+1, array)
+#     return array
 
-def switch(i, j, array):
-    array[i], array[j] = array[j], array[i]
+# def switch(i, j, array):
+#     array[i], array[j] = array[j], array[i]
 
 
 
