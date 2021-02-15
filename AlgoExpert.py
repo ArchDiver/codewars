@@ -91,18 +91,18 @@ def nodeDepth(root, depth=0):
 
 
 #Option 2 (iterative=same run time just less pretty) O(n) time | O(h) space
-def nodeDepths(root):
-    depthsSum = 0
-    stack = [{"node": root, "depth": 0}]
-    while len(stack) > 0:
-        nodeInfo = stack.pop()
-        node, depth = nodeInfo["node"], nodeInfo["depth"]
-        if node is None:
-            continue
-        depthsSum += depth
-        stack.append({"node": node.left, "depth": depth + 1})
-        stack.append({"node": node.right, "depth": depth + 1})
-    return depthsSum
+# def nodeDepths(root):
+#     depthsSum = 0
+#     stack = [{"node": root, "depth": 0}]
+#     while len(stack) > 0:
+#         nodeInfo = stack.pop()
+#         node, depth = nodeInfo["node"], nodeInfo["depth"]
+#         if node is None:
+#             continue
+#         depthsSum += depth
+#         stack.append({"node": node.left, "depth": depth + 1})
+#         stack.append({"node": node.right, "depth": depth + 1})
+#     return depthsSum
 
 # # Only use this when bringing in from somewhere
 # #This is the class off the input binary tree
