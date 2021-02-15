@@ -29,22 +29,22 @@ def isValidSequence(a, b):
     return True
 
 # # Find Closest Value in BST---------------------------------------------------------------------------------------------
-def findClosestValueinBst(tree, target):
-    #write code here
-    #float('inf') gives an infinite value. This helps to find the lowest value of something.
-    close = float('inf')
-    return closest(tree, target,close)
-def closest(bst, t, c):
-    if bst is None:
-        return c
-    if abs(t-c) > abs(t-bst.value):
-        c = bst.value
-    if t < bst.value:
-        return closest(bst.left, t, c)
-    elif t > bst.value:
-        return closest(bst.right, t, c)
-    else:
-        return c
+# def findClosestValueinBst(tree, target):
+#     #write code here
+#     #float('inf') gives an infinite value. This helps to find the lowest value of something.
+#     close = float('inf')
+#     return closest(tree, target,close)
+# def closest(bst, t, c):
+#     if bst is None:
+#         return c
+#     if abs(t-c) > abs(t-bst.value):
+#         c = bst.value
+#     if t < bst.value:
+#         return closest(bst.left, t, c)
+#     elif t > bst.value:
+#         return closest(bst.right, t, c)
+#     else:
+#         return c
     
 
 # # This is the class of the input tree. Do not edit.
