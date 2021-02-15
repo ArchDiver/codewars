@@ -129,13 +129,13 @@ class Node:
     
     #This is where most of the action happens.
     # Time = O(v(ertices) + e(dges)) Space = O(v)
-    def depthFirstSearch(self, array):
-        # Write your code here.
-        array.append(self.name)
-        for child in self.children:
-            child.depthFirstSearch(array)
-        return array
-        pass
+    # def depthFirstSearch(self, array):
+    #     # Write your code here.
+    #     array.append(self.name)
+    #     for child in self.children:
+    #         child.depthFirstSearch(array)
+    #     return array
+    #     pass
 
 # # Min Wait Time---------------------------------------------------------------------------------------------
 # Time = O(nlogn) , space = O(1)
