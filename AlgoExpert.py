@@ -188,14 +188,14 @@
 
 # # Product Sum with a "special" array ---------------------------------------------------------------------------------------------
 # # e.g. [x,[y,z]] = x + 2*(y+z) or [x[y[z]]] = x+ 2 * (y + 3 * (z)
-def productSum(array, depth=1):
-    sum = 0
-    for item in array:
-        if type(item) is list:
-            sum += productSum(item, depth + 1)
-        else:
-            sum += item
-    return sum * depth
+# def productSum(array, depth=1):
+#     sum = 0
+#     for item in array:
+#         if type(item) is list:
+#             sum += productSum(item, depth + 1)
+#         else:
+#             sum += item
+#     return sum * depth
 
 
 # # Bianary Tree Search---------------------------------------------------------------------------------------------
