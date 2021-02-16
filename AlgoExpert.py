@@ -351,7 +351,7 @@ def nonConstructibleChange(coins):
         if coin > total + 1:
             return total + 1
         total += coin
-        
+    return total + 1
 
 # # ---------------------------------------------------------------------------------------------
 
