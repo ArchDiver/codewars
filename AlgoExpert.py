@@ -346,6 +346,8 @@
 # Algo version time = O(nlogn) space = 0(1)
 def nonConstructibleChange(coins):
     coins.sort()
+    total = 0
+    
 
 # # ---------------------------------------------------------------------------------------------
 
