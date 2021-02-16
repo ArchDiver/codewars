@@ -347,7 +347,7 @@
 def nonConstructibleChange(coins):
     coins.sort()
     total = 0
-    
+    for coin in coins:
 
 # # ---------------------------------------------------------------------------------------------
 
