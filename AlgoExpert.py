@@ -323,25 +323,27 @@
 
 
 # # Non-Constructible Change---------------------------------------------------------------------------------------------
-# Mine that didn't work and would have been inefficiant
-def nonConstructibleChange(coins):
-    c = sorted(coins)
-	nope = False
-	val = 1
-	while not nope:
-		if val in c or check(c, val):
-			val += 1
-		else:
-			nope = True
-    return val
+# # Mine that didn't work and would have been inefficiant
+# def nonConstructibleChange(coins):
+#     c = sorted(coins)
+# 	nope = False
+# 	val = 1
+# 	while not nope:
+# 		if val in c or check(c, val):
+# 			val += 1
+# 		else:
+# 			nope = True
+#     return val
 
-def check(c, val):
-	total = c[0]
-	count = 1
-	while total < val:
-		total += c[count]
-		count += 1
-	return True if total == val else False
+# def check(c, val):
+# 	total = c[0]
+# 	count = 1
+# 	while total < val:
+# 		total += c[count]
+# 		count += 1
+# 	return True if total == val else False
+
+# Algo version time = O(nlogn) space = 0(1)
 
 # # ---------------------------------------------------------------------------------------------
 
