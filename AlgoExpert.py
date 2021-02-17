@@ -344,14 +344,14 @@
 # 	return True if total == val else False
 
 # Algo version time = O(nlogn) space = 0(1)
-def nonConstructibleChange(coins):
-    coins.sort()
-    total = 0
-    for coin in coins:
-        if coin > total + 1:
-            return total + 1
-        total += coin
-    return total + 1
+# def nonConstructibleChange(coins):
+#     coins.sort()
+#     total = 0
+#     for coin in coins:
+#         if coin > total + 1:
+#             return total + 1
+#         total += coin
+#     return total + 1
 
 # # ---------------------------------------------------------------------------------------------
 
