@@ -360,7 +360,7 @@ def classPhotos(front, back):
     if front[0] > back[0]:
         front, back = back, front
     for i in range(len(front)):
-        if front[i] > back[i]:
+        if front[i] >= back[i]:
             return False
     return True
 
