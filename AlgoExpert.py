@@ -354,15 +354,15 @@
 #     return total + 1
 
 # # Class Photo---------------------------------------------------------------------------------------------
-def classPhotos(front, back):
-    front.sort(reverse=True)
-    back.sort(reverse=True)
-    if front[0] > back[0]:
-        front, back = back, front
-    for i in range(len(front)):
-        if front[i] >= back[i]:
-            return False
-    return True
+# def classPhotos(front, back):
+#     front.sort(reverse=True)
+#     back.sort(reverse=True)
+#     if front[0] > back[0]:
+#         front, back = back, front
+#     for i in range(len(front)):
+#         if front[i] >= back[i]:
+#             return False
+#     return True
 
 # # ---------------------------------------------------------------------------------------------
 
