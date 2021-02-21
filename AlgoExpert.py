@@ -374,6 +374,7 @@ class LinkedList:
 
 def removeDuplicatesFromLinkedList(linkedList):
     currentNode = LinkedList
+    # this loops through the whole linked list
     while currentNode is not none:
 # # ---------------------------------------------------------------------------------------------
 
