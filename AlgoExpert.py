@@ -380,6 +380,9 @@ def removeDuplicatesFromLinkedList(linkedList):
         # This loops through checking for and removing duplicates. (This only works if they are sorted)
         while nextNode is not None and nextNode.value == currentNode.value:
             nextNode = nextNode.next
+        # this changes the point THEN changes the node
+        currentNode.next = nextNode
+        currentNode = nextNode
 
 # # ---------------------------------------------------------------------------------------------
 
