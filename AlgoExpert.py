@@ -383,7 +383,8 @@ def removeDuplicatesFromLinkedList(linkedList):
         # this changes the point THEN changes the node
         currentNode.next = nextNode
         currentNode = nextNode
-
+        
+    return linkedList
 # # ---------------------------------------------------------------------------------------------
 
 
