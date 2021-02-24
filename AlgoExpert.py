@@ -372,19 +372,19 @@
 #         self.next = None
 
 
-# def removeDuplicatesFromLinkedList(linkedList):
-#     currentNode = LinkedList
-#     # this loops through the whole linked list
-#     while currentNode is not None:
-#         nextNode = currentNode.next
-#         # This loops through checking for and removing duplicates. (This only works if they are sorted)
-#         while nextNode is not None and nextNode.value == currentNode.value:
-#             nextNode = nextNode.next
-#         # this changes the point THEN changes the node
-#         currentNode.next = nextNode
-#         currentNode = nextNode
+def removeDuplicatesFromLinkedList(linkedList):
+    currentNode = LinkedList
+    # this loops through the whole linked list
+    while currentNode is not None:
+        nextNode = currentNode.next
+        # This loops through checking for and removing duplicates. (This only works if they are sorted)
+        while nextNode is not None and nextNode.value == currentNode.value:
+            nextNode = nextNode.next
+        # this changes the point THEN changes the node
+        currentNode.next = nextNode
+        currentNode = nextNode
 
-#     return linkedList
+    return linkedList
 # # ---------------------------------------------------------------------------------------------
 
 
