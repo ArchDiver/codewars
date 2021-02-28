@@ -373,7 +373,7 @@
 
 
 def removeDuplicatesFromLinkedList(linkedList):
-    currentNode = LinkedList
+    currentNode = linkedList
     # this loops through the whole linked list
     while currentNode is not None:
         nextNode = currentNode.next
