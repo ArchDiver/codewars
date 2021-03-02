@@ -1574,12 +1574,12 @@
 #         return f"{s[int((len(s)/2)-1)]}{s[int((len(s)/2))]}"
 #     else:
 #         return f"{s[math.floor(len(s)/2)]}"
-## Best
-def get_middle(s):
-   return s[(len(s)-1)/2:len(s)/2+1]
+# # Best
+# def get_middle(s):
+#    return s[(len(s)-1)/2:len(s)/2+1]
    
-s = "of"
-get_middle(s)
+# s = "of"
+# get_middle(s)
 
 # # ---------------------------------------------------------------------------------------------
 
