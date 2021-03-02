@@ -372,7 +372,6 @@
 #         self.next = None
 
 
-<<<<<<< HEAD
 def removeDuplicatesFromLinkedList(linkedList):
     currentNode = linkedList
     # this loops through the whole linked list
@@ -386,7 +385,6 @@ def removeDuplicatesFromLinkedList(linkedList):
         currentNode = nextNode
 
     return linkedList
-=======
 # def removeDuplicatesFromLinkedList(linkedList):
 #     currentNode = linkedList
 #     # this loops through the whole linked list
@@ -400,7 +398,6 @@ def removeDuplicatesFromLinkedList(linkedList):
 #         currentNode = nextNode
 
 #     return linkedList
->>>>>>> 8e8d1b8d992070b7edc683a5c259d323eede82fc
 # # ---------------------------------------------------------------------------------------------
 
 
