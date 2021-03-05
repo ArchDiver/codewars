@@ -406,9 +406,10 @@ def squaredSorted(array):
     squaredArray= []
     
     for i in range(len(array)):
-        squaredArray[i] = (array[i]**2)
+        squaredArray.append(array[i]**2)
     
-    return squaredArray.sort()
+    squaredArray.sort()
+    return squaredArray
 
 
 # # This version is O(n) for both time and space
