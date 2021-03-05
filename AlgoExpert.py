@@ -402,14 +402,14 @@
 
 # # sorted sq array ---------------------------------------------------------------------------------------------
 # # This version time = O(nLogn) Space = O(n)
-def squaredSorted(array):
-    squaredArray= []
+# def squaredSorted(array):
+#     squaredArray= []
     
-    for i in range(len(array)):
-        squaredArray.append(array[i]**2)
+#     for i in range(len(array)):
+#         squaredArray.append(array[i]**2)
     
-    squaredArray.sort()
-    return squaredArray
+#     squaredArray.sort()
+#     return squaredArray
 
 
 # # This version is O(n) for both time and space
