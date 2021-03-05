@@ -398,8 +398,26 @@
 #         currentNode = nextNode
 
 #     return linkedList
-# # ---------------------------------------------------------------------------------------------
 
+
+# # sorted sq array ---------------------------------------------------------------------------------------------
+def sortedSquared(array):
+    squareArray = []
+    lowValIdx = 0
+    highValIdx = len(array)-1
+
+    for i in reversed(range(len(array))):
+        low = array[lowValIdx]
+        high = array[highValIdx]
+
+        if abs(low) > abs(high):
+            squareArray[i] = low**2
+            lowValIdx +=1
+        else:
+            squareArray[i] = high**2
+            highValIdx -= 1
+            
+    return squareArray
 
 # # ---------------------------------------------------------------------------------------------
 
