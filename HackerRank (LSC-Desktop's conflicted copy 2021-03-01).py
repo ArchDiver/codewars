@@ -26,25 +26,25 @@
 
 #     def add(self, val):
 #         # Adds one occurrence of val from the multiset, if any
-#         self.mset.append(val)
+        self.mset.append(val)
 
-#     def remove(self, val):
-#         # Removes one occurrence of val from the multiset, if any
-#         if val in self.mset:
-#             self.mset.remove(val)
-#         else:
-#             return False
+    def remove(self, val):
+        # Removes one occurrence of val from the multiset, if any
+        if val in self.mset:
+            self.mset.remove(val)
+        else:
+            return False
 
-#     def __contains__(self, val):
-#         # Returns True when val is in the multiset, else returns False
-#         if val in self.mset:
-#             return True
-#         else:
-#             return False
+    def __contains__(self, val):
+        # Returns True when val is in the multiset, else returns False
+        if val in self.mset:
+            return True
+        else:
+            return False
 
-#     def __len__(self):
-#         # Returns the number of elements in the multiset
-#         return len(self.mset)
+    def __len__(self):
+        # Returns the number of elements in the multiset
+        return len(self.mset)
 
 
 
