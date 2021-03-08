@@ -48,22 +48,22 @@
 
 
 
-##Second
-class Multiset:
-    def __init__(self):
-        self.mset = list()
+# ##Second
+# class Multiset:
+#     def __init__(self):
+#         self.mset = list()
 
-    def add(self, val):
-        # Adds one occurrence of val from the multiset, if any
-        self.mset.append(val)
+#     def add(self, val):
+#         # Adds one occurrence of val from the multiset, if any
+#         self.mset.append(val)
 
-    def remove(self, val):
-        # Removes one occurrence of val from the multiset, if any
-        return self.mset.remove(val)if val in self.mset else False
+#     def remove(self, val):
+#         # Removes one occurrence of val from the multiset, if any
+#         return self.mset.remove(val)if val in self.mset else False
 
-    def __contains__(self, val):
-        # Returns True when val is in the multiset, else returns False
-        return bool(val in self.mset)
+#     def __contains__(self, val):
+#         # Returns True when val is in the multiset, else returns False
+#         return bool(val in self.mset)
 
 #     def __len__(self):
 #         # Returns the number of elements in the multiset
