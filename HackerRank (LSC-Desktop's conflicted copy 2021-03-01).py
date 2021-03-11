@@ -20,20 +20,20 @@
 # import sys
 
 ##First
-class Multiset:
-    def __init__(self):
-        self.mset = list()
+# class Multiset:
+#     def __init__(self):
+#         self.mset = list()
 
-    def add(self, val):
-        # Adds one occurrence of val from the multiset, if any
-        self.mset.append(val)
+#     def add(self, val):
+#         # Adds one occurrence of val from the multiset, if any
+#         self.mset.append(val)
 
-    def remove(self, val):
-        # Removes one occurrence of val from the multiset, if any
-        if val in self.mset:
-            self.mset.remove(val)
-        else:
-            return False
+#     def remove(self, val):
+#         # Removes one occurrence of val from the multiset, if any
+#         if val in self.mset:
+#             self.mset.remove(val)
+#         else:
+#             return False
 
     # def __contains__(self, val):
     #     # Returns True when val is in the multiset, else returns False
