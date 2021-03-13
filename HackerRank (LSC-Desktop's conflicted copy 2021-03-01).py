@@ -89,21 +89,21 @@
 
 
 
-crew = [1,3,5]
-repair = [3,5,7]
+# crew = [1,3,5]
+# repair = [3,5,7]
 
 
-getMinCost(crew, repair)
-#----------------------------------------------------------------------------------
-def filledOrders(order, k):
-    # Write your code here
-    x  = 0
-    order.sort()
-    for i in range(len(order)):
-        if order[i] <= k:
-            x += 1
-            k -= order[i]
-    return x
+# getMinCost(crew, repair)
+# #----------------------------------------------------------------------------------
+# def filledOrders(order, k):
+#     # Write your code here
+#     x  = 0
+#     order.sort()
+#     for i in range(len(order)):
+#         if order[i] <= k:
+#             x += 1
+#             k -= order[i]
+#     return x
 ##----------------------------------------------------------------------------------
 
 ##----------------------------------------------------------------------------------
