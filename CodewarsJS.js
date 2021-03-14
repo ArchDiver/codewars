@@ -253,31 +253,31 @@
 
 // ------------------------------
 
-//   let index;
-//   let arrLen = arr.length
-//   let midLen = Math.floor(arrLen/2);
-//   let mid = arr[midLen];
-//   let max = arrLen;
-//   let min = 0
-//   console.log(mid)
-//   while (target > min && target < max {
-//     if(target == mid){
-//       return 
-//     } else if (target > mid){
-//       low = midLen;
-//       mid = (Math.floor(max-mid))+ mid;
-//     }else{
+  let index;
+  let arrLen = arr.length
+  let midLen = Math.floor(arrLen/2);
+  let mid = arr[midLen];
+  let max = arrLen;
+  let min = 0
+  console.log(mid)
+  while (target > min && target < max {
+    if(target == mid){
+      return 
+    } else if (target > mid){
+      low = midLen;
+      mid = (Math.floor(max-mid))+ mid;
+    }else{
 
-//     }
-
-
-
-//   }
-// }
+    }
 
 
-// console.log(getTarget([-1,0,3,5,9,12],2))
-// console.log(getTarget([-1,0,3,5,9,12],9))
+
+  }
+}
+
+
+console.log(getTarget([-1,0,3,5,9,12],2))
+console.log(getTarget([-1,0,3,5,9,12],9))
 // -------------------------------------------------------------------------------------------------------------------
 // # Your plane has just landed in England and you rent a car. You have a meeting really soon and you have to get from Heathrow Airport to London as fast as you can.
 
