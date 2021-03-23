@@ -450,21 +450,21 @@
 # # Selection sort
 # # time O(n^2) space O(1)
 
-def selectionSort(array):
-    # Write your code here.
-	idx = 0
-	while idx < len(array) - 1:
-		small = idx
-		for i in range(idx + 1, len(array)):
-			if array[small] > array[i]:
-				small = i
-		array[idx], array[small] = array[small], array[idx]
-		idx += 1			
-    return array
+# def selectionSort(array):
+#     # Write your code here.
+# 	idx = 0
+# 	while idx < len(array) - 1:
+# 		small = idx
+# 		for i in range(idx + 1, len(array)):
+# 			if array[small] > array[i]:
+# 				small = i
+# 		array[idx], array[small] = array[small], array[idx]
+# 		idx += 1			
+#     return array
 
 
-array [8, 5, 2, 9, 5, 6, 3]
-print(selectionSort(array))
+# array [8, 5, 2, 9, 5, 6, 3]
+# print(selectionSort(array))
 
 # # ---------------------------------------------------------------------------------------------
 
