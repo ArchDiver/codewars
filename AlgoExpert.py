@@ -447,7 +447,7 @@
 # print(insertionSort(array))
 
 # # ---------------------------------------------------------------------------------------------
-# # Insertion sort
+# # Selection sort
 # # time O(n^2) space O(1)
 
 def selectionSort(array):
