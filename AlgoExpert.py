@@ -486,7 +486,11 @@
 
 # # time O(n) space O(n)
 def isPalindrome(string):
-    
+    revChar = []
+    for i in reversed(range(len(string))):
+        revChar.append(string[i])
+    return string == "".join(revChar)
+
 
 
 string = "racecar"
