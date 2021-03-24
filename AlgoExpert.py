@@ -485,12 +485,17 @@
 #     return string == reversedString
 
 # # time O(n) space O(n)
-def isPalindrome(string):
-    revChar = []
-    for i in reversed(range(len(string))):
-        revChar.append(string[i])
-    return string == "".join(revChar)
+# def isPalindrome(string):
+#     revChar = []
+#     for i in reversed(range(len(string))):
+#         revChar.append(string[i])
+#     return string == "".join(revChar)
 
+def isPalindrome(string, idx = 0):
+    j = len(string) -1 - idx
+    return True if idx >= j else string[idx] == string[j] and isPalindrome(string, i + 1)
+
+# # Same as above just written out.
 
 
 string = "racecar"
