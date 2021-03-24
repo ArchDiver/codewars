@@ -468,7 +468,18 @@
 
 # # ---------------------------------------------------------------------------------------------
 # # Palindrome Check
+def isPalindrome(string):
+    # Write your code here.
+    for i in range(1,round(len(string)/2)):
+        low = string[i - 1]
+        high = string[i * -1]
+        if low != high:
+            return False
+    return True
 
+
+string = "racecar"
+print(isPalindrome(string))
 
 # # ---------------------------------------------------------------------------------------------
 
