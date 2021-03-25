@@ -509,7 +509,31 @@ string = "racecar"
 print(isPalindrome(string))
 
 # # ---------------------------------------------------------------------------------------------
+# #caesar cipher
+def caesarCipherEncryptor(string, key):
+    # Write your code here.
+    str = string
+    caesar = []
+    used = {}
+    for letter in str:
+        if letter in used:
+            continue
+        else:
+            used[letter] = letter
+            unx = ord(letter)
+            shift = unx + key
+            if shift <= 122:
+                shifted = chr(shift)
+                str.replace(letter, shifted)
+            else:
+                shifted = chr(96 + (shift % 122))
+                str.replace(letter, shifted)
+    return str
 
+string = 'xyz'
+key = 2
+
+print(caesarCipherEncryptor(string, key))
 
 # # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
 
