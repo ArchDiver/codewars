@@ -513,6 +513,9 @@ print(isPalindrome(string))
 def caesarCipherEncryptor(string, key):
     # Write your code here.
     str = string
+    
+    # this catches a shift that is greater than 26
+    key = key % 26
     caesar = []
     used = {}
     for letter in str:
