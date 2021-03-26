@@ -512,31 +512,51 @@ print(isPalindrome(string))
 # #caesar cipher
 def caesarCipherEncryptor(string, key):
     # Write your code here.
-    str = string
+    # str = string
     
     # this catches a shift that is greater than 26
-    key = key % 26
-    caesar = []
-    used = {}
-    for letter in str:
-        if letter in used:
-            continue
-        else:
-            used[letter] = letter
-            unx = ord(letter)
-            shift = unx + key
-            if shift <= 122:
-                shifted = chr(shift)
-                str.replace(letter, shifted)
-            else:
-                shifted = chr(96 + (shift % 122))
-                str.replace(letter, shifted)
-    return str
+#     key = key % 26
+#     new = []
+#     for letter in string:
+#         shift = (ord(letter) + key)
+#         if shift <= 122:
+#             new.append(chr(shift))
+#         else:
+#             new.append(chr(96 + (shift % 122)))
+#     return str
 
-string = 'xyz'
-key = 2
+# string = 'xyz'
+# key = 2
 
-print(caesarCipherEncryptor(string, key))
+# print(caesarCipherEncryptor(string, key))
+
+# # # Algo option with unx 
+# # O(n)for time and space
+# def caesarCipherEncryptor(string, key):
+#     newLetter = []
+#     newKey = key % 26
+#     for letter in string:
+#         newLetter.append(getNewletter(letter, newKey))
+#     return "".join(newLetter)
+
+# def getNewletter(letter, key):
+#     newLetterCode = ord(letter) + key
+#     return chr(newLetterCode) if newLetterCode <= 122 else chr(96 + newLetterCode % 122)
+
+# # Algo without unx
+# # O(n)for time and space 
+# def caesarCipherEncryptor(string, key):
+#     newLetter = []
+#     newKey = key % 26
+#     alph = list("abcdefghijklmnopqrstuvwxyz")
+#     for letter in string:
+#         newLetter.append(getNewletter(letter, newKey, alph))
+#     return "".join(newLetter)
+
+# def getNewletter(letter, key, alph):
+#     newLetterCode = alph.index(letter) + key
+#     return alph[newLetterCode % 26]
+
 
 # # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
 
