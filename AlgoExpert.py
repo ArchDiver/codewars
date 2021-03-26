@@ -492,25 +492,25 @@
 #     return string == "".join(revChar)
 
 # # time O(n) space O(n)
-def isPalindrome(string, idx = 0):
-    j = len(string) -1 - idx
-    return True if idx >= j else string[idx] == string[j] and isPalindrome(string, idx + 1)
+# def isPalindrome(string, idx = 0):
+#     j = len(string) -1 - idx
+#     return True if idx >= j else string[idx] == string[j] and isPalindrome(string, idx + 1)
 
-# # Same as above just written out.
-def isPalindrome(string, idx = 0):
-    j = len(string) -1 - idx
-    if idx >= j:
-        return True
-    if string[idx] != string[j]:
-        return False
-    return isPalindrome(string, i + 1)
+# # # Same as above just written out.
+# def isPalindrome(string, idx = 0):
+#     j = len(string) -1 - idx
+#     if idx >= j:
+#         return True
+#     if string[idx] != string[j]:
+#         return False
+#     return isPalindrome(string, i + 1)
 
-string = "racecar"
-print(isPalindrome(string))
+# string = "racecar"
+# print(isPalindrome(string))
 
 # # ---------------------------------------------------------------------------------------------
-# #caesar cipher
-def caesarCipherEncryptor(string, key):
+# # #caesar cipher
+# def caesarCipherEncryptor(string, key):
     # Write your code here.
     # str = string
     
