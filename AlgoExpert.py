@@ -559,29 +559,29 @@
 
 
 # # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
-# # Run-Length Encoding
-def runLengthEncoding(string):
-    # Write your code here.
-    count = 1
-    string_list = [] 
+# # # Run-Length Encoding
+# def runLengthEncoding(string):
+#     # Write your code here.
+#     count = 1
+#     string_list = [] 
     
-    for i in range(1, len(string)):
+#     for i in range(1, len(string)):
 
-        if string[i] != string[i-1] or count == 9:
-            string_list.append(str(count))
-            string_list.append(string[i-1])
-            count = 0            
-        count += 1
+#         if string[i] != string[i-1] or count == 9:
+#             string_list.append(str(count))
+#             string_list.append(string[i-1])
+#             count = 0            
+#         count += 1
 		
-    string_list.append(str(count))
-    string_list.append(string[-1])
+#     string_list.append(str(count))
+#     string_list.append(string[-1])
 	
-    return ''.join(string_list)
+#     return ''.join(string_list)
 
 
-string = "AAAAAAAAAAAAABBCCCCDD"
+# string = "AAAAAAAAAAAAABBCCCCDD"
 
-print(runLengthEncoding(string))
+# print(runLengthEncoding(string))
 
 
 # # ---------------------------------------------------------------------------------------------
