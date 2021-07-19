@@ -1,27 +1,46 @@
 # #--------------------------------------------------------------------------------
 # #  Two Number Sum 
-array = [3, 5, -4, 8, 11, 1, -1, 6]
-targetSum = 10
+# array = [3, 5, -4, 8, 11, 1, -1, 6]
+# targetSum = 10
 
-def twoNumberSum(array, targetSum):
-  nums = sorted(array)
-  high = len(nums)-1
-  low = 0
-  while high > low:
-    out = nums[high] + nums[low]
-    if out == targetSum:
-      return [nums[low], nums[high]]
-    elif out > targetSum:
-      high -=1
-    elif out < targetSum:
-      low +=1
-  return []
+# def twoNumberSum(array, targetSum):
+#   nums = sorted(array)
+#   high = len(nums)-1
+#   low = 0
+#   while high > low:
+#     out = nums[high] + nums[low]
+#     if out == targetSum:
+#       return [nums[low], nums[high]]
+#     elif out > targetSum:
+#       high -=1
+#     elif out < targetSum:
+#       low +=1
+#   return []
 
-print(twoNumberSum(array, targetSum))
+# print(twoNumberSum(array, targetSum))
 
 # #--------------------------------------------------------------------------------
-# #  
+# #  Valid Subsequence
+def isValidSubsequence(a, b):
+  if len(b) > len(a):
+    return False
+  a_pos = 0  
+  for i in range(len(b)):
+    if a_pos == len(a)-1:
+      return False
+    else:
+      for j in range(a_pos, len(a)):
+        if a[j] == b[i]:
+          a_pos = j + 1
+          break
+        else:
+          a_pos = j
+  return True        
 
+array = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence = [1, 6, -1, 10]
+
+print(isValidSubsequence(array, sequence))
 
 
 # #--------------------------------------------------------------------------------
