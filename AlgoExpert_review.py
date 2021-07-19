@@ -1,7 +1,23 @@
 # #--------------------------------------------------------------------------------
 # #  Two Number Sum 
+array = [3, 5, -4, 8, 11, 1, -1, 6]
+targetSum = 10
 
+def twoNumberSum(array, targetSum):
+  nums = sorted(array)
+  high = len(nums)-1
+  low = 0
+  while high > low:
+    out = nums[high] + nums[low]
+    if out == targetSum:
+      return [nums[low], nums[high]]
+    elif out > targetSum:
+      high -=1
+    elif out < targetSum:
+      low +=1
+  return []
 
+print(twoNumberSum(array, targetSum))
 
 # #--------------------------------------------------------------------------------
 # #  
