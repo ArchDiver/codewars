@@ -44,41 +44,41 @@
 
 # #--------------------------------------------------------------------------------
 # #  Sorted Squared Array
-def sortedSquaredArray(array):
-  sq_array = []
-  for i in array:
-    sq_array.append(i**2)
-  return sorted(sq_array)
+# def sortedSquaredArray(array):
+#   sq_array = []
+#   for i in array:
+#     sq_array.append(i**2)
+#   return sorted(sq_array)
 
-array = [-4, 1, -7, 10, 5]
+# array = [-4, 1, -7, 10, 5]
 
-print(sortedSquaredArray(array))
+# print(sortedSquaredArray(array))
 
 
-def sortedSquaredArray2(array2):
-  pos = len(array2) - 1
-  sq_array2 = [0] * len(array2)
-  left = 0
-  right = len(array2) - 1
-  while left <= right:
-    if abs(array2[left]) >= abs(array2[right]):
-      sq_array2[pos] = array2[left]**2
-      left += 1
-    elif abs(array2[right]) > abs(array2[left]):
-      sq_array2[pos] = array2[right]**2
-      right -= 1
-    elif abs(array2[right]) == abs(array2[left]):
-      sq_array2[pos] = array2[right]**2
-      right -= 1
-      pos -=1
-      sq_array2[pos] = array2[left]**2
-      left +=1
-    pos -= 1
-  return sq_array2
+# def sortedSquaredArray2(array2):
+#   pos = len(array2) - 1
+#   sq_array2 = [0] * len(array2)
+#   left = 0
+#   right = len(array2) - 1
+#   while left <= right:
+#     if abs(array2[left]) >= abs(array2[right]):
+#       sq_array2[pos] = array2[left]**2
+#       left += 1
+#     elif abs(array2[right]) > abs(array2[left]):
+#       sq_array2[pos] = array2[right]**2
+#       right -= 1
+#     elif abs(array2[right]) == abs(array2[left]):
+#       sq_array2[pos] = array2[right]**2
+#       right -= 1
+#       pos -=1
+#       sq_array2[pos] = array2[left]**2
+#       left +=1
+#     pos -= 1
+#   return sq_array2
 
-array2 = [-7, -5, -4, 3, 6, 8, 9]
+# array2 = [-7, -5, -4, 3, 6, 8, 9]
 
-print(sortedSquaredArray2(array2))
+# print(sortedSquaredArray2(array2))
 
 
 # #--------------------------------------------------------------------------------
