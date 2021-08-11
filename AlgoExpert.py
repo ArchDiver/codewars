@@ -584,8 +584,30 @@
 # print(runLengthEncoding(string))
 
 
-# # ---------------------------------------------------------------------------------------------
+# # ----Tandem Bicycle-----------------------------------------------------------------------------------------
+def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
+    red = sorted(redShirtSpeeds)
+    blue = sorted(blueShirtSpeeds)
+    total_speed = 0
+    if fastest == True:
+        x,y = 1, -1
+    elif fastest == False:
+        x,y = 0, 1        
 
+    for i in range(len(red)):
+        j = (i + x) * y
+        if red[i] >= blue[j]:
+            total_speed += red[i]
+        elif blue[j] > red[i]:
+            total_speed += blue[j]
+            
+    return total_speed
+    
+r = [5, 5, 3, 9, 2]
+b = [3, 6, 7, 2, 1]
+f = False
+
+print(tandemBicycle(r, b, f))
 
 # # ---------------------------------------------------------------------------------------------
 
