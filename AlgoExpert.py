@@ -586,28 +586,51 @@
 
 # # ----Tandem Bicycle-----------------------------------------------------------------------------------------
 def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
-    red = sorted(redShirtSpeeds)
-    blue = sorted(blueShirtSpeeds)
-    total_speed = 0
-    if fastest == True:
-        x,y = 1, -1
-    elif fastest == False:
-        x,y = 0, 1        
+  red = sorted(redShirtSpeeds)
+  blue = sorted(blueShirtSpeeds)
+  total_speed = 0
+  if fastest == True:
+      x,y = 1, -1
+  elif fastest == False:
+      x,y = 0, 1        
 
-    for i in range(len(red)):
-        j = (i + x) * y
-        if red[i] >= blue[j]:
-            total_speed += red[i]
-        elif blue[j] > red[i]:
-            total_speed += blue[j]
-            
-    return total_speed
-    
+  for i in range(len(red)):
+      j = (i + x) * y
+      if red[i] >= blue[j]:
+          total_speed += red[i]
+      elif blue[j] > red[i]:
+          total_speed += blue[j]
+          
+  return total_speed
+  
 r = [5, 5, 3, 9, 2]
 b = [3, 6, 7, 2, 1]
 f = False
 
 print(tandemBicycle(r, b, f))
+
+def tandemBicycle2(redShirtSpeeds, blueShirtSpeeds, fastest):
+
+  total_speed = 0
+  if fastest == True:
+      x,y = 1, -1
+  elif fastest == False:
+      x,y = 0, 1        
+
+  for i in range(len(red)):
+      j = (i + x) * y
+      if red[i] >= blue[j]:
+          total_speed += red[i]
+      elif blue[j] > red[i]:
+          total_speed += blue[j]
+          
+  return total_speed
+    
+r2 = [5, 5, 3, 9, 2]
+b2 = [3, 6, 7, 2, 1]
+f2 = False
+
+print(tandemBicycle2(r2, b2, f2))
 
 # # ---------------------------------------------------------------------------------------------
 
