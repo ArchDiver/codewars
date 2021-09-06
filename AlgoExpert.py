@@ -632,22 +632,22 @@ r2 = [5, 5, 3, 9, 2]
 b2 = [3, 6, 7, 2, 1]
 f2 = False
 
-# print(tandemBicycle2(r2, b2, f2))
-# # =====
-# def tandemBicycle3(redShirtSpeeds, blueShirtSpeeds, fastest):
-#   total_speed = 0
-#   blueShirtSpeeds.sort()
+print(tandemBicycle2(r2, b2, f2))
+# =====
+def tandemBicycle3(redShirtSpeeds, blueShirtSpeeds, fastest):
+  total_speed = 0
+  blueShirtSpeeds.sort()
 
-#   if fastest == True:
-#     redShirtSpeeds.sort(reverse=True)
-#   elif fastest ==False:
-#     redShirtSpeeds.sort()
+  if fastest == True:
+    redShirtSpeeds.sort(reverse=True)
+  elif fastest ==False:
+    redShirtSpeeds.sort()
 
-#   for i in range(len(redShirtSpeeds)):
-#     total_speed += max(redShirtSpeeds[i], blueShirtSpeeds[i])
+  for i in range(len(redShirtSpeeds)):
+    total_speed += max(redShirtSpeeds[i], blueShirtSpeeds[i])
 
           
-#   return total_speed
+  return total_speed
     
 r3 = [5, 5, 3, 9, 2]
 b3 = [3, 6, 7, 2, 1]
