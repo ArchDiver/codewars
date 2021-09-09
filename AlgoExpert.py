@@ -656,17 +656,17 @@
 # print(tandemBicycle3(r3, b3, f3))
 
 # # ----Generate Document-----------------------------------------------------------------------------------------
-def generateDocument(characters, document):
-  counted = {}
-  for char in characters:
-    if char not in counted:
-      counted[char] = 1
-    else:
-      counted[char] += 1
+# def generateDocument(characters, document):
+#   counted = {}
+#   for char in characters:
+#     if char not in counted:
+#       counted[char] = 1
+#     else:
+#       counted[char] += 1
 
-  for char in document:
-    if char not in counted or counted[char] <= 0:
-      return False
+#   for char in document:
+#     if char not in counted or counted[char] <= 0:
+#       return False
 #     else:
 #       counted[char] -= 1
 
