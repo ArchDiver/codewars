@@ -667,16 +667,16 @@ def generateDocument(characters, document):
   for char in document:
     if char not in counted or counted[char] <= 0:
       return False
-    else:
-      counted[char] -= 1
+#     else:
+#       counted[char] -= 1
 
-  return True
+#   return True
 
 
-characters = "Bste!hetsi ogEAxpelrt x "
-document = "AlgoExpert is the Best!"
+# characters = "Bste!hetsi ogEAxpelrt x "
+# document = "AlgoExpert is the Best!"
 
-print(generateDocument(characters, document))
+# print(generateDocument(characters, document))
 # # ---------------------------------------------------------------------------------------------
 
 
