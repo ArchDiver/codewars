@@ -678,13 +678,63 @@
 
 # print(generateDocument(characters, document))
 # # ---------------------------------------------------------------------------------------------
+# #This gives the value not the index
+# def firstNonRepeatingCharacter(string):
+#     stored_vals = {}
+#     nonrepeat = None
+#     for i in range(len(string)):
+#         if string[i] not in stored_vals:
+#             stored_vals[string[i]] = 1
+#         else:
+#             stored_vals[string[i]] += 1
+            
+#     for key, value in stored_vals.items():
+#         if value == 1:
+#             return key
+    
+#     return -1
+
+# string = "abcdcaf"
+
+# print(firstNonRepeatingCharacter(string))
+# #-------Not correct-----
+# def firstNonRepeatingCharacter(string):
+#     stored_vals = {}
+#     nonrepeat = None
+#     for i in range(len(string)):
+#         if string[i] not in stored_vals:
+#             stored_vals[string[i]] = i
+#         else:
+#             stored_vals[string[i]] = stored_vals[string[i]], i
+#     for key, value in stored_vals.items():
+#         if value == 1:
+#             return key
+    
+#     return -1
+
+# string = "aaabcdcaf"
+
+# print(firstNonRepeatingCharacter(string))
+# # -----------
 def firstNonRepeatingCharacter(string):
-    # Write your code here.
+    stored_vals = {}
+    for char in string:
+        if char not in stored_vals:
+            stored_vals[char] = 1
+        else:
+            stored_vals[char] += 1
+    for key, value in stored_vals.items():
+        if value == 1:
+            for idx in range(len(string)):
+                if string[idx] == key:
+                    return idx    
     return -1
 
-string = abcdcaf
+string = "abcdcaf"
 
-print(FileExistsError(string))
+print(firstNonRepeatingCharacter(string))
+
+
 
 # # ---------------------------------------------------------------------------------------------
 
