@@ -716,21 +716,37 @@
 
 # print(firstNonRepeatingCharacter(string))
 # # -----------
+# def firstNonRepeatingCharacter(string):
+#     stored_vals = {}
+#     for char in string:
+#         if char not in stored_vals:
+#             stored_vals[char] = 1
+#         else:
+#             stored_vals[char] += 1
+#     for key, value in stored_vals.items():
+#         if value == 1:
+#             for idx in range(len(string)):
+#                 if string[idx] == key:
+#                     return idx    
+#     return -1
+
+# string = "abcdcaf"
+
+# print(firstNonRepeatingCharacter(string))
+# #----------------"best?"----
 def firstNonRepeatingCharacter(string):
-    stored_vals = {}
+    charFreq = {}
+    
     for char in string:
-        if char not in stored_vals:
-            stored_vals[char] = 1
-        else:
-            stored_vals[char] += 1
-    for key, value in stored_vals.items():
-        if value == 1:
-            for idx in range(len(string)):
-                if string[idx] == key:
-                    return idx    
+        charFreq[char] = charFreq.get(char, 0) + 1
+        
+    for i in range(len(string)):
+        character = string[i]
+        if charFreq[character] == 1:
+            return i
     return -1
 
-string = "abcdcaf"
+string = "aabcdcaf"
 
 print(firstNonRepeatingCharacter(string))
 
