@@ -734,21 +734,21 @@
 
 # print(firstNonRepeatingCharacter(string))
 # #----------------"best?"----
-def firstNonRepeatingCharacter(string):
-    charFreq = {}
+# def firstNonRepeatingCharacter(string):
+#     charFreq = {}
     
-    for char in string:
-        charFreq[char] = charFreq.get(char, 0) + 1
+#     for char in string:
+#         charFreq[char] = charFreq.get(char, 0) + 1
         
-    for i in range(len(string)):
-        character = string[i]
-        if charFreq[character] == 1:
-            return i
-    return -1
+#     for i in range(len(string)):
+#         character = string[i]
+#         if charFreq[character] == 1:
+#             return i
+#     return -1
 
-string = "aabcdcaf"
+# string = "aabcdcaf"
 
-print(firstNonRepeatingCharacter(string))
+# print(firstNonRepeatingCharacter(string))
 
 
 
