@@ -755,12 +755,34 @@
 # # ------Three number sum---------------------------------------------------------------------------------------
 def threeNumberSum(array, targetSum):
     array.sort()
-    dict = {}
-    for i in array:
-        needSum = targetSum - i
-        
+    # dict = {}
+    answer = []
+    # for i in array:
+    #     needSum = targetSum - i
+    #     dict[i] = needSum
+    go = (len(array)-1) / 2
+    for j in range(go):
+        char = array[j]
+        need = targetSum - char
+        left, right = j+1, (len(array)-1)
+        while left < right:
+            al = array[left]
+            ar = array[right]
+            sum = al + ar
+            if sum == need:
+                list = char, al, ar
+                answer.append(list)
+                right -= 1
+                left += 1
+            elif sum > need:
+                right -= 1
+            else:
+                left += 1
+    if answer:
+        return answer
 
-    return {}
+
+    return []
 
 
 array = [12, 3, 1, 2, -6, 5, -8, 6]
