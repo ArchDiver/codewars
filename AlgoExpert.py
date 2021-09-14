@@ -753,6 +753,7 @@
 
 
 # # ------Three number sum---------------------------------------------------------------------------------------
+import math
 def threeNumberSum(array, targetSum):
     array.sort()
     # dict = {}
@@ -760,7 +761,7 @@ def threeNumberSum(array, targetSum):
     # for i in array:
     #     needSum = targetSum - i
     #     dict[i] = needSum
-    go = (len(array)-1) / 2
+    go = math.ceil((len(array)-1) / 2)
     for j in range(go):
         char = array[j]
         need = targetSum - char
@@ -770,7 +771,7 @@ def threeNumberSum(array, targetSum):
             ar = array[right]
             sum = al + ar
             if sum == need:
-                list = char, al, ar
+                list = [char, al, ar]
                 answer.append(list)
                 right -= 1
                 left += 1
@@ -778,10 +779,9 @@ def threeNumberSum(array, targetSum):
                 right -= 1
             else:
                 left += 1
+
     if answer:
         return answer
-
-
     return []
 
 
