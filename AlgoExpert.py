@@ -857,8 +857,26 @@
 
 # # -------Smallest Diffenece--------------------------------------------------------------------------------------
 def smallestDifference(arrayOne, arrayTwo):
-    ans_array = []
-    return ans_array
+    arrayTwo.sort()
+    a1Num = arrayOne[0]
+    a2Num = arrayTwo[0]
+    diff = abs(a1Num - a2Num)
+    for num in arrayOne:
+        a1Num, a2Num, diff = check(num, arrayTwo, a1Num, a2Num, diff)
+    return [a1Num, a2Num]
+
+
+def check(num, arrayTwo, a1Num, a2Num, diff):
+    for i in range(len(arrayTwo) - 1):
+        j = i + 1
+        diff2 = abs(arrayTwo[i] - num)
+        diff3 = abs(arrayTwo[j] - num)
+        if diff2 < diff3:
+            if diff2 < diff:
+                return num, arrayTwo[i], diff2
+            else:
+                return a1Num, a2Num, diff
+
 
 
 arrayOne = [-1, 5, 10, 20, 28, 3]
