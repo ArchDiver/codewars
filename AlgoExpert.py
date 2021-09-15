@@ -753,48 +753,117 @@
 
 
 # # ------Three number sum---------------------------------------------------------------------------------------
-import math
-def threeNumberSum(array, targetSum):
-    array.sort()
-    # dict = {}
-    answer = []
-    # for i in array:
-    #     needSum = targetSum - i
-    #     dict[i] = needSum
-    go = math.ceil((len(array)-1) / 2)
-    for j in range(go):
-        char = array[j]
-        need = targetSum - char
-        left, right = j+1, (len(array)-1)
-        while left < right:
-            al = array[left]
-            ar = array[right]
-            sum = al + ar
-            if sum == need:
-                list = [char, al, ar]
-                answer.append(list)
-                right -= 1
-                left += 1
-            elif sum > need:
-                right -= 1
-            else:
-                left += 1
+# import math
+# def threeNumberSum(array, targetSum):
+#     array.sort()
+#     # dict = {}
+#     answer = []
+#     # for i in array:
+#     #     needSum = targetSum - i
+#     #     dict[i] = needSum
+#     go = math.ceil((len(array)-1) / 2)
+#     for j in range(go):
+#         char = array[j]
+#         need = targetSum - char
+#         left, right = j+1, (len(array)-1)
+#         while left < right:
+#             al = array[left]
+#             ar = array[right]
+#             sum = al + ar
+#             if sum == need:
+#                 list = [char, al, ar]
+#                 answer.append(list)
+#                 right -= 1
+#                 left += 1
+#             elif sum > need:
+#                 right -= 1
+#             else:
+#                 left += 1
 
-    if answer:
-        return answer
-    return []
-
-
-array = [12, 3, 1, 2, -6, 5, -8, 6]
-targetSum = 0
-
-print(threeNumberSum(array, targetSum))
+#     if answer:
+#         return answer
+#     return []
 
 
+# array = [12, 3, 1, 2, -6, 5, -8, 6]
+# targetSum = 0
+
+# print(threeNumberSum(array, targetSum))
+
+# # ----Mine longer run--
+# import math
+# def threeNumberSum(array, targetSum):
+# 	# print(array, targetSum)
+#     array.sort()
+#     answer = []
+
+#     # go = math.ceil((len(array)-1) / 2)
+#     for j in range(len(array)-2):
+#         char = array[j]
+#         need = targetSum - char
+#         left, right = j+1, (len(array)-1)
+#         while left < right:
+#             al = array[left]
+#             ar = array[right]
+#             sum = al + ar
+#             if sum == need:
+#                 list = [char, al, ar]
+#                 answer.append(list)
+#                 right -= 1
+#                 left += 1
+#             elif sum > need:
+#                 right -= 1
+#             else:
+#                 left += 1
+#     if answer:
+#         return answer
 
 
+#     return []
 
-# # ---------------------------------------------------------------------------------------------
+# array = [12, 3, 1, 2, -6, 5, -8, 6]
+# targetSum = 0
+
+# print(threeNumberSum(array, targetSum))
+
+# # ----Thiers----
+# def threeNumberSum(array, targetSum):
+#     array.sort()
+#     answers = []
+#     for i in range(len(array) - 2):
+#         left = i + 1
+#         right = len(array) - 1
+#         while left < right:
+#             sum = array[i] + array[left] + array[right]
+#             if sum == targetSum:
+#                 answers.append([array[i], array[left], array[right]])
+#                 left += 1
+#                 right -= 1
+#             elif sum < targetSum:
+#                 left += 1
+#             elif sum > targetSum:
+#                 right -= 1
+
+#     return answers
+        
+        
+        
+        
+        
+# array = [12, 3, 1, 2, -6, 5, -8, 6]
+# targetSum = 0
+
+# print(threeNumberSum(array, targetSum))
+
+# # -------Smallest Diffenece--------------------------------------------------------------------------------------
+def smallestDifference(arrayOne, arrayTwo):
+    ans_array = []
+    return ans_array
+
+
+arrayOne = [-1, 5, 10, 20, 28, 3]
+arrayTwo = [26, 134, 135, 15, 17]
+print(smallestDifference(arrayOne, arrayTwo))
 
 
 # # ---------------------------------------------------------------------------------------------
