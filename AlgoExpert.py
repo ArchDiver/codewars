@@ -869,18 +869,23 @@ def smallestDifference(arrayOne, arrayTwo):
 def check(num, arrayTwo, a1Num, a2Num, diff):
     for i in range(len(arrayTwo) - 1):
         j = i + 1
-        diff2 = abs(arrayTwo[i] - num)
-        diff3 = abs(arrayTwo[j] - num)
-        if diff2 < diff3:
-            if diff2 < diff:
-                return num, arrayTwo[i], diff2
+        # diff2 = abs(arrayTwo[i] - num)
+        # diff3 = abs(arrayTwo[j] - num)
+        if abs(arrayTwo[i] - num) < abs(arrayTwo[j] - num):
+            if abs(arrayTwo[i] - num) < diff:
+                return num, arrayTwo[i], abs(arrayTwo[i] - num)
+            else:
+                return a1Num, a2Num, diff
+        if arrayTwo[j] == arrayTwo[-1]:
+            if abs(arrayTwo[j] - num) < diff:
+                return num, arrayTwo[j], abs(arrayTwo[j] - num)
             else:
                 return a1Num, a2Num, diff
 
 
 
-arrayOne = [-1, 5, 10, 20, 28, 3]
-arrayTwo = [26, 134, 135, 15, 17]
+arrayOne = [10, 0, 20, 25, 2000]
+arrayTwo = [1005, 1006, 1014, 1032, 1031]
 print(smallestDifference(arrayOne, arrayTwo))
 
 
