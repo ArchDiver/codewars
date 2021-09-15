@@ -856,37 +856,64 @@
 # print(threeNumberSum(array, targetSum))
 
 # # -------Smallest Diffenece--------------------------------------------------------------------------------------
-def smallestDifference(arrayOne, arrayTwo):
-    arrayTwo.sort()
-    a1Num = arrayOne[0]
-    a2Num = arrayTwo[0]
-    diff = abs(a1Num - a2Num)
-    for num in arrayOne:
-        a1Num, a2Num, diff = check(num, arrayTwo, a1Num, a2Num, diff)
-    return [a1Num, a2Num]
+# #------Mine-------
+# def smallestDifference(arrayOne, arrayTwo):
+#     arrayTwo.sort()
+#     a1Num = arrayOne[0]
+#     a2Num = arrayTwo[0]
+#     diff = abs(a1Num - a2Num)
+#     for num in arrayOne:
+#         a1Num, a2Num, diff = check(num, arrayTwo, a1Num, a2Num, diff)
+#     return [a1Num, a2Num]
 
 
-def check(num, arrayTwo, a1Num, a2Num, diff):
-    for i in range(len(arrayTwo) - 1):
-        j = i + 1
-        # diff2 = abs(arrayTwo[i] - num)
-        # diff3 = abs(arrayTwo[j] - num)
-        if abs(arrayTwo[i] - num) < abs(arrayTwo[j] - num):
-            if abs(arrayTwo[i] - num) < diff:
-                return num, arrayTwo[i], abs(arrayTwo[i] - num)
-            else:
-                return a1Num, a2Num, diff
-        if arrayTwo[j] == arrayTwo[-1]:
-            if abs(arrayTwo[j] - num) < diff:
-                return num, arrayTwo[j], abs(arrayTwo[j] - num)
-            else:
-                return a1Num, a2Num, diff
+# def check(num, arrayTwo, a1Num, a2Num, diff):
+#     for i in range(len(arrayTwo) - 1):
+#         j = i + 1
+#         # diff2 = abs(arrayTwo[i] - num)
+#         # diff3 = abs(arrayTwo[j] - num)
+#         if abs(arrayTwo[i] - num) < abs(arrayTwo[j] - num):
+#             if abs(arrayTwo[i] - num) < diff:
+#                 return num, arrayTwo[i], abs(arrayTwo[i] - num)
+#             else:
+#                 return a1Num, a2Num, diff
+#         if arrayTwo[j] == arrayTwo[-1]:
+#             if abs(arrayTwo[j] - num) < diff:
+#                 return num, arrayTwo[j], abs(arrayTwo[j] - num)
+#             else:
+#                 return a1Num, a2Num, diff
 
 
 
-arrayOne = [10, 0, 20, 25, 2000]
-arrayTwo = [1005, 1006, 1014, 1032, 1031]
-print(smallestDifference(arrayOne, arrayTwo))
+# arrayOne = [10, 0, 20, 25, 2000]
+# arrayTwo = [1005, 1006, 1014, 1032, 1031]
+# print(smallestDifference(arrayOne, arrayTwo))
+# #-------Theirs------
+# def smallestDifference(arrayOne, arrayTwo):
+#     arrayOne.sort()
+#     arrayTwo.sort()
+#     idxOne, idxTwo, smallest = 0, 0, float('inf')
+#     # current = float('inf')
+#     smallestPair = []
+#     while idxOne < len(arrayOne) and idxTwo < len(arrayTwo):
+#         numOne, numTwo = arrayOne[idxOne], arrayTwo[idxTwo]
+#         if numOne < numTwo:
+#             current = numTwo - numOne
+#             idxOne += 1
+#         elif numTwo < numOne:
+#             current = numOne - numTwo
+#             idxTwo += 1
+#         else:
+#             return [numOne, numTwo]
+#         if current < smallest:
+#             smallest = current
+#             smallestPair = [numOne, numTwo]
+#     return smallestPair
+
+
+# arrayOne = [10, 0, 20, 25, 2000]
+# arrayTwo = [1005, 1006, 1014, 1032, 1031]
+# print(smallestDifference(arrayOne, arrayTwo))
 
 
 # # ---------------------------------------------------------------------------------------------
