@@ -917,12 +917,22 @@
 
 
 # # ------Move Element to end---------------------------------------------------------------------------------------
+# # #------First try
+# def moveElementToEnd(array, toMove):
+# 	for i in range(len(array) - 1):
+# 		if array[i] == toMove:
+# 			array.append(array.pop(array.index(i)))
+# 	return array
 
+# array = [2, 1, 2, 2, 2, 3, 4, 2]
+# toMove = 2
+
+# print(moveElementToEnd(array, toMove))
+
+# #------really stripped with __eq__
 def moveElementToEnd(array, toMove):
-	for i in range(len(array) - 1):
-		if array[i] == toMove:
-			array.append(array.pop(array.index(i)))
-	return array
+    array = array.sort(key = toMove.__eq__)
+    return array
 
 array = [2, 1, 2, 2, 2, 3, 4, 2]
 toMove = 2
