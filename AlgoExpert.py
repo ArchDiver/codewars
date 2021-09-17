@@ -916,7 +916,18 @@
 # print(smallestDifference(arrayOne, arrayTwo))
 
 
-# # ---------------------------------------------------------------------------------------------
+# # ------Move Element to end---------------------------------------------------------------------------------------
+
+def moveElementToEnd(array, toMove):
+	for i in range(len(array) - 1):
+		if array[i] == toMove:
+			array.append(array.pop(array.index(i)))
+	return array
+
+array = [2, 1, 2, 2, 2, 3, 4, 2]
+toMove = 2
+
+print(moveElementToEnd(array, toMove))
 
 # # ---------------------------------------------------------------------------------------------
 
