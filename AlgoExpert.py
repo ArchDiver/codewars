@@ -930,14 +930,14 @@
 # print(moveElementToEnd(array, toMove))
 
 # #------really stripped with __eq__
-# def moveElementToEnd(array, toMove):
-#     array = array.sort(key = toMove.__eq__)
-#     return array
+def moveElementToEnd(array, toMove):
+    array = array.sort(key = toMove.__eq__)
+    return array
 
-# array = [2, 1, 2, 2, 2, 3, 4, 2]
-# toMove = 2
+array = [2, 1, 2, 2, 2, 3, 4, 2]
+toMove = 2
 
-# print(moveElementToEnd(array, toMove))
+print(moveElementToEnd(array, toMove))
 
 # # ---------------------------------------------------------------------------------------------
 
