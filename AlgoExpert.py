@@ -956,7 +956,34 @@
 
 # print(moveElementToEnd(array, toMove))
 
-# # ---------------------------------------------------------------------------------------------
+# # ------Monotonic Array---------------------------------------------------------------------------------------
+# # -----Mine----
+def isMonotonic(array):
+    if array == [] or len(array) == 1:
+        return True
+    for i in range(len(array) - 1):
+        j = i + 1
+        while array[i] == array[j]:
+            i += 1
+            j += 1
+        if array[i] < array[j]:
+            for k in range(i, len(array) - 1):
+                j = k + 1
+                if array[k] > array[j]:
+                    return False
+            return True
+        elif array[i] > array[j]:
+            for k in range(i, len(array) - 1):
+                j = k + 1
+                if array[k] < array[j]:
+                    return False
+            return True
+    return True
+
+
+array = [-1, -5, -10, -1100, -1100, -1101, -1102, -9001]
+
+print(isMonotonic(array))
 
 
 # # ---------------------------------------------------------------------------------------------
