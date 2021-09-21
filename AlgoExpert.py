@@ -1002,10 +1002,27 @@
 
 # # ------Spiral Traverse---------------------------------------------------------------------------------------
 def spiralTraverse(array):
-    new_array = []
-    for i in array:
-        if i 
-        for j in 
+    solution = []
+    firstRow, lastRow = 0, len(array)-1
+    firstCol, lastCol = 0, len(array[0]) -1
+    while firstRow <= lastRow and firstCol <= lastCol:
+        for col in range(firstCol, lastCol +1):
+            solution.append(array[firstRow][col])
+        for row in range(firstRow + 1, lastRow + 1):
+            solution.append(array[row][lastCol])
+        for col in reversed(range(firstCol, lastCol)):
+            if firstRow == lastRow:
+                break
+            solution.append(array[lastRow][col])
+        for row in reversed(range(firstRow + 1, lastRow)):
+            if firstCol == lastCol:
+                break
+            solution.append(array[row][firstCol])
+        firstRow, lastRow, firstCol, lastCol += 1
+        
+    return solution
+
+
 
 array = [
   [1, 2, 3, 4],
