@@ -1001,34 +1001,66 @@
 
 
 # # ------Spiral Traverse---------------------------------------------------------------------------------------
-# # Iterative
-# # 0(n) Time and 0(n) space 
+# # #----Iterative
+# # # 0(n) Time and 0(n) space 
+# def spiralTraverse(array):
+#     solution = []
+#     firstRow, lastRow = 0, len(array)-1
+#     firstCol, lastCol = 0, len(array[0]) -1
+#     while firstRow <= lastRow and firstCol <= lastCol:
+#         for col in range(firstCol, lastCol +1):
+#             solution.append(array[firstRow][col])
+#         for row in range(firstRow + 1, lastRow + 1):
+#             solution.append(array[row][lastCol])
+#         for col in reversed(range(firstCol, lastCol)):
+#             if firstRow == lastRow:
+#                 break
+#             solution.append(array[lastRow][col])
+#         for row in reversed(range(firstRow + 1, lastRow)):
+#             if firstCol == lastCol:
+#                 break
+#             solution.append(array[row][firstCol])
+#         firstRow += 1
+#         lastRow -= 1
+#         firstCol += 1
+#         lastCol -= 1
+        
+#     return solution
+
+
+
+# array = [
+#   [1, 2, 3, 4],
+#   [12, 13, 14, 5],
+#   [11, 16, 15, 6],
+#   [10, 9, 8, 7]
+# ]
+# print(spiralTraverse(array))
+
+# # ------Recursive
 def spiralTraverse(array):
     solution = []
-    firstRow, lastRow = 0, len(array)-1
-    firstCol, lastCol = 0, len(array[0]) -1
-    while firstRow <= lastRow and firstCol <= lastCol:
-        for col in range(firstCol, lastCol +1):
-            solution.append(array[firstRow][col])
-        for row in range(firstRow + 1, lastRow + 1):
-            solution.append(array[row][lastCol])
-        for col in reversed(range(firstCol, lastCol)):
-            if firstRow == lastRow:
-                break
-            solution.append(array[lastRow][col])
-        for row in reversed(range(firstRow + 1, lastRow)):
-            if firstCol == lastCol:
-                break
-            solution.append(array[row][firstCol])
-        firstRow += 1
-        lastRow -= 1
-        firstCol += 1
-        lastCol -= 1
-        
+    spiralPath(array, 0, len(array), 0, len(array[0]), solution)
     return solution
 
-
-
+def spiralPath(array, fr, lr, fc, lc, solution):
+    if fc > lc or fr > lr:
+        return
+    for col in range(fc, lc + 1):
+        solution.append(array[fr][col])
+    for row in range(fr + 1, lr + 1):
+        solution.append(array[row][lc])
+    for col in reversed(range(fc + 1, lc)):
+        if fc == lc:
+            break
+        solution.append(array[lr][col])
+    for row in reversed(range(fr + 1, lr)):
+        if fr == lr:
+            break
+        solution.append(array[row][fc])
+    
+    spiralPath(array, fr + 1, lr - 1, fc + 1, lc - 1, solution)
+    
 array = [
   [1, 2, 3, 4],
   [12, 13, 14, 5],
@@ -1036,7 +1068,6 @@ array = [
   [10, 9, 8, 7]
 ]
 print(spiralTraverse(array))
-
 
 
 # # ---------------------------------------------------------------------------------------------
