@@ -986,21 +986,35 @@
 # print(isMonotonic(array))
 
 # #------theirs (with my add to cut short if found early)----
-def isMonotonic(array):
-    nonDec = True
-    nonInc = True
-    for i in range(1, len(array)):
-        if array[i] < array[i-1]:
-            nonDec = False
-        if array[i] > array[i - 1]:
-            nonInc = False
-        # # I added the next line to cut the run shorter
-        if nonDec == False and nonInc == False:
-            return False
-    return True
+# def isMonotonic(array):
+#     nonDec = True
+#     nonInc = True
+#     for i in range(1, len(array)):
+#         if array[i] < array[i-1]:
+#             nonDec = False
+#         if array[i] > array[i - 1]:
+#             nonInc = False
+#         # # I added the next line to cut the run shorter
+#         if nonDec == False and nonInc == False:
+#             return False
+#     return True
 
 
-# # ---------------------------------------------------------------------------------------------
+# # ------Spiral Traverse---------------------------------------------------------------------------------------
+def spiralTraverse(array):
+    new_array = []
+    for i in array:
+        if i 
+        for j in 
+
+array = [
+  [1, 2, 3, 4],
+  [12, 13, 14, 5],
+  [11, 16, 15, 6],
+  [10, 9, 8, 7]
+]
+print(spiralTraverse(array))
+
 
 # # ---------------------------------------------------------------------------------------------
 
