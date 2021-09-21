@@ -1001,6 +1001,8 @@
 
 
 # # ------Spiral Traverse---------------------------------------------------------------------------------------
+# # Iterative
+# # 0(n) Time and 0(n) space 
 def spiralTraverse(array):
     solution = []
     firstRow, lastRow = 0, len(array)-1
@@ -1018,7 +1020,10 @@ def spiralTraverse(array):
             if firstCol == lastCol:
                 break
             solution.append(array[row][firstCol])
-        firstRow, lastRow, firstCol, lastCol += 1
+        firstRow += 1
+        lastRow -= 1
+        firstCol += 1
+        lastCol -= 1
         
     return solution
 
@@ -1031,6 +1036,7 @@ array = [
   [10, 9, 8, 7]
 ]
 print(spiralTraverse(array))
+
 
 
 # # ---------------------------------------------------------------------------------------------
