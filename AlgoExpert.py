@@ -1040,7 +1040,7 @@
 # # ------Recursive
 def spiralTraverse(array):
     solution = []
-    spiralPath(array, 0, len(array), 0, len(array[0]), solution)
+    spiralPath(array, 0, len(array) - 1, 0, len(array[0]) - 1, solution)
     return solution
 
 def spiralPath(array, fr, lr, fc, lc, solution):
@@ -1050,25 +1050,23 @@ def spiralPath(array, fr, lr, fc, lc, solution):
         solution.append(array[fr][col])
     for row in range(fr + 1, lr + 1):
         solution.append(array[row][lc])
-    for col in reversed(range(fc + 1, lc)):
-        if fc == lc:
+    for col in reversed(range(fc, lc)):
+        if fr == lr:
             break
         solution.append(array[lr][col])
     for row in reversed(range(fr + 1, lr)):
-        if fr == lr:
+        if fc == lc:
             break
         solution.append(array[row][fc])
     
     spiralPath(array, fr + 1, lr - 1, fc + 1, lc - 1, solution)
     
 array = [
-  [1, 2, 3, 4],
-  [12, 13, 14, 5],
-  [11, 16, 15, 6],
-  [10, 9, 8, 7]
-]
+    [1, 2, 3, 4],
+    [10, 11, 12, 5],
+    [9, 8, 7, 6]
+  ]
 print(spiralTraverse(array))
-
 
 # # ---------------------------------------------------------------------------------------------
 
