@@ -1085,9 +1085,11 @@ def longestPeak(array):
                     longest = currentLong
                     peak = k
                 i = k + 1
-                break                
-
-    
+                break
+            i = k
+            j = i + 1
+            k = j + 1
+                
     return peak
 
 array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
