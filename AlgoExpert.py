@@ -1070,7 +1070,29 @@
 
 # # -----Longest Peak----------------------------------------------------------------------------------------
 # # -----mine---
+def longestPeak(array):
+    peak = float('inf')
+    longest = []
+    currentLong = []
+    i = 0
+    while i < len(array) - 1:
+        j = i + 1
+        k = j + 1
+        while array[i] < array[j] < array[k]:
+            currentLong.append(array[i],array[j],array[k])
+            if array[k + 1] < array[k]:
+                if len(currentLong) > len(longest):
+                    longest = currentLong
+                    peak = k
+                i = k + 1
+                break                
 
+    
+    return peak
+
+array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+
+print(longestPeak(array))
 
 # # ---------------------------------------------------------------------------------------------
 
