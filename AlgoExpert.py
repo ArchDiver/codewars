@@ -1037,36 +1037,36 @@
 # ]
 # print(spiralTraverse(array))
 
-# # ------Recursive
-def spiralTraverse(array):
-    solution = []
-    spiralPath(array, 0, len(array) - 1, 0, len(array[0]) - 1, solution)
-    return solution
+# # # ------Recursive
+# def spiralTraverse(array):
+#     solution = []
+#     spiralPath(array, 0, len(array) - 1, 0, len(array[0]) - 1, solution)
+#     return solution
 
-def spiralPath(array, fr, lr, fc, lc, solution):
-    if fc > lc or fr > lr:
-        return
-    for col in range(fc, lc + 1):
-        solution.append(array[fr][col])
-    for row in range(fr + 1, lr + 1):
-        solution.append(array[row][lc])
-    for col in reversed(range(fc, lc)):
-        if fr == lr:
-            break
-        solution.append(array[lr][col])
-    for row in reversed(range(fr + 1, lr)):
-        if fc == lc:
-            break
-        solution.append(array[row][fc])
+# def spiralPath(array, fr, lr, fc, lc, solution):
+#     if fc > lc or fr > lr:
+#         return
+#     for col in range(fc, lc + 1):
+#         solution.append(array[fr][col])
+#     for row in range(fr + 1, lr + 1):
+#         solution.append(array[row][lc])
+#     for col in reversed(range(fc, lc)):
+#         if fr == lr:
+#             break
+#         solution.append(array[lr][col])
+#     for row in reversed(range(fr + 1, lr)):
+#         if fc == lc:
+#             break
+#         solution.append(array[row][fc])
     
-    spiralPath(array, fr + 1, lr - 1, fc + 1, lc - 1, solution)
+#     spiralPath(array, fr + 1, lr - 1, fc + 1, lc - 1, solution)
     
-array = [
-    [1, 2, 3, 4],
-    [10, 11, 12, 5],
-    [9, 8, 7, 6]
-  ]
-print(spiralTraverse(array))
+# array = [
+#     [1, 2, 3, 4],
+#     [10, 11, 12, 5],
+#     [9, 8, 7, 6]
+#   ]
+# print(spiralTraverse(array))
 
 # # ---------------------------------------------------------------------------------------------
 
