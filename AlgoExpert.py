@@ -1148,7 +1148,22 @@ array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
 
 print(longestPeak(array))
 
-# # ---------------------------------------------------------------------------------------------
+# # -----Array of Products----------------------------------------------------------------------------------------
+# # -----mine
+def arrayOfProducts(array):
+    array2 = []
+    i = 0
+    for  i in range(len(array)):
+        product = 1
+        for j in range(len(array)):
+            if j == i:
+                continue
+            product *= array[j]
+        array2.append(product)
+    return array2
+
+array = [5,1,4,2]
+print(arrayOfProducts(array))
 
 # # ---------------------------------------------------------------------------------------------
 
