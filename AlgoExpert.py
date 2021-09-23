@@ -1069,28 +1069,55 @@
 # print(spiralTraverse(array))
 
 # # -----Longest Peak----------------------------------------------------------------------------------------
-# # -----mine---
-def longestPeak(array):
-    peak = float('inf')
-    longest = []
-    currentLong = []
-    i = 0
-    while i < len(array) - 1:
-        j = i + 1
-        k = j + 1
-        while array[i] < array[j] < array[k]:
-            currentLong.append(array[i],array[j],array[k])
-            if array[k + 1] < array[k]:
-                if len(currentLong) > len(longest):
-                    longest = currentLong
-                    peak = k
-                i = k + 1
-                break
-            i = k
-            j = i + 1
-            k = j + 1
+# # -----mine---not working
+# def longestPeak(array):
+#     peak = float('inf')
+#     longest = []
+#     currentLong = []
+#     i = 0
+#     while i < len(array) - 1:
+#         j = i + 1
+#         k = j + 1
+#         while array[i] < array[j] < array[k]:
+#             currentLong.append(array[i],array[j],array[k])
+#             if array[k + 1] < array[k]:
+#                 if len(currentLong) > len(longest):
+#                     longest = currentLong
+#                     peak = k
+#                 i = k + 1
+#                 break
+#             i = k
+#             j = i + 1
+#             k = j + 1
                 
-    return peak
+#     return peak
+
+# array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+
+# print(longestPeak(array))
+# #---Mine after version 2
+def longestPeak(array):
+    longestPeak  = 0
+    i = 1
+    while i < len(array)-1:
+        j, k = i - 1, i + 1
+        peak = array[j] < array[i] and array[k] < array[i]
+        if not peak:
+            i += 1
+            continue
+        
+
+        while array[j] > array[j - 1]:
+            currentPeak +=1
+            j -= 1
+        while array[k] > array[k + 1]:
+            currentPeak += 1
+            k += 1
+        if currentPeak > longestPeak:
+            longestPeak = currentPeak
+
+                
+    return longestPeak
 
 array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
 
