@@ -1096,71 +1096,93 @@
 
 # print(longestPeak(array))
 # #---Mine after version 2
-def longestPeak(array):
-    longestPeak  = 0
-    i = 1
-    while i < len(array)-1:
-        j, k = i - 1, i + 1
-        peak = array[j] < array[i] and array[k] < array[i]
-        if not peak:
-            i += 1
-            continue
+# def longestPeak(array):
+#     longestPeak  = 0
+#     i = 1
+#     while i < len(array)-1:
+#         j, k = i - 1, i + 1
+#         peak = array[j] < array[i] and array[k] < array[i]
+#         if not peak:
+#             i += 1
+#             continue
         
 
-        while array[j] > array[j - 1]:
-            currentPeak +=1
-            j -= 1
-        while array[k] > array[k + 1]:
-            currentPeak += 1
-            k += 1
-        if currentPeak > longestPeak:
-            longestPeak = currentPeak
+#         while array[j] > array[j - 1]:
+#             currentPeak +=1
+#             j -= 1
+#         while array[k] > array[k + 1]:
+#             currentPeak += 1
+#             k += 1
+#         if currentPeak > longestPeak:
+#             longestPeak = currentPeak
 
                 
-    return longestPeak
+#     return longestPeak
 
-array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+# array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
 
-print(longestPeak(array))
-# #-------theirs
-def longestPeak(array):
-    longestPeak  = 0
-    i = 1
-    while i < len(array)-1:
-        peak = array[i - 1] < array[i] and array[i + 1] < array[i]
-        if not peak:
-            i += 1
-            continue
+# print(longestPeak(array))
+# # #-------theirs
+# def longestPeak(array):
+#     longestPeak  = 0
+#     i = 1
+#     while i < len(array)-1:
+#         peak = array[i - 1] < array[i] and array[i + 1] < array[i]
+#         if not peak:
+#             i += 1
+#             continue
         
-        left = i - 2
-        while left >= 0 and array[left] < array[left + 1]:
-            left -= 1
-        right = i + 2
-        while right < len(array) and array[right] < array[right - 1]:
-            right +=1
-        currentPeak = right - left - 1
-        longestPeak = max(longestPeak, currentPeak)
-        i = right
+#         left = i - 2
+#         while left >= 0 and array[left] < array[left + 1]:
+#             left -= 1
+#         right = i + 2
+#         while right < len(array) and array[right] < array[right - 1]:
+#             right +=1
+#         currentPeak = right - left - 1
+#         longestPeak = max(longestPeak, currentPeak)
+#         i = right
                 
-    return longestPeak
+#     return longestPeak
 
-array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+# array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
 
-print(longestPeak(array))
+# print(longestPeak(array))
 
 # # -----Array of Products----------------------------------------------------------------------------------------
 # # -----mine worst time complexity
+# # O(n^2) time and O(n)
+# def arrayOfProducts(array):
+#     array2 = []
+#     i = 0
+#     for  i in range(len(array)):
+#         product = 1
+#         for j in range(len(array)):
+#             if j == i:
+#                 continue
+#             product *= array[j]
+#         array2.append(product)
+#     return array2
+
+# array = [5,1,4,2]
+# print(arrayOfProducts(array))
+# # Thiers 
+# # O(n) time and O(n)
 def arrayOfProducts(array):
-    array2 = []
-    i = 0
-    for  i in range(len(array)):
-        product = 1
-        for j in range(len(array)):
-            if j == i:
-                continue
-            product *= array[j]
-        array2.append(product)
-    return array2
+    out_array = []
+    r_array = [1,1,1,1]
+    l_array = [1,1,1,1]
+    product = 1
+    for i in range(len(array)-1):
+        r_array.append(product)
+        product *= array[i]
+    product = 1
+    for i in reversed(range(len(array)-1)):
+        l_array.insert(i, product)
+        product *= array[i]
+    for i in range(len(array)-1):
+        out_array.append((r_array[i] * l_array[i]))    
+
+    return out_array
 
 array = [5,1,4,2]
 print(arrayOfProducts(array))
