@@ -1186,6 +1186,24 @@ def arrayOfProducts(array):
 
 array = [5,1,4,2]
 print(arrayOfProducts(array))
+# # -----Best
+# # O(n) time and O(n)
+def arrayOfProducts(array):
+    out_array = [1 for _ in range(len(array))]
+
+    product = 1
+    for i in range(len(array)):
+        out_array[i] = product
+        product *= array[i]
+    product = 1
+    for i in reversed(range(len(array))):
+        out_array[i]  *= product
+        product *= array[i]
+
+    return out_array
+
+array = [5,1,4,2]
+print(arrayOfProducts(array))
 
 # # ---------------------------------------------------------------------------------------------
 
