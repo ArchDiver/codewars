@@ -1167,45 +1167,50 @@
 # print(arrayOfProducts(array))
 # # Thiers 
 # # O(n) time and O(n)
-def arrayOfProducts(array):
-    out_array = [1 for _ in range(len(array))]
-    r_array = [1 for _ in range(len(array))]
-    l_array = [1 for _ in range(len(array))]
-    product = 1
-    for i in range(len(array)):
-        r_array[i] = product
-        product *= array[i]
-    product = 1
-    for i in reversed(range(len(array))):
-        l_array[i]  = product
-        product *= array[i]
-    for i in range(len(array)):
-        out_array[i] = r_array[i] * l_array[i]
+# def arrayOfProducts(array):
+#     out_array = [1 for _ in range(len(array))]
+#     r_array = [1 for _ in range(len(array))]
+#     l_array = [1 for _ in range(len(array))]
+#     product = 1
+#     for i in range(len(array)):
+#         r_array[i] = product
+#         product *= array[i]
+#     product = 1
+#     for i in reversed(range(len(array))):
+#         l_array[i]  = product
+#         product *= array[i]
+#     for i in range(len(array)):
+#         out_array[i] = r_array[i] * l_array[i]
 
-    return out_array
+#     return out_array
 
-array = [5,1,4,2]
-print(arrayOfProducts(array))
-# # -----Best
-# # O(n) time and O(n)
-def arrayOfProducts(array):
-    out_array = [1 for _ in range(len(array))]
+# array = [5,1,4,2]
+# print(arrayOfProducts(array))
+# # # -----Best
+# # # O(n) time and O(n)
+# def arrayOfProducts(array):
+#     out_array = [1 for _ in range(len(array))]
 
-    product = 1
-    for i in range(len(array)):
-        out_array[i] = product
-        product *= array[i]
-    product = 1
-    for i in reversed(range(len(array))):
-        out_array[i]  *= product
-        product *= array[i]
+#     product = 1
+#     for i in range(len(array)):
+#         out_array[i] = product
+#         product *= array[i]
+#     product = 1
+#     for i in reversed(range(len(array))):
+#         out_array[i]  *= product
+#         product *= array[i]
 
-    return out_array
+#     return out_array
 
-array = [5,1,4,2]
-print(arrayOfProducts(array))
+# array = [5,1,4,2]
+# print(arrayOfProducts(array))
 
-# # ---------------------------------------------------------------------------------------------
+# # ----First Duplicate Value-----------------------------------------------------------------------------------------
+# #---mine
+def firstDuplicateValue(array):
+
+array = [2, 1 , 5, 2, 3, 3, 4]
+print(firstDuplicateValue(array))
 
 
 # # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
