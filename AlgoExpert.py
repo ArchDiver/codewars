@@ -1168,19 +1168,19 @@
 # # Thiers 
 # # O(n) time and O(n)
 def arrayOfProducts(array):
-    out_array = []
-    r_array = [1,1,1,1]
-    l_array = [1,1,1,1]
+    out_array = [1 for _ in range(len(array))]
+    r_array = [1 for _ in range(len(array))]
+    l_array = [1 for _ in range(len(array))]
     product = 1
-    for i in range(len(array)-1):
-        r_array.append(product)
+    for i in range(len(array)):
+        r_array[i] = product
         product *= array[i]
     product = 1
-    for i in reversed(range(len(array)-1)):
-        l_array.insert(i, product)
+    for i in reversed(range(len(array))):
+        l_array[i]  = product
         product *= array[i]
-    for i in range(len(array)-1):
-        out_array.append((r_array[i] * l_array[i]))    
+    for i in range(len(array)):
+        out_array[i] = r_array[i] * l_array[i]
 
     return out_array
 
