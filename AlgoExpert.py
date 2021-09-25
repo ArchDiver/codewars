@@ -1207,10 +1207,27 @@
 
 # # ----First Duplicate Value-----------------------------------------------------------------------------------------
 # #---mine
-def firstDuplicateValue(array):
+# def firstDuplicateValue(array):
+#     seen_array = []
+#     for i in array:
+#         if i in seen_array:
+#             return i
+#         seen_array.append(i)
+#     return -1
 
-array = [2, 1 , 5, 2, 3, 3, 4]
-print(firstDuplicateValue(array))
+# array = [2, 1 , 5, 2, 3, 3, 4]
+# print(firstDuplicateValue(array))
+# #---Best but only under the circumstances where we have int 1 to n and can mutate
+# def firstDuplicateValue(array):
+#     for i in range(len(array)-1):
+#         if array[abs(i) - 1] < 0:
+#             return i
+#         array[abs(i) - 1] *= -1
+
+#     return -1
+
+# array = [2, 1 , 5, 2, 3, 3, 4]
+# print(firstDuplicateValue(array))
 
 
 # # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
