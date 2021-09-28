@@ -1217,20 +1217,26 @@
 
 # array = [2, 1 , 5, 2, 3, 3, 4]
 # print(firstDuplicateValue(array))
-# #---Best but only under the circumstances where we have int 1 to n and can mutate
-# def firstDuplicateValue(array):
-#     for i in range(len(array)-1):
-#         if array[abs(i) - 1] < 0:
-#             return i
-#         array[abs(i) - 1] *= -1
+# # #---Best but only under the circumstances where we have int 1 to n and can mutate
+def firstDuplicateValue(array):
+    for i in array:
+        abs_val = abs(i)
+        if array[abs_val - 1] < 0:
+            return abs_val
+        array[abs_val - 1] *= -1
 
-#     return -1
+    return -1
+
+        
 
 # array = [2, 1 , 5, 2, 3, 3, 4]
 # print(firstDuplicateValue(array))
 
 
-# # ---------------------------------------------------------------------------------------------# # ---------------------------------------------------------------------------------------------
+# # ------Merge Overlapping Intervals---------------------------------------------------------------------------------------
+
+
+# # ---------------------------------------------------------------------------------------------
 
 # # ---------------------------------------------------------------------------------------------
 
