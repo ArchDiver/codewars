@@ -1261,22 +1261,46 @@
 # print(mergeOverlappingIntervals(intervals))
 
 # # -----
+# def mergeOverlappingIntervals(intervals):
+#     out_array = []
+#     intervals.sort()
+#     i = 0
+#     while i < range(len(intervals) - 2):
+#         j = i + 1
+#         if intervals[i][1] < intervals[j][0]:
+#             low = intervals[i][0]
+#             high = high = max(intervals[i][1], intervals[j][1])
+#             while intervals[i][1] < intervals[j][0]:
+#                 high = max(intervals[i][1], intervals[j][1])
+#                 i += 1
+#                 j += 1
+#             out_array.append([low, high])
+#         else:
+#             out_array.append(intervals[i])
+    
+#     return out_array
+
+# intervals = [
+#     [1, 2],
+#     [3, 5],
+#     [4, 7],
+#     [6, 8],
+#     [9, 10]
+# ]
+
+# print(mergeOverlappingIntervals(intervals))
+# #------Mine working
 def mergeOverlappingIntervals(intervals):
-    out_array = []
+    out_array = [intervals[0]]
     intervals.sort()
-    i = 0
-    while i < range(len(intervals) - 2):
-        j = i + 1
-        if intervals[i][1] < intervals[j][0]:
-            low = intervals[i][0]
-            high = high = max(intervals[i][1], intervals[j][1])
-            while intervals[i][1] < intervals[j][0]:
-                high = max(intervals[i][1], intervals[j][1])
-                i += 1
-                j += 1
-            out_array.append([low, high])
+    i = 1
+    while i < len(intervals):
+        if intervals[i][0] < out_array[-1][1]:
+            out_array[-1][1] = max(intervals[i][1],out_array[-1][1])
         else:
             out_array.append(intervals[i])
+        i += 1
+
     
     return out_array
 
