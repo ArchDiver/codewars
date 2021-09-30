@@ -1298,7 +1298,8 @@ def mergeOverlappingIntervals(intervals):
         if intervals[i][0] <= out_array[-1][1]:
             out_array[-1][1] = max(intervals[i][1],out_array[-1][1])
         else:
-            out_array.append(intervals[i])        i += 1
+            out_array.append(intervals[i])        
+        i += 1
 
     
     return out_array
