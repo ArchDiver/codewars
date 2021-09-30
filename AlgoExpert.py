@@ -1291,15 +1291,14 @@
 # print(mergeOverlappingIntervals(intervals))
 # #------Mine working
 def mergeOverlappingIntervals(intervals):
-    out_array = [intervals[0]]
     intervals.sort()
+    out_array = [intervals[0]]
     i = 1
     while i < len(intervals):
-        if intervals[i][0] < out_array[-1][1]:
+        if intervals[i][0] <= out_array[-1][1]:
             out_array[-1][1] = max(intervals[i][1],out_array[-1][1])
         else:
-            out_array.append(intervals[i])
-        i += 1
+            out_array.append(intervals[i])        i += 1
 
     
     return out_array
