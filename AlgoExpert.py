@@ -1290,29 +1290,47 @@
 
 # print(mergeOverlappingIntervals(intervals))
 # #------Mine working
-def mergeOverlappingIntervals(intervals):
-    intervals.sort()
-    out_array = [intervals[0]]
-    i = 1
-    while i < len(intervals):
-        if intervals[i][0] <= out_array[-1][1]:
-            out_array[-1][1] = max(intervals[i][1],out_array[-1][1])
-        else:
-            out_array.append(intervals[i])        
-        i += 1
-
+# def mergeOverlappingIntervals(intervals):
+#     intervals.sort()
+#     out_array = [intervals[0]]
+#     i = 1
+#     while i < len(intervals):
+#         if intervals[i][0] <= out_array[-1][1]:
+#             out_array[-1][1] = max(intervals[i][1],out_array[-1][1])
+#         else:
+#             out_array.append(intervals[i])        
+#         i += 1
     
-    return out_array
+#     return out_array
 
-intervals = [
-    [1, 2],
-    [3, 5],
-    [4, 7],
-    [6, 8],
-    [9, 10]
-]
+# intervals = [
+#     [1, 2],
+#     [3, 5],
+#     [4, 7],
+#     [6, 8],
+#     [9, 10]
+# ]
 
-print(mergeOverlappingIntervals(intervals))
+# print(mergeOverlappingIntervals(intervals))
+# # ----Their code--O(nlog(n)) time | O(n) space
+def mergeOverlappingIntervals(intervals):
+    sortedIntervals = sorted(intervals, key=lambda x: x[0])
+    mergedIntervals = []
+    currentInterval = sortedIntervals[0]
+    mergedIntervals.append(currentInterval)
+
+    for nextInterval in sortedIntervals:
+        _, currentIntervalEnd = currentInterval
+        nextIntervalStart, nextIntervalEnd = nextInterval
+
+        if currentIntervalEnd >= nextIntervalStart:
+            currentInterval[1] = max(currentIntervalEnd, nextIntervalEnd)
+
+        else:
+            currentInterval = nextInterval
+            mergedIntervals.append(currentInterval)
+
+    return mergedIntervals
 # # ---------------------------------------------------------------------------------------------
 
 # # ---------------------------------------------------------------------------------------------
