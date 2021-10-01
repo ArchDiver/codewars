@@ -1332,11 +1332,13 @@
 
 #     return mergedIntervals
 # # -----BST Construction----------------------------------------------------------------------------------------
-# #---Mine
+# #---Theirs
+# # Avg = O(log(n)) time| O(log(n)) space(if recursive) or O(1) space(if iterative), worst O(n) time | O(log(n)) space(if recursive) or O(1) space(if iterative)
 # Do not edit the class below except for
 # the insert, contains, and remove methods.
 # Feel free to add new properties and methods
 # to the class.
+# # ----iterative
 class BST:
     def __init__(self, value):
         self.value = value
