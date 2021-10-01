@@ -1313,25 +1313,49 @@
 
 # print(mergeOverlappingIntervals(intervals))
 # # ----Their code--O(nlog(n)) time | O(n) space
-def mergeOverlappingIntervals(intervals):
-    sortedIntervals = sorted(intervals, key=lambda x: x[0])
-    mergedIntervals = []
-    currentInterval = sortedIntervals[0]
-    mergedIntervals.append(currentInterval)
+# def mergeOverlappingIntervals(intervals):
+#     sortedIntervals = sorted(intervals, key=lambda x: x[0])
+#     mergedIntervals = []
+#     currentInterval = sortedIntervals[0]
+#     mergedIntervals.append(currentInterval)
 
-    for nextInterval in sortedIntervals:
-        _, currentIntervalEnd = currentInterval
-        nextIntervalStart, nextIntervalEnd = nextInterval
+#     for nextInterval in sortedIntervals:
+#         _, currentIntervalEnd = currentInterval
+#         nextIntervalStart, nextIntervalEnd = nextInterval
 
-        if currentIntervalEnd >= nextIntervalStart:
-            currentInterval[1] = max(currentIntervalEnd, nextIntervalEnd)
+#         if currentIntervalEnd >= nextIntervalStart:
+#             currentInterval[1] = max(currentIntervalEnd, nextIntervalEnd)
 
-        else:
-            currentInterval = nextInterval
-            mergedIntervals.append(currentInterval)
+#         else:
+#             currentInterval = nextInterval
+#             mergedIntervals.append(currentInterval)
 
-    return mergedIntervals
-# # ---------------------------------------------------------------------------------------------
+#     return mergedIntervals
+# # -----BST Construction----------------------------------------------------------------------------------------
+# #---Mine
+# Do not edit the class below except for
+# the insert, contains, and remove methods.
+# Feel free to add new properties and methods
+# to the class.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def insert(self, value):
+        # Write your code here.
+        # Do not edit the return statement of this method.
+        return self
+
+    def contains(self, value):
+        # Write your code here.
+        pass
+
+    def remove(self, value):
+        # Write your code here.
+        # Do not edit the return statement of this method.
+        return self
 
 # # ---------------------------------------------------------------------------------------------
 
