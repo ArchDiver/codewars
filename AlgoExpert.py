@@ -1394,8 +1394,25 @@ class BST:
                     currentNode.value = currentNode.right.getMinValue()
                     # removes the smallest value in the right sub-tree and passes it as currentNode.value
                     currentNode.right.remove(currentNode.value, currentNode)
+                elif parentNode is None:
+                    if currentNode.left is not None:
+                        currentNode.value = currentNode.left.value
+                        currentNode.right = currentNode.left.right
+                        # This has to be last so that we still have the Node reference 
+                        currentNode.left = currentNode.left.left
+                    elif currentNode.right is not None:
+                        currentNode.value = currentNode.right.value
+                        currentNode.left = currentNode.right.left
+                        # This has to be last so that we still have the Node reference 
+                        currentNode.right = currentNode.right.right
+                    else:
+                        #This is a random edge case where you are deleting the BST
+                        currentNode.value = None                
                 elif parentNode.left == currentNode:
-                    
+                    parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right
+                elif currentNode.right == currentNode:
+                    parentNode.right = currentNode.right if currentNode.right is not None else currentNode.left
+                break
 
 
         return self
