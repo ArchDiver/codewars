@@ -1366,8 +1366,20 @@ class BST:
         return self
 
     def contains(self, value):
+        # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
+        currentNode = self
+        while currentNode is not None:
+            if value < currentNode.value:
+                currentNode = currentNode.left
+            elif value < currentNode.value:
+                currentNode = currentNode.right
+            else:
+                return True
 
-        pass
+        return False
+
+
+
 
     def remove(self, value, parentNode = None):
 
