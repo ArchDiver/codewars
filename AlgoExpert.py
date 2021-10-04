@@ -1362,7 +1362,6 @@ class BST:
                     break
                 else:
                     currentNode = currentNode.right
-
         return self
 
 
@@ -1372,22 +1371,21 @@ class BST:
         while currentNode is not None:
             if value < currentNode.value:
                 currentNode = currentNode.left
-            elif value < currentNode.value:
+            elif value > currentNode.value:
                 currentNode = currentNode.right
             else:
                 return True
-
         return False
 
 
-    def remove(self, value, parentNode = None):
+    def remove(self, value, parentNode=None):
         # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
         currentNode = self
         while currentNode is not None:
             if value < currentNode.value:
                 parentNode = currentNode
                 currentNode = currentNode.left
-            elif value < currentNode.value:
+            elif value > currentNode.value:
                 parentNode = currentNode
                 currentNode = currentNode.right
             else:
@@ -1414,18 +1412,15 @@ class BST:
                 elif currentNode.right == currentNode:
                     parentNode.right = currentNode.right if currentNode.right is not None else currentNode.left
                 break
+        return self
 
 
     def getMinValue(self):
         currentNode = self
-        while currentNode is not None:
+        while currentNode.left is not None:
             currentNode = currentNode.left
         return currentNode.value
 
-
-
-
-        return self
 
 # # ---------------------------------------------------------------------------------------------
 
