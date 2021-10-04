@@ -1365,6 +1365,7 @@ class BST:
 
         return self
 
+
     def contains(self, value):
         # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
         currentNode = self
@@ -1379,9 +1380,23 @@ class BST:
         return False
 
 
-
-
     def remove(self, value, parentNode = None):
+        currentNode = self
+        while currentNode is not None:
+            if value < currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.left
+            elif value < currentNode.value:
+                parentNode = currentNode
+                currentNode = currentNode.right
+            else:
+                if currentNode.left is not None and currentNode.right is not None:
+                    currentNode.value = currentNode.right.getMinValue()
+                    # removes the smallest value in the right sub-tree and passes it as currentNode.value
+                    currentNode.right.remove(currentNode.value, currentNode)
+                elif parentNode.left == currentNode:
+                    
+
 
         return self
 
