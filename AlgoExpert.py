@@ -1338,7 +1338,8 @@
 # the insert, contains, and remove methods.
 # Feel free to add new properties and methods
 # to the class.
-# # ----iterative  O(log(n)) time | O(1) space
+
+# # --------Iterative
 class BST:
     def __init__(self, value):
         self.value = value
@@ -1346,6 +1347,7 @@ class BST:
         self.right = None
 
     def insert(self, value):
+        # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
         currentNode = self
         while True:
             if value < currentNode.value:
