@@ -1346,17 +1346,29 @@ class BST:
         self.right = None
 
     def insert(self, value):
-        # Write your code here.
-        # Do not edit the return statement of this method.
+        currentNode = self
+        while True:
+            if value < currentNode.value:
+                if currentNode.left is None:
+                    currentNode.left = BST(value)
+                    break
+                else:
+                    currentNode = currentNode.left
+            else:
+                if currentNode.right is None:
+                    currentNode.right = BST(value)
+                    break
+                else:
+                    currentNode = currentNode.right
+
         return self
 
     def contains(self, value):
-        # Write your code here.
+
         pass
 
-    def remove(self, value):
-        # Write your code here.
-        # Do not edit the return statement of this method.
+    def remove(self, value, parentNode = None):
+
         return self
 
 # # ---------------------------------------------------------------------------------------------
