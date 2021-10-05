@@ -1346,8 +1346,8 @@ class BST:
         self.left = None
         self.right = None
 
-    def insert(self, value):
         # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
+    def insert(self, value):
         currentNode = self
         while True:
             if value < currentNode.value:
@@ -1365,8 +1365,8 @@ class BST:
         return self
 
 
-    def contains(self, value):
         # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
+    def contains(self, value):
         currentNode = self
         while currentNode is not None:
             if value < currentNode.value:
@@ -1378,8 +1378,8 @@ class BST:
         return False
 
 
-    def remove(self, value, parentNode=None):
         # # ----Avg: O(log(n)) time | O(1) space, Worst: O(n) time | O(1) space
+    def remove(self, value, parentNode=None):
         currentNode = self
         while currentNode is not None:
             if value < currentNode.value:
@@ -1406,7 +1406,8 @@ class BST:
                         currentNode.right = currentNode.right.right
                     else:
                         #This is a random edge case where you are deleting the BST
-                        currentNode.value = None                
+                        # currentNode.value = None
+                        pass                
                 elif parentNode.left == currentNode:
                     parentNode.left = currentNode.left if currentNode.left is not None else currentNode.right
                 elif currentNode.right == currentNode:
