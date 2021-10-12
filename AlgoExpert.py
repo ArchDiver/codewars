@@ -1494,9 +1494,9 @@ class BST:
 
     def getMinValue(self):
 	    currentNode = self
-        while currentNode is not None:
-			currentNode = currentNode.left
-		return currentNode.value
+        # while currentNode is not None:
+		# 	currentNode = currentNode.left
+		# return currentNode.value
 
 # # ---------------------------------------------------------------------------------------------
 
