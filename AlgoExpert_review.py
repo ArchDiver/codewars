@@ -82,9 +82,87 @@
 
 
 # #--------------------------------------------------------------------------------
-# #  
+# #  Tournament Winner
+
+competitors = [
+    ["HTML", "C#"],
+    ["C#", "Python"],
+    ["Python", "HTML"],
+]
+results = [0, 0, 1]
+
+def tournamentWinner(competitions, results):
+    win = 3
+    final_winner = "fail"
+    competitors_list = {}
+    
+    for i in range(len(competitions)):
+        print(competitions[i][0], competitions[i][1])
+        
+        if competitions[i][0] not in competitors_list:
+            competitors_list[competitions[i][0]] = 0
+        if competitions[i][1] not in competitors_list:
+            competitors_list[competitions[i][1]] = 0
+            
+        print(results[i])    
+        if results[i] == 1:
+            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+            print(competitors_list[competitions[i][0]])
+
+        else:
+            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+            print(competitors_list[competitions[i][1]])
+        print(competitors_list)
+    
+    print(competitors_list)
+    final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
+    print(final)
+    final_winner = final[0]
 
 
+    # Write your code here.
+    return f"{final_winner}"
+
+
+print(tournamentWinner(competitors, results))
+
+#___Clean
+def tournamentWinner(competitions, results):
+    win = 3
+    competitors_list = {}
+    
+    for i in range(len(competitions)):
+        # This check to make sure the lang is in the dict
+        if competitions[i][0] not in competitors_list:
+            competitors_list[competitions[i][0]] = 0
+        if competitions[i][1] not in competitors_list:
+            competitors_list[competitions[i][1]] = 0
+
+        #This updates the winners scores    
+        if results[i] == 1:
+            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+        else:
+            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+
+    # Write your code here.
+    return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
+
+
+tournamentWinner(competitors, results)
+
+#__Better 
+def tournamentWinner(competitions, results):
+    # Write your code here.
+    winner = ''
+    rank = {winner: 0}
+    for teams, result in zip(competitions, results):
+        team = teams[0]  if result == 1 else teams[1]
+        if team not in rank:
+            rank[team] = 0
+        rank[team] += 3
+        if rank[team] > rank[winner]:
+            winner = team
+    return winner
 
 # #--------------------------------------------------------------------------------
 # #  
