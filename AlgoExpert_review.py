@@ -82,90 +82,146 @@
 
 
 # #--------------------------------------------------------------------------------
-# #  Tournament Winner
+# # #  Tournament Winner
 
-competitors = [
-    ["HTML", "C#"],
-    ["C#", "Python"],
-    ["Python", "HTML"],
-]
-results = [0, 0, 1]
+# competitors = [
+#     ["HTML", "C#"],
+#     ["C#", "Python"],
+#     ["Python", "HTML"],
+# ]
+# results = [0, 0, 1]
 
-def tournamentWinner(competitions, results):
-    win = 3
-    final_winner = "fail"
-    competitors_list = {}
+# def tournamentWinner(competitions, results):
+#     win = 3
+#     final_winner = "fail"
+#     competitors_list = {}
     
-    for i in range(len(competitions)):
-        print(competitions[i][0], competitions[i][1])
+#     for i in range(len(competitions)):
+#         print(competitions[i][0], competitions[i][1])
         
-        if competitions[i][0] not in competitors_list:
-            competitors_list[competitions[i][0]] = 0
-        if competitions[i][1] not in competitors_list:
-            competitors_list[competitions[i][1]] = 0
+#         if competitions[i][0] not in competitors_list:
+#             competitors_list[competitions[i][0]] = 0
+#         if competitions[i][1] not in competitors_list:
+#             competitors_list[competitions[i][1]] = 0
             
-        print(results[i])    
-        if results[i] == 1:
-            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-            print(competitors_list[competitions[i][0]])
+#         print(results[i])    
+#         if results[i] == 1:
+#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+#             print(competitors_list[competitions[i][0]])
 
-        else:
-            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
-            print(competitors_list[competitions[i][1]])
-        print(competitors_list)
+#         else:
+#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+#             print(competitors_list[competitions[i][1]])
+#         print(competitors_list)
     
-    print(competitors_list)
-    final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
-    print(final)
-    final_winner = final[0]
+#     print(competitors_list)
+#     final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
+#     print(final)
+#     final_winner = final[0]
 
 
-    # Write your code here.
-    return f"{final_winner}"
+#     # Write your code here.
+#     return f"{final_winner}"
 
 
-print(tournamentWinner(competitors, results))
+# print(tournamentWinner(competitors, results))
 
-#___Clean
-def tournamentWinner(competitions, results):
-    win = 3
-    competitors_list = {}
+# #___Clean
+# def tournamentWinner(competitions, results):
+#     win = 3
+#     competitors_list = {}
     
-    for i in range(len(competitions)):
-        # This check to make sure the lang is in the dict
-        if competitions[i][0] not in competitors_list:
-            competitors_list[competitions[i][0]] = 0
-        if competitions[i][1] not in competitors_list:
-            competitors_list[competitions[i][1]] = 0
+#     for i in range(len(competitions)):
+#         # This check to make sure the lang is in the dict
+#         if competitions[i][0] not in competitors_list:
+#             competitors_list[competitions[i][0]] = 0
+#         if competitions[i][1] not in competitors_list:
+#             competitors_list[competitions[i][1]] = 0
 
-        #This updates the winners scores    
-        if results[i] == 1:
-            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-        else:
-            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+#         #This updates the winners scores    
+#         if results[i] == 1:
+#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+#         else:
+#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
 
-    # Write your code here.
-    return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
+#     # Write your code here.
+#     return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
 
 
-tournamentWinner(competitors, results)
+# tournamentWinner(competitors, results)
 
-#__Better 
-def tournamentWinner(competitions, results):
-    # Write your code here.
-    winner = ''
-    rank = {winner: 0}
-    for teams, result in zip(competitions, results):
-        team = teams[0]  if result == 1 else teams[1]
-        if team not in rank:
-            rank[team] = 0
-        rank[team] += 3
-        if rank[team] > rank[winner]:
-            winner = team
-    return winner
+# #__Better 
+# def tournamentWinner(competitions, results):
+#     # Ties only return the first winner.
+#     winner = ''
+#     rank = {winner: 0}
+#     for teams, result in zip(competitions, results):
+#         team = teams[0]  if result == 1 else teams[1]
+#         if team not in rank:
+#             rank[team] = 0
+#         rank[team] += 3
+#         if rank[team] > rank[winner]:
+#             winner = team
+#     return winner
 
 # #--------------------------------------------------------------------------------
-# #  
+# #  Non-Constructrable Change
+from numpy import s_
+
+
+coins0 = []
+coins1 = [5, 7, 1, 1, 2, 3, 22]
+coins2 = [1, 2, 3, 4]
+
+
+#____Not working due to randoms
+def nonConstructibleChange(coins):
+    # Write your code here.
+    if not coins or min(coins) > 1:
+        return 1
+    
+    highest = sum(coins)
+    s_coins = sorted(coins)
+    last_j = 0
+    for i in range(1, highest):
+        if i not in coins:
+            running = s_coins[last_j]
+            for j in range(len(s_coins)):
+                if running > i:
+                    return i                    
+                running = running + s_coins[j]
+                if running == i:
+                    break
+        if i in s_coins:
+            last_j = s_coins.index(i)
+    highest += 1
+    return highest
+
+nonConstructibleChange(coins1)
+
+#___Try 2
+def nonConstructibleChange(coins):
+    # Write your code here.
+    if not coins or min(coins) > 1:
+        return 1
+    last_j = 0
+    s_coins = sorted(coins)
+    for i in range(1, (sum(s_coins))):
+        if i not in s_coins:
+            running = s_coins[last_j]
+            need = i - running
+            used_list = s_coins[last_j]
+            if need in s_coins:
+                while s_coins.index(need) in used_list:
+                    
+
+
+
+
+
+        if i in s_coins:
+            last_j = s_coins.index(i)
+    
 
 
 
