@@ -166,63 +166,70 @@
 
 # #--------------------------------------------------------------------------------
 # #  Non-Constructrable Change
-from numpy import s_
-
-
 coins0 = []
 coins1 = [5, 7, 1, 1, 2, 3, 22]
 coins2 = [1, 2, 3, 4]
 
 
-#____Not working due to randoms
-def nonConstructibleChange(coins):
-    # Write your code here.
-    if not coins or min(coins) > 1:
-        return 1
+# #____Not working due to randoms
+# def nonConstructibleChange(coins):
+#     # Write your code here.
+#     if not coins or min(coins) > 1:
+#         return 1
     
-    highest = sum(coins)
-    s_coins = sorted(coins)
-    last_j = 0
-    for i in range(1, highest):
-        if i not in coins:
-            running = s_coins[last_j]
-            for j in range(len(s_coins)):
-                if running > i:
-                    return i                    
-                running = running + s_coins[j]
-                if running == i:
-                    break
-        if i in s_coins:
-            last_j = s_coins.index(i)
-    highest += 1
-    return highest
-
-nonConstructibleChange(coins1)
-
-#___Try 2
-def nonConstructibleChange(coins):
-    # Write your code here.
-    if not coins or min(coins) > 1:
-        return 1
-    last_j = 0
-    s_coins = sorted(coins)
-    for i in range(1, (sum(s_coins))):
-        if i not in s_coins:
-            running = s_coins[last_j]
-            need = i - running
-            used_list = s_coins[last_j]
-            if need in s_coins:
-                while s_coins.index(need) in used_list:
-                    
+#     highest = sum(coins)
+#     s_coins = sorted(coins)
+#     last_j = 0
+#     for i in range(1, highest):
+#         if i not in coins:
+#             running = s_coins[last_j]
+#             for j in range(len(s_coins)):
+#                 if running > i:
+#                     return i                    
+#                 running = running + s_coins[j]
+#                 if running == i:
+#                     break
+#         if i in s_coins:
+#             last_j = s_coins.index(i)
+#     highest += 1
+#     return highest
 
 
 
-
-
-        if i in s_coins:
-            last_j = s_coins.index(i)
+# #___Try 2__nope
+# def nonConstructibleChange(coins):
+#     # Write your code here.
+#     if not coins or min(coins) > 1:
+#         return 1
     
-
+#     highest = sum(coins)
+#     s_coins = sorted(coins)
+#     last_j = 0
+#     for i in range(1, highest):
+#         if i not in coins:
+#             running = s_coins[last_j]
+#             for j in range(len(s_coins)):
+#                 if running > i:
+#                     return i                    
+#                 running = running + s_coins[j]
+#                 if running == i:
+#                     break
+#         if i in s_coins:
+#             last_j = s_coins.index(i)
+#     highest += 1
+#     return highest
+    
+#__Try 3
+def nonConstructibleChange(coins):
+    coins.sort()
+    total = 0
+    for coin in coins:
+        if coin > total + 1:
+            return total + 1
+        
+        total += coin
+    
+    return total + 1
 
 
 # #--------------------------------------------------------------------------------
