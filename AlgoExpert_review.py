@@ -107,26 +107,26 @@ def tournamentWinner1(competitions, results):
     competitors_list = {}
     
     for i in range(len(competitions)):
-        print(competitions[i][0], competitions[i][1])
+        # print(competitions[i][0], competitions[i][1])
         
         if competitions[i][0] not in competitors_list:
             competitors_list[competitions[i][0]] = 0
         if competitions[i][1] not in competitors_list:
             competitors_list[competitions[i][1]] = 0
             
-        print(results[i])    
+        # print(results[i])    
         if results[i] == 1:
             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-            print(competitors_list[competitions[i][0]])
+            # print(competitors_list[competitions[i][0]])
 
         else:
             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
-            print(competitors_list[competitions[i][1]])
-        print(competitors_list)
+            # print(competitors_list[competitions[i][1]])
+        # print(competitors_list)
     
-    print(competitors_list)
+    # print(competitors_list)
     final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
-    print(final)
+    # print(final)
     final_winner = final[0]
 
 
@@ -174,9 +174,9 @@ def tournamentWinner3(competitions, results):
             winner = team
     return winner
 
-main(tournamentWinner1(competitors, results))
-main(tournamentWinner2(competitors, results))
-main(tournamentWinner3(competitors, results))
+my_timer.timed(tournamentWinner1(competitors, results))
+my_timer.timed(tournamentWinner2(competitors, results))
+my_timer.timed(tournamentWinner3(competitors, results))
 
 # #--------------------------------------------------------------------------------
 # #  Non-Constructrable Change
@@ -197,6 +197,7 @@ main(tournamentWinner3(competitors, results))
 #     for i in range(1, highest):
 #         if i not in coins:
 #             running = s_coins[last_j]
+
 #             for j in range(len(s_coins)):
 #                 if running > i:
 #                     return i                    
