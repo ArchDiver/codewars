@@ -1,3 +1,13 @@
+import my_timer
+
+def main(prog):
+    t = my_timer.Timer()
+    t.start()
+
+    print(prog)
+
+    t.stop()
+
 # #--------------------------------------------------------------------------------
 # #  Two Number Sum 
 # array = [3, 5, -4, 8, 11, 1, -1, 6]
@@ -84,91 +94,95 @@
 # #--------------------------------------------------------------------------------
 # # #  Tournament Winner
 
-# competitors = [
-#     ["HTML", "C#"],
-#     ["C#", "Python"],
-#     ["Python", "HTML"],
-# ]
-# results = [0, 0, 1]
+competitors = [
+    ["HTML", "C#"],
+    ["C#", "Python"],
+    ["Python", "HTML"],
+]
+results = [0, 0, 1]
 
-# def tournamentWinner(competitions, results):
-#     win = 3
-#     final_winner = "fail"
-#     competitors_list = {}
+def tournamentWinner1(competitions, results):
+    win = 3
+    final_winner = "fail"
+    competitors_list = {}
     
-#     for i in range(len(competitions)):
-#         print(competitions[i][0], competitions[i][1])
+    for i in range(len(competitions)):
+        print(competitions[i][0], competitions[i][1])
         
-#         if competitions[i][0] not in competitors_list:
-#             competitors_list[competitions[i][0]] = 0
-#         if competitions[i][1] not in competitors_list:
-#             competitors_list[competitions[i][1]] = 0
+        if competitions[i][0] not in competitors_list:
+            competitors_list[competitions[i][0]] = 0
+        if competitions[i][1] not in competitors_list:
+            competitors_list[competitions[i][1]] = 0
             
-#         print(results[i])    
-#         if results[i] == 1:
-#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-#             print(competitors_list[competitions[i][0]])
+        print(results[i])    
+        if results[i] == 1:
+            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+            print(competitors_list[competitions[i][0]])
 
-#         else:
-#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
-#             print(competitors_list[competitions[i][1]])
-#         print(competitors_list)
+        else:
+            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+            print(competitors_list[competitions[i][1]])
+        print(competitors_list)
     
-#     print(competitors_list)
-#     final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
-#     print(final)
-#     final_winner = final[0]
+    print(competitors_list)
+    final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
+    print(final)
+    final_winner = final[0]
 
 
-#     # Write your code here.
-#     return f"{final_winner}"
+    # Write your code here.
+    return f"{final_winner}"
 
 
-# print(tournamentWinner(competitors, results))
+# print(tournamentWinner1(competitors, results))
 
-# #___Clean
-# def tournamentWinner(competitions, results):
-#     win = 3
-#     competitors_list = {}
+#___Clean
+def tournamentWinner2(competitions, results):
+    win = 3
+    competitors_list = {}
     
-#     for i in range(len(competitions)):
-#         # This check to make sure the lang is in the dict
-#         if competitions[i][0] not in competitors_list:
-#             competitors_list[competitions[i][0]] = 0
-#         if competitions[i][1] not in competitors_list:
-#             competitors_list[competitions[i][1]] = 0
+    for i in range(len(competitions)):
+        # This check to make sure the lang is in the dict
+        if competitions[i][0] not in competitors_list:
+            competitors_list[competitions[i][0]] = 0
+        if competitions[i][1] not in competitors_list:
+            competitors_list[competitions[i][1]] = 0
 
-#         #This updates the winners scores    
-#         if results[i] == 1:
-#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-#         else:
-#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+        #This updates the winners scores    
+        if results[i] == 1:
+            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+        else:
+            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
 
-#     # Write your code here.
-#     return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
+    # Write your code here.
+    return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
 
 
-# tournamentWinner(competitors, results)
+# tournamentWinner2(competitors, results)
 
-# #__Better 
-# def tournamentWinner(competitions, results):
-#     # Ties only return the first winner.
-#     winner = ''
-#     rank = {winner: 0}
-#     for teams, result in zip(competitions, results):
-#         team = teams[0]  if result == 1 else teams[1]
-#         if team not in rank:
-#             rank[team] = 0
-#         rank[team] += 3
-#         if rank[team] > rank[winner]:
-#             winner = team
-#     return winner
+#__Better 
+def tournamentWinner3(competitions, results):
+    # Ties only return the first winner.
+    winner = ''
+    rank = {winner: 0}
+    for teams, result in zip(competitions, results):
+        team = teams[0]  if result == 1 else teams[1]
+        if team not in rank:
+            rank[team] = 0
+        rank[team] += 3
+        if rank[team] > rank[winner]:
+            winner = team
+    return winner
+
+main(tournamentWinner1(competitors, results))
+main(tournamentWinner2(competitors, results))
+main(tournamentWinner3(competitors, results))
 
 # #--------------------------------------------------------------------------------
 # #  Non-Constructrable Change
-coins0 = []
-coins1 = [5, 7, 1, 1, 2, 3, 22]
-coins2 = [1, 2, 3, 4]
+# coins0 = []
+# coins1 = [5, 7, 1, 1, 2, 3, 22]
+# coins2 = [1, 2, 3, 4]
 
 
 # #____Not working due to randoms
@@ -220,16 +234,24 @@ coins2 = [1, 2, 3, 4]
 #     return highest
     
 #__Try 3
-def nonConstructibleChange(coins):
-    coins.sort()
-    total = 0
-    for coin in coins:
-        if coin > total + 1:
-            return total + 1
+# def nonConstructibleChange(coins):
+#     coins.sort()
+#     total = 0
+#     for coin in coins:
+#         if coin > total + 1:
+#             return total + 1
         
-        total += coin
+#         total += coin
     
-    return total + 1
+#     return total + 1
+
+# my_timer.run_time(print(nonConstructibleChange))
+
+
+# #--------------------------------------------------------------------------------
+# #  
+
+
 
 
 # #--------------------------------------------------------------------------------
@@ -261,6 +283,5 @@ def nonConstructibleChange(coins):
 # #  
 
 
-
-# #--------------------------------------------------------------------------------
-# #  
+# if __name__ == '__main__':
+#     main()
