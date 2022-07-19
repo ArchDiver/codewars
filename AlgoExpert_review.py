@@ -284,8 +284,35 @@ class BST:
 
 
 # #--------------------------------------------------------------------------------
-# #  Building a BST
-def 
+# #  Branch Sums
+# This is the class of the input root. Do not edit it.
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+def branchSums(root):
+    sums = []
+    branchSums_Helper(root, sums, 0)
+
+    return sums
+
+
+def branchSums_Helper(current_Node, sums, current_sum):
+    if current_Node is None:
+        return
+    new_Sum = current_sum + current_Node.value
+    if current_Node.left is None and current_Node.right is None:
+        sums.append(new_Sum)
+        return
+    
+    branchSums_Helper(current_Node.left, sums, new_Sum)
+    branchSums_Helper(current_Node.right, sums, new_Sum)    
+
+
+    return sums
 
 
 
