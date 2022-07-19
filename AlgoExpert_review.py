@@ -250,13 +250,42 @@ my_timer.timed(tournamentWinner3(competitors, results))
 
 
 # #--------------------------------------------------------------------------------
-# #  
+# #  Find the closest Value in a BST
+# # Try 1
+def findClosestValueInBst(tree, target):
+    return tree_helper(tree, target, tree.value)
+    
+
+def tree_helper(tree, target, closest):
+    current_Node = tree
+    while current_Node is not None:
+        if abs(target - closest) > abs(target - current_Node.value):
+            closest = current_Node.value
+            
+        if target < current_Node.value:
+            current_Node = current_Node.left
+        elif target > current_Node.value:
+            current_Node = current_Node.right
+
+        else:
+            break
+    return closest
+        
+            
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
 
 
 
 # #--------------------------------------------------------------------------------
-# #  
+# #  Building a BST
+def 
 
 
 
