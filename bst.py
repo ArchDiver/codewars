@@ -1,25 +1,54 @@
-class Node(value):
+class Node(object):
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
 
-class BinaryTree(value):
+class BinaryTree(object):
     def __init__(self, root):
         self.root = Node(root)
 
     def print_tree(self, traverse_type):
-        if traverse_type == "reorder":
-            return self.preorder_print(tree.root, "")
+        if traverse_type == "preorder":
+            order = self.preorder_print(tree.root, "")
+            return print(f"{traverse_type}: {order}")
+        elif traverse_type == "inorder":
+            order = self.inorder_print(tree.root, "")
+            return print(f"{traverse_type} {order}")
+        elif traverse_type == "postorder":
+            order = self.postorder_print(tree.root, "")
+            return print(f"{traverse_type}r: {order}")
+        
         else:
             print(f"The traversal type {traverse_type} is not supported")
+            return False
 
     def preorder_print(self, start, traverse_list):
         """This goes Root->Left->Right"""
         if start:
-            traverse_list += (str(str(start.value) + "->"))
+            traverse_list += (str(start.value) + "->")
             traverse_list = self.preorder_print(start.left, traverse_list)
             traverse_list = self.preorder_print(start.right, traverse_list)
+
+        return traverse_list
+
+    def inorder_print(self, start, traverse_list):
+        """This goes Left most Leaf then constantly looks for the furthest left
+           Left>Root>Right
+        """
+        if start:
+            traverse_list = self.inorder_print(start.left, traverse_list)
+            traverse_list += (str(start.value) + "->")
+            traverse_list = self.inorder_print(start.right, traverse_list)
+        
+        return traverse_list
+
+    def postorder_print(self, start, traverse_list):
+        """This goes Left->Right->Root"""
+        if start:
+            traverse_list = self.postorder_print(start.left, traverse_list)
+            traverse_list = self.postorder_print(start.right, traverse_list)
+            traverse_list += (str(start.value) + "->")
 
         return traverse_list
 
@@ -34,4 +63,7 @@ tree.root.right.left = Node(6)
 tree.root.right.right = Node(7)
 tree.root.right.right.right = Node(8)
 
+tree.print_tree("flarg")
 tree.print_tree("preorder")
+tree.print_tree("inorder")
+tree.print_tree("postorder")
