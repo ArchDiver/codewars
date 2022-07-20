@@ -249,75 +249,110 @@ my_timer.timed(tournamentWinner3(competitors, results))
 # my_timer.run_time(print(nonConstructibleChange))
 
 
-# #--------------------------------------------------------------------------------
-# #  Find the closest Value in a BST
-# # Try 1
-def findClosestValueInBst(tree, target):
-    return tree_helper(tree, target, tree.value)
+# # #--------------------------------------------------------------------------------
+# # #  Find the closest Value in a BST
+# # # Try 1
+# def findClosestValueInBst(tree, target):
+#     return tree_helper(tree, target, tree.value)
     
 
-def tree_helper(tree, target, closest):
-    current_Node = tree
-    while current_Node is not None:
-        if abs(target - closest) > abs(target - current_Node.value):
-            closest = current_Node.value
+# def tree_helper(tree, target, closest):
+#     current_Node = tree
+#     while current_Node is not None:
+#         if abs(target - closest) > abs(target - current_Node.value):
+#             closest = current_Node.value
             
-        if target < current_Node.value:
-            current_Node = current_Node.left
-        elif target > current_Node.value:
-            current_Node = current_Node.right
+#         if target < current_Node.value:
+#             current_Node = current_Node.left
+#         elif target > current_Node.value:
+#             current_Node = current_Node.right
 
-        else:
-            break
-    return closest
+#         else:
+#             break
+#     return closest
         
             
 
-# This is the class of the input tree. Do not edit.
-class BST:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+# # This is the class of the input tree. Do not edit.
+# class BST:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
 
 
 
 
-# #--------------------------------------------------------------------------------
-# #  Branch Sums
-# This is the class of the input root. Do not edit it.
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+# # #--------------------------------------------------------------------------------
+# # #  Branch Sums
+# # This is the class of the input root. Do not edit it.
+# class BinaryTree:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
 
 
-def branchSums(root):
-    sums = []
-    branchSums_Helper(root, sums, 0)
+# def branchSums(root):
+#     sums = []
+#     branchSums_Helper(root, sums, 0)
 
-    return sums
+#     return sums
 
 
-def branchSums_Helper(current_Node, sums, current_sum):
-    if current_Node is None:
-        return
-    new_Sum = current_sum + current_Node.value
-    if current_Node.left is None and current_Node.right is None:
-        sums.append(new_Sum)
-        return
+# def branchSums_Helper(current_Node, sums, current_sum):
+#     if current_Node is None:
+#         return
+#     new_Sum = current_sum + current_Node.value
+#     if current_Node.left is None and current_Node.right is None:
+#         sums.append(new_Sum)
+#         return
     
-    branchSums_Helper(current_Node.left, sums, new_Sum)
-    branchSums_Helper(current_Node.right, sums, new_Sum)    
+#     branchSums_Helper(current_Node.left, sums, new_Sum)
+#     branchSums_Helper(current_Node.right, sums, new_Sum)    
 
 
-    return sums
+#     return sums
 
 
 
-# #--------------------------------------------------------------------------------
-# #  
+# # #--------------------------------------------------------------------------------
+# #  Node Depths
+# First try - Does not work returns only Zero
+# def nodeDepths(root):
+#     total = 0
+#     nodeDepths_Helper(root, total, depth=0)
+#     return total
+
+# def nodeDepths_Helper(node, total, depth):
+#     depth += 1
+#     if node.left is None and node.right is None:
+#         total += depth
+#         return total
+#     nodeDepths_Helper(node.left, total, depth)
+#     nodeDepths_Helper(node.right, total, depth)
+
+
+# # This is the class of the input binary tree.
+# class BinaryTree:
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
+
+# Their answer
+def nodeDepth(root):
+    sumDepths = 0
+    stack = [{"node": root, "depth":0}]
+    while len(stack) > 0:
+        nodeInfo = stack.pop()
+        node, depth = nodeInfo["node"], nodeInfo["depth"]
+        if node is None:
+            continue
+        sumDepths += depth
+        stack.append({"node":node.left, "depth": depth +1})
+        stack.append({"node":node.right, "depth": depth + 1})
+    return depth
 
 
 
