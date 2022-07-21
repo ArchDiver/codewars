@@ -1,8 +1,38 @@
-class Node(object):
+class Node:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def add(self, current, value):
+        if self.root == None:
+            self.root = Node(value)
+        else:
+            if value < current.value:
+                if current.left == None:
+                    current.left = Node(value)
+                else:
+                    self.add(current.left, value)
+            else:  
+                if current.right == None:
+                    current.right = Node(value)
+                else:
+                    self.add(current.right, value)
+
+    def build_From_list(self, list):
+        for i in list:
+            self.add(self.root, i)
+
+
+
+
+
+
+
 
 class BinaryTree(object):
     def __init__(self, root):
@@ -51,6 +81,8 @@ class BinaryTree(object):
             traverse_list += (str(start.value) + "->")
 
         return traverse_list
+
+
 
 
 # This builds our tree
