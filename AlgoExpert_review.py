@@ -476,8 +476,39 @@ def main(prog):
 
 
 # #-------------------------------------------------------------------------------
-# #  
+# #  Nth Fibonacci
+# Mine
+# def getNthFib1(n):
+#     fib = [0, 1]
+#     count = 3
+#     while count <= n:
+#         nextFib = fib[0] + fib[1]
+#         fib[0], fib[1] = fib[1], nextFib
+#         count +=1
+#     # if n > 1:
+#     #     return fib[1]
+#     # else:
+#     #     return fib[0]
+#     return fib[1] if n > 1 else fib[0]
+    
 
+
+# # algo recursive
+# def getNthFib2(n):
+#     if n == 2:
+#         return 1
+#     elif n == 1:
+#         return 0
+#     return getNthFib(n - 1) + getNthFib(n - 2)
+
+
+# # best 
+# def getNthFib(n):
+#     # Write your code here.
+#     a, b = 0, 1
+#     for i in range(n-1):
+#         a, b = b, a+b
+#     return a
 
 
 # #-------------------------------------------------------------------------------
