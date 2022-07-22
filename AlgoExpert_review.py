@@ -92,91 +92,91 @@ def main(prog):
 
 
 # #--------------------------------------------------------------------------------
-# # #  Tournament Winner
+# # # #  Tournament Winner
 
-competitors = [
-    ["HTML", "C#"],
-    ["C#", "Python"],
-    ["Python", "HTML"],
-]
-results = [0, 0, 1]
+# competitors = [
+#     ["HTML", "C#"],
+#     ["C#", "Python"],
+#     ["Python", "HTML"],
+# ]
+# results = [0, 0, 1]
 
-def tournamentWinner1(competitions, results):
-    win = 3
-    final_winner = "fail"
-    competitors_list = {}
+# def tournamentWinner1(competitions, results):
+#     win = 3
+#     final_winner = "fail"
+#     competitors_list = {}
     
-    for i in range(len(competitions)):
-        # print(competitions[i][0], competitions[i][1])
+#     for i in range(len(competitions)):
+#         # print(competitions[i][0], competitions[i][1])
         
-        if competitions[i][0] not in competitors_list:
-            competitors_list[competitions[i][0]] = 0
-        if competitions[i][1] not in competitors_list:
-            competitors_list[competitions[i][1]] = 0
+#         if competitions[i][0] not in competitors_list:
+#             competitors_list[competitions[i][0]] = 0
+#         if competitions[i][1] not in competitors_list:
+#             competitors_list[competitions[i][1]] = 0
             
-        # print(results[i])    
-        if results[i] == 1:
-            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-            # print(competitors_list[competitions[i][0]])
+#         # print(results[i])    
+#         if results[i] == 1:
+#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+#             # print(competitors_list[competitions[i][0]])
 
-        else:
-            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
-            # print(competitors_list[competitions[i][1]])
-        # print(competitors_list)
+#         else:
+#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+#             # print(competitors_list[competitions[i][1]])
+#         # print(competitors_list)
     
-    # print(competitors_list)
-    final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
-    # print(final)
-    final_winner = final[0]
+#     # print(competitors_list)
+#     final = sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True)
+#     # print(final)
+#     final_winner = final[0]
 
 
-    # Write your code here.
-    return f"{final_winner}"
+#     # Write your code here.
+#     return f"{final_winner}"
 
 
-# print(tournamentWinner1(competitors, results))
+# # print(tournamentWinner1(competitors, results))
 
-#___Clean
-def tournamentWinner2(competitions, results):
-    win = 3
-    competitors_list = {}
+# #___Clean
+# def tournamentWinner2(competitions, results):
+#     win = 3
+#     competitors_list = {}
     
-    for i in range(len(competitions)):
-        # This check to make sure the lang is in the dict
-        if competitions[i][0] not in competitors_list:
-            competitors_list[competitions[i][0]] = 0
-        if competitions[i][1] not in competitors_list:
-            competitors_list[competitions[i][1]] = 0
+#     for i in range(len(competitions)):
+#         # This check to make sure the lang is in the dict
+#         if competitions[i][0] not in competitors_list:
+#             competitors_list[competitions[i][0]] = 0
+#         if competitions[i][1] not in competitors_list:
+#             competitors_list[competitions[i][1]] = 0
 
-        #This updates the winners scores    
-        if results[i] == 1:
-            competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
-        else:
-            competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
+#         #This updates the winners scores    
+#         if results[i] == 1:
+#             competitors_list[competitions[i][0]] = competitors_list[competitions[i][0]] + win
+#         else:
+#             competitors_list[competitions[i][1]] = competitors_list[competitions[i][1]] + win
 
-    # Write your code here.
-    return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
+#     # Write your code here.
+#     return (sorted(competitors_list.items(), key = lambda kv:(kv[1], kv[0]), reverse=True))[0][0]
 
 
-# tournamentWinner2(competitors, results)
+# # tournamentWinner2(competitors, results)
 
-#__Better 
-def tournamentWinner3(competitions, results):
-    # Ties only return the first winner.
-    winner = ''
-    rank = {winner: 0}
-    for teams, result in zip(competitions, results):
-        team = teams[0]  if result == 1 else teams[1]
-        if team not in rank:
-            rank[team] = 0
-        rank[team] += 3
-        if rank[team] > rank[winner]:
-            winner = team
-    return winner
+# #__Better 
+# def tournamentWinner3(competitions, results):
+#     # Ties only return the first winner.
+#     winner = ''
+#     rank = {winner: 0}
+#     for teams, result in zip(competitions, results):
+#         team = teams[0]  if result == 1 else teams[1]
+#         if team not in rank:
+#             rank[team] = 0
+#         rank[team] += 3
+#         if rank[team] > rank[winner]:
+#             winner = team
+#     return winner
 
-my_timer.timed(tournamentWinner1(competitors, results))
-my_timer.timed(tournamentWinner2(competitors, results))
-my_timer.timed(tournamentWinner3(competitors, results))
+# my_timer.timed(tournamentWinner1(competitors, results))
+# my_timer.timed(tournamentWinner2(competitors, results))
+# my_timer.timed(tournamentWinner3(competitors, results))
 
 # #--------------------------------------------------------------------------------
 # #  Non-Constructrable Change
@@ -340,48 +340,70 @@ my_timer.timed(tournamentWinner3(competitors, results))
 #         self.left = None
 #         self.right = None
 
-# Their answer
-def nodeDepth(root):
-    sumDepths = 0
-    stack = [{"node": root, "depth":0}]
-    while len(stack) > 0:
-        nodeInfo = stack.pop()
-        node, depth = nodeInfo["node"], nodeInfo["depth"]
-        if node is None:
-            continue
-        sumDepths += depth
-        stack.append({"node":node.left, "depth": depth +1})
-        stack.append({"node":node.right, "depth": depth + 1})
-    return depth
+# # Their answer
+# def nodeDepth(root):
+#     sumDepths = 0
+#     stack = [{"node": root, "depth":0}]
+#     while len(stack) > 0:
+#         nodeInfo = stack.pop()
+#         node, depth = nodeInfo["node"], nodeInfo["depth"]
+#         if node is None:
+#             continue
+#         sumDepths += depth
+#         stack.append({"node":node.left, "depth": depth +1})
+#         stack.append({"node":node.right, "depth": depth + 1})
+#     return depth
 
 
 
-# #--------------------------------------------------------------------------------
-# #  Depth first Search
-# Do not edit the class below except
-# for the depthFirstSearch method.
-# Feel free to add new properties
-# and methods to the class.
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+# # #--------------------------------------------------------------------------------
+# # #  Depth first Search
+# # Do not edit the class below except
+# # for the depthFirstSearch method.
+# # Feel free to add new properties
+# # and methods to the class.
+# class Node:
+#     def __init__(self, name):
+#         self.children = []
+#         self.name = name
 
-    def addChild(self, name):
-        self.children.append(Node(name))
-        return self
+#     def addChild(self, name):
+#         self.children.append(Node(name))
+#         return self
 
-    def depthFirstSearch(self, array):
-        # Write your code here.
-        array.append(self.name)
-        for child in self.children:
-            child.depthFirstSearch(array)
-        return array
+#     def depthFirstSearch(self, array):
+#         # Write your code here.
+#         array.append(self.name)
+#         for child in self.children:
+#             child.depthFirstSearch(array)
+#         return array
 
-# #--------------------------------------------------------------------------------
-# #  
+# # #--------------------------------------------------------------------------------
+# #  Min wait time
+# queries = [3, 2, 1, 2, 6]
+# queries2 = [3, 2, 1, 2, 6]
+
+# def minimumWaitingTime1(queries):
+#     sortQ = sorted(queries)
+#     total = 0
+#     numRuns = len(sortQ) 
+#     for wait in sortQ:
+#         numRuns -= 1
+#         total += wait * numRuns
+#     return total
+
+# def minimumWaitingTime2(queries):
+#     queries.sort()
+#     total, prev = 0, 0
+#     for time in queries:
+#         total += prev
+#         prev += time
+#     return total
 
 
+
+# my_timer.timed(print(minimumWaitingTime1(queries)))
+# my_timer.timed(print(minimumWaitingTime2(queries2)))
 
 # #--------------------------------------------------------------------------------
 # #  
