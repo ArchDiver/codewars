@@ -512,22 +512,90 @@ def main(prog):
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Product Sum
+# array = [5, 2, [7, -1], 3, [6, [-13, 8], 4]]
 
+# # Tip: You can use the type(element) function to check whether an item
+# # is a list or an integer.
+# def productSum(array, depth=1):
+#     # Write your code here.
+#     sum = 0
+#     for i in array:
+#         print(type(i))
+#         if type(i) == list:
+#             i = productSum(i, depth + 1)
+#         sum += i
+
+#     return sum * depth
+
+# print(productSum(array))
 
 # #-------------------------------------------------------------------------------
 
-# #  
+# # #  Binary Seach
+# array = [1, 5, 23, 111]
+# target = 5
 
+# def binarySearch(array, target):
+#     half = int(len(array)/2)
+#     a = array[0]
+#     b = array[half]
+#     c = array[-1]
+    
+#     if target == array[half]:
+#         if half == 0:
+#             return 1
+#         return half
+#     elif target > array[half]:
+#         subarray = array[half:]
+#         return half + binarySearch(subarray, target)
+#     elif target < array[half]:
+#         subarray = array[:half]
+#         return binarySearch(subarray, target)
+#     else:
+#         return -1
+
+# print(binarySearch(array, target))
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Skilled Coding interview with Kevin
+# [2, 4, -4, 0, -1, 5]
 
+# Get all the three number tuples in the list with sum = 0
+
+# [4, -4, 0]
+# [-4, -1, 5]
+# """
+
+# [-4, -4, -4, -1, 0, 2, 4, 5]
+
+# a = [0]
+# b = [-1]
+
+# need = -(pointA + pointB )
+# if need in ARRAY[PointA + 1:PointB]:
+#      output.append[need]
+
+# dedupated(output)
 
 # #-------------------------------------------------------------------------------
-# #  
+# # #  Find Three largest numbers
+# array = [-1, -2, -3, -7, -17, -27, -18, -541, -8, -7, 7]
 
+# def findThreeLargestNumbers(array):
+#     ans = [None,None,None]
+#     # a, b , c = None, None, None
+#     for i in array:
+#         if ans[2] is None or i > ans[2]:
+#             ans[0], ans[1], ans[2] = ans[1], ans[2], i
+#         elif ans[1] is None or i >ans[1]:
+#             ans[0], ans[1] = ans[1], i
+#         elif ans[0] is None or i >ans[0]:
+#             ans[0] = i
+#     return ans
+
+# print(findThreeLargestNumbers(array))
 
 
 # #-------------------------------------------------------------------------------
