@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Array
 import my_timer
 
 def main(prog):
@@ -599,8 +600,29 @@ def main(prog):
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # bubble sort
 
+array = [8, 5, 2, 9, 5, 6, 3]
+# # Mine
+def bubbleSort(array):
+    b_sorted = False
+    runs = 1
+    while b_sorted == False:
+        moved = 0
+        for i in range(len(array) - runs):
+            if array[i] > array[i + 1]:
+                array[i], array[i + 1] = array[i + 1], array[i]
+                moved += 1
+            else:
+                continue
+
+        if moved == 0:
+            b_sorted = True
+        runs += 1
+
+    return array
+
+bubbleSort(array)
 
 # #-------------------------------------------------------------------------------
 
