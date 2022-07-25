@@ -649,13 +649,18 @@ def main(prog):
 #     return array
 
 # selectionSort(array)
-
-
-    
-
-
 # #-------------------------------------------------------------------------------
-# #  
+# #  Palindrome Check
+# string = "abcdcba"
+
+# def isPalindrome(string):
+#     l, r = 0, len(string)
+#     while l < r:
+#         if string[l] != string[r]:
+#             return False
+#     return True
+
+# isPalindrome(string)
 
 
 
