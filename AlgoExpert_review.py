@@ -600,38 +600,58 @@ def main(prog):
 
 
 # #-------------------------------------------------------------------------------
-# # bubble sort
+# # # bubble sort
 
-array = [8, 5, 2, 9, 5, 6, 3]
-# # Mine
-def bubbleSort(array):
-    b_sorted = False
-    runs = 1
-    while b_sorted == False:
-        moved = 0
-        for i in range(len(array) - runs):
-            if array[i] > array[i + 1]:
-                array[i], array[i + 1] = array[i + 1], array[i]
-                moved += 1
-            else:
-                continue
+# array = [8, 5, 2, 9, 5, 6, 3]
+# # # Mine
+# def bubbleSort(array):
+#     b_sorted = False
+#     runs = 1
+#     while b_sorted == False:
+#         b_sorted = True
+#         for i in range(len(array) - runs):
+#             if array[i] > array[i + 1]:
+#                 array[i], array[i + 1] = array[i + 1], array[i]
+#                 b_sorted = False
+#             else:
+#                 continue
+#         runs += 1
 
-        if moved == 0:
-            b_sorted = True
-        runs += 1
+#     return array
 
-    return array
-
-bubbleSort(array)
+# bubbleSort(array)
 
 # #-------------------------------------------------------------------------------
 
-# #  
+# # #  insertion sort
+# array = [8, 5, 2, 9, 5, 6, 3]
 
+# def insertionSort(array):
+#     for i in range(1, len(array)):
+#         while array[i] < array[i - 1] and i != 0:
+#             array[i], array[i - 1] = array[i - 1], array[i]
+#             i -= 1
+#     return array
+
+# insertionSort(array)
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # # Selection Sort
+# array = [8, 5, 2, 9, 5, 6, 3]
+
+
+# def selectionSort(array):
+#     for i in range(len(array) - 1):
+#         for j in range(i + 1, len(array)):
+#             if array[j] < array[i]:
+#                 array[i], array[j] = array[j], array[i]
+#     return array
+
+# selectionSort(array)
+
+
+    
 
 
 # #-------------------------------------------------------------------------------
