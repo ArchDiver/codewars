@@ -569,7 +569,7 @@ def main(prog):
 # [-4, -1, 5]
 # """
 
-# [-4, -4, -4, -1, 0, 2, 4, 5]
+# numList = [-4, -4, -4, -1, 0, 2, 4, 5]
 
 # a = [0]
 # b = [-1]
@@ -579,6 +579,39 @@ def main(prog):
 #      output.append[need]
 
 # dedupated(output)
+
+
+# # NOT FINISHED
+# numList = [-4, -4, -4, -1, 0, 2, 4, 5]
+
+# def findThreeNumsSumN(lookList, target=0):
+#     output = []
+#     l, r = 0, len(lookList) -1
+#     # max, min = sum(lookList[r], lookList[r - 1], lookList[r - 2]), sum(lookList[l], lookList[l + 1], lookList[l + 2])
+#     # if target > max or target < min:
+#     #     return "The target is out of range"
+#     while l < r:
+#         a, b = lookList[l], lookList[r]
+#         have = a + b
+#         need = target - have
+#         # need = target - (lookList[l] + lookList[r])        
+#         if need in lookList:
+#             output = addOutput(lookList, output, l, r, need)
+        
+            
+
+
+#     return output
+
+# def addOutput(look, out, l, r, need):
+#     loc = look.index(need)
+#     while need in look:
+#         out.append(look[loc])
+#         look.pop(look[loc])
+#     return out
+
+
+# findThreeNumsSumN(numList, 0)
 
 # #-------------------------------------------------------------------------------
 # # #  Find Three largest numbers
@@ -662,10 +695,24 @@ def main(prog):
 
 # isPalindrome(string)
 
-
-
 # #-------------------------------------------------------------------------------
-# # 
+# # # Ceasar Cipher Encryptor
+# key = 25
+# string = "iwufqnkqkqoolxzzlzihqfm"
+
+
+# def caesarCipherEncryptor(string, key):
+#     alph ="abcdefghijklmnopqrstuvwxyz"
+#     newString = ""
+#     for letter in string:
+#         newString += (alph[(alph.find(letter) + key) % 26])
+        
+#     return newString
+
+
+# caesarCipherEncryptor(string, key)
+
+
 
 
 # #-------------------------------------------------------------------------------
