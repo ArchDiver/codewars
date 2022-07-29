@@ -790,12 +790,34 @@ threeNumberSum(numList, 0)
 # firstNonRepeatingCharacter(goingIn)
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Three Number sum
+# def threeNumberSum(array, targetSum):
+#     answerList = list()
+#     array.sort()
+#     for i in range(len(array) - 2):
+#         l, r = i + 1, len(array) - 1
+#         while l < r:
+#             nowSum = array[i] + array[l] + array[r]
+#             if nowSum == targetSum and [array[i], array[l], array[r]] not in answerList:
+#                 answerList.append([array[i], array[l], array[r]])
+#                 l += 1
+#                 r -= 1
+#             elif nowSum < targetSum:
+#                 l += 1
+#             elif nowSum > targetSum:
+#                 r -=1
+    
+#     return answerList
+
+# x = [12, 3, 1, 2, -6, 5, -8, 6]
+# target = 0
+# threeNumberSum(x, target)
 
 
 # #-------------------------------------------------------------------------------
 
-# #  
+# #  Smallest difference
+
 
 
 
