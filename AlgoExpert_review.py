@@ -758,8 +758,25 @@ threeNumberSum(numList, 0)
         
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Generate Document
+def generateDocument(characters, document):
+    usedChar = []
+    # characters, document = characters.lower(), document.lower()
+    for char in document:
+        if char in usedChar:
+            continue
+        else:
+            if document.count(char) > characters.count(char):
+                return False
+            else:
+                usedChar.append(char)    
+    
+    return True
 
+
+characters = "Bste!hetsi ogEAxpelrt x "
+document =  "AlgoyExpert is the Best!"
+generateDocument(characters, document)
 
 # #-------------------------------------------------------------------------------
 # #  
