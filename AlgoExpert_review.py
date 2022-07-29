@@ -758,30 +758,36 @@ threeNumberSum(numList, 0)
         
 
 # #-------------------------------------------------------------------------------
-# # Generate Document
-def generateDocument(characters, document):
-    usedChar = []
-    # characters, document = characters.lower(), document.lower()
-    for char in document:
-        if char in usedChar:
-            continue
-        else:
-            if document.count(char) > characters.count(char):
-                return False
-            else:
-                usedChar.append(char)    
+# # # Generate Document
+# def generateDocument(characters, document):
+#     usedChar = []
+#     # characters, document = characters.lower(), document.lower()
+#     for char in document:
+#         if char in usedChar:
+#             continue
+#         else:
+#             if document.count(char) > characters.count(char):
+#                 return False
+#             else:
+#                 usedChar.append(char)    
     
-    return True
+#     return True
 
 
-characters = "Bste!hetsi ogEAxpelrt x "
-document =  "AlgoyExpert is the Best!"
-generateDocument(characters, document)
+# characters = "Bste!hetsi ogEAxpelrt x "
+# document =  "AlgoyExpert is the Best!"
+# generateDocument(characters, document)
 
 # #-------------------------------------------------------------------------------
-# #  
+# # #  First non-repeating character
+# def firstNonRepeatingCharacter(string):
+#     for char in string:
+#         if string.count(char) == 1:
+#             return string.index(char)
+#     return -1
 
-
+# goingIn = "faadabcbbebdf"
+# firstNonRepeatingCharacter(goingIn)
 
 # #-------------------------------------------------------------------------------
 # # 
