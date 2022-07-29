@@ -737,24 +737,25 @@ threeNumberSum(numList, 0)
 
 # #-------------------------------------------------------------------------------
 
-# #  run-length encoding
-def runLengthEncoding(string):
-    code = ''
-    i = 0
-    while i < len(string):
-        count = 0
-        while string[i] == string[i + 1] and count < 10:
-            count += 1
-        code = code + count + string[i]
+# # #  run-length encoding
+# def runLengthEncoding(string):
+#     count, code = 1, ''
+    
+#     for i in range(1, len(string)):
+#         last, current = string[i - 1], string[i]
+#         if current != last or count == 9:
+#             code += str(count) + last
+#             count = 0
+#         count += 1
+#     code += str(count) + string[-1]
 
-    return code
+#     return code
 
-runLengthEncoding("AAAAAAAAAAAAABBCCCCDD")
+
+# code = "AAAAAAAAAAABBCCCCDD"
+# runLengthEncoding(code)
+# ans = "9A2A2B4C2D"
         
-        
-
-
-
 
 # #-------------------------------------------------------------------------------
 # # 
