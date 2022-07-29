@@ -581,8 +581,8 @@ def main(prog):
 # dedupated(output)
 
 
-# # NOT FINISHED
-# numList = [-4, -4, -4, -1, 0, 2, 4, 5]
+# NOT FINISHED
+
 
 # def findThreeNumsSumN(lookList, target=0):
 #     output = []
@@ -593,25 +593,45 @@ def main(prog):
 #     while l < r:
 #         a, b = lookList[l], lookList[r]
 #         have = a + b
-#         need = target - have
+#         need = target - (lookList[l], lookList[r])
 #         # need = target - (lookList[l] + lookList[r])        
 #         if need in lookList:
-#             output = addOutput(lookList, output, l, r, need)
-        
+#             output = addOutput(lookList[l+1:r], output, l, r, need)
+#         if 
             
-
 
 #     return output
 
 # def addOutput(look, out, l, r, need):
-#     loc = look.index(need)
 #     while need in look:
-#         out.append(look[loc])
-#         look.pop(look[loc])
+#         out.append((l, need, r))
+#         look.remove(need)
+
 #     return out
 
+# Will work
+def threeNumberSum(array, targetSum):
+    array.sort()
+    output = []
+    for i in range(len(array) - 2):
+        l, r = i + 1, len(array) - 1
+        while l < r:
+            iSum = array[i] + array[l] + array[r]
+            if  iSum == targetSum:
+                if [array[i], array[l], array[r]] not in output:
+                    output.append([array[i], array[l], array[r]])
+                l += 1
+                r -= 1
+            elif iSum < targetSum:
+                l += 1
+            elif iSum > targetSum:
+                r -= 1
 
-# findThreeNumsSumN(numList, 0)
+    return output
+            
+
+numList = [-4, -4, -4, -1, 0, 2, 4, 5]
+threeNumberSum(numList, 0)
 
 # #-------------------------------------------------------------------------------
 # # #  Find Three largest numbers
@@ -717,7 +737,22 @@ def main(prog):
 
 # #-------------------------------------------------------------------------------
 
-# #  
+# #  run-length encoding
+def runLengthEncoding(string):
+    code = ''
+    i = 0
+    while i < len(string):
+        count = 0
+        while string[i] == string[i + 1] and count < 10:
+            count += 1
+        code = code + count + string[i]
+
+    return code
+
+runLengthEncoding("AAAAAAAAAAAAABBCCCCDD")
+        
+        
+
 
 
 
