@@ -817,16 +817,126 @@ threeNumberSum(numList, 0)
 # #-------------------------------------------------------------------------------
 
 # #  Smallest difference
+# def smallestDifference(arrayOne, arrayTwo):
+#     arrayOne.sort()
+#     arrayTwo.sort()
+#     longest = arrayOne if len(arrayOne) > len(arrayTwo) else arrayTwo
+#     shortest = arrayTwo if longest == arrayOne else arrayOne
+#     smallest, ansNums = (abs(shortest[0] - shortest[0])), list(shortest[0], shortest[0])
+#     for i in range(1, len(longest)-1):
+#         if i in shortest:
+#             return [i, i]
+#         else:
+#             for j in range(len())
+
+# # Broken
+# def smallestDifference(arrayOne, arrayTwo):
+#     arrayOne.sort()
+#     arrayTwo.sort()
+#     smallest, smallPair = (abs(arrayOne[0] - arrayTwo[0])), [arrayOne[0], arrayTwo[0]]
+#     for i in range(len(arrayOne)):
+#         curr_i_Num = arrayOne[i]
+#         for j in range(len(arrayTwo)):
+#             curr_j, next_j = arrayTwo[j], arrayTwo[j + 1]
+#             next_sum = abs(curr_i_Num - next_j)
+            
+#             curr_Sum = abs(arrayOne[i] - arrayTwo[j])
+#             if curr_Sum < smallest:
+#                 smallPair = [arrayOne[i] , arrayTwo[j]]
+#                 smallest = curr_Sum
+#                 break
+#             elif curr_Sum < abs(arrayOne[i] - arrayTwo[j + 1]):
+#                 break
+
+#     return smallPair
+
+def smallestDifference(arrayOne, arrayTwo):
+    arrayOne.sort()
+    arrayTwo.sort()
+    small, smallPair, idx1, idx2 = float('inf'), [], 0, 0
+    while idx1 < len(arrayOne) and idx2 < len(arrayTwo):
+        curr_Sum = abs(arrayOne[idx1] - arrayTwo[idx2])
+        if abs(arrayOne[idx1] - arrayTwo[idx2]) < small:
+            small = abs(arrayOne[idx1] - arrayTwo[idx2])
+            smallPair = [arrayOne[idx1], arrayTwo[idx2]]
+        if arrayOne[idx1] > arrayTwo[idx2]:
+            idx2 +=1
+        else:
+            idx += 1
+
+    return smallPair
 
 
+a = [10, 0, 20, 25, 2000]
+b = [26, 134, 135, 15, 17]
+
+print(smallestDifference(a,b))
+
+        
+# #-------------------------------------------------------------------------------
+# # Skilled July 29, 2022
+# Word finding: Given a word w and some text t, write a function that finds whether w is in t. For example: w="nest", t=" Ibuiltanestandtestedit. "
+
+
+# t = 20
+# m = 17
+
+# len(t) = n
+# len(w) = m
+
+# time => O(n)
+# space => O(1)
+# def finding(w,t):
+# 	curr_word = ""
+# 	for char in t: 
+# 		if char == " ":
+# 			if w == curr_word:
+# 				return True
+# 			else:
+# 				curr_word = ""
+# 		else:
+# 			if len(curr_word) > len(w):
+# 				continue
+# 			else:
+# 				curr_word += char
+        
+# 	return False
+
+
+
+# w = "cast"
+# t = "i built a nest and castle it "
+# print(finding(w, t))
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # #  MOve Element to End
+# def moveElementToEnd(array, toMove):
+#     for num in array:
+#         if num == toMove:
+#             array.pop(num)
+#             array.append(num)
+#     return array
+
+# x = [2, 1, 2, 2, 2, 3, 4, 2]
+# y = 2
 
 
-# #-------------------------------------------------------------------------------
-# #  
+# moveElementToEnd(x, y)
+
+# #  MOve Element to End
+def moveElementToEnd(array, toMove):
+    l, r = 0, len(array) - 1    
+    while l <  r and toMove in array:        
+        array.append(array.pop(array.index(toMove)))
+        l = array.index(toMove)
+        r -= 1
+        
+    return array
+
+x = [2, 1, 3, 4, 2]
+y = 2
+moveElementToEnd(x, y)
 
 
 
