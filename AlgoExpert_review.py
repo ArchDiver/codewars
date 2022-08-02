@@ -924,30 +924,96 @@ print(smallestDifference(a,b))
 
 # moveElementToEnd(x, y)
 
-# #  MOve Element to End
-def moveElementToEnd(array, toMove):
-    l, r = 0, len(array) - 1    
-    while l <  r and toMove in array:        
-        array.append(array.pop(array.index(toMove)))
-        l = array.index(toMove)
-        r -= 1
+# # #  MOve Element to End
+# def moveElementToEnd(array, toMove):
+#     l, r = 0, len(array) - 1    
+#     while l <  r and toMove in array:        
+#         array.append(array.pop(array.index(toMove)))
+#         l = array.index(toMove)
+#         r -= 1
         
-    return array
+#     return array
 
-x = [2, 1, 3, 4, 2]
-y = 2
-moveElementToEnd(x, y)
-
-
+# x = [2, 1, 3, 4, 2]
+# y = 2
+# moveElementToEnd(x, y)
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Monotonic Array
+# messy
+# def isMonotonic(array):
+#     direction = 0
+#     for i in range(len(array) - 1):
+#         if array[i] == array[i + 1]:
+#             continue
+#         if direction == 0:
+#             direction = -1 if array[i] > array[i + 1] else 1
+#             # continue
+#         if array[i] > array[i + 1] and direction == -1:
+#             continue
+#         elif array[i] < array[i + 1] and direction == 1:
+#             continue
+#         else:
+#             return False
+#     return True
+
+#Clean with early breaks
+# def isMonotonic(array):
+#     arrInc, arrDec = False, False
+#     for i in range(len(array) - 1):
+#         if array[i] > array[i + 1]:
+#             arrDec = True
+#         if array[i] < array[i + 1]:
+#             arrInc = True
+#         if arrDec == True and arrInc == True:
+#             return False
+#     return True
 
 
-# #-------------------------------------------------------------------------------
 
-# #  
+# x = [-1, -1, -5, -10, -1100, -1100, -1101, -1102, -9001]
+# isMonotonic(x)
 
+# # #-------------------------------------------------------------------------------
+
+# # #  
+# def spiralTraverse(array):
+#     useLen, ans, direction = len(array) - 1, [], False
+#     topRow, lastRow = 0, len(array) - 1
+#     topCol, lastCol = 0, len(array[0]) - 1
+#     while topRow <= lastRow and topCol <= lastCol:
+#         for col in range(topCol, lastCol + 1):
+#             ans.append(array[topRow][col])
+            
+#         for row in range(topRow + 1, lastRow + 1):
+#             ans.append(array[row][lastCol])
+            
+#         for col in range(lastCol - 1, topCol, -1):
+#             if topRow == lastRow:
+#                 break
+#             ans.append(array[lastRow][col])
+            
+#         for row in range(lastRow, topRow, -1):
+#             if topCol == lastCol:
+#                 break
+#             ans.append(array[row][topCol])
+            
+#         topRow += 1
+#         lastRow -=1
+#         topCol +=1        
+#         lastCol -= 1     
+    
+#     return ans
+
+
+# x = [
+#     [1, 2, 3, 4],
+#     [12, 13, 14, 5],
+#     [11, 16, 15, 6],
+#     [10, 9, 8, 7]
+# ]
+# spiralTraverse(x)
+# correctAnser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
 
 # #-------------------------------------------------------------------------------
