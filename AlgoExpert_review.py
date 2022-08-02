@@ -1017,8 +1017,32 @@ print(smallestDifference(a,b))
 
 
 # #-------------------------------------------------------------------------------
-# # 
+# # Longest Peak
+def longestPeak(array):
+    peak, current, i = 0, 0, 1
+    while i < len(array):
+        if array[i] > array[i - 1] or array[i + 1] > array[i] > array[i - 1]:
+            current += 1
+            peak = max(peak, current)
+            i += 1
+            
+        elif array[i] < array[i - 1] > array[i - 2]:
+            current = 3
+            i += 1
+            while i < len(array) - 1 and array[i] < array[i - 1]:
+                current +=1
+                i += 1
+            peak = max(peak, current)
+            current = 0
+        else:
+            i += 1
+            current = 0
+            
+    return peak
 
+
+x = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+longestPeak(x)
 
 # #-------------------------------------------------------------------------------
 # #  
