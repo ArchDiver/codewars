@@ -1122,10 +1122,26 @@ def main(prog):
 # firstDuplicateValue(x)
 # #-------------------------------------------------------------------------------
 
-# #  
+# # #  Merge Overlapping Intervals
+# def mergeOverlappingIntervals(intervals):
+#     sI = sorted(intervals, key=lambda x: x[0])
+#     ans = [sI[0]]
+#     for start, end in sI[1:]:
+#         if start > ans[-1][1]:
+#             ans.append([start,end])
+#         else:
+#             ans[-1][1] = max(end, ans[-1][1])        
+    
+#     return ans
 
-
-
+# x= [
+#     [1, 2],
+#     [3, 5],
+#     [4, 7],
+#     [6, 8],
+#     [9, 10]
+#   ]
+# mergeOverlappingIntervals(x)
 # #-------------------------------------------------------------------------------
 # # 
 
