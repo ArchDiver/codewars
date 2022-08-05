@@ -610,28 +610,28 @@ def main(prog):
 #     return out
 
 # Will work
-def threeNumberSum(array, targetSum):
-    array.sort()
-    output = []
-    for i in range(len(array) - 2):
-        l, r = i + 1, len(array) - 1
-        while l < r:
-            iSum = array[i] + array[l] + array[r]
-            if  iSum == targetSum:
-                if [array[i], array[l], array[r]] not in output:
-                    output.append([array[i], array[l], array[r]])
-                l += 1
-                r -= 1
-            elif iSum < targetSum:
-                l += 1
-            elif iSum > targetSum:
-                r -= 1
+# def threeNumberSum(array, targetSum):
+#     array.sort()
+#     output = []
+#     for i in range(len(array) - 2):
+#         l, r = i + 1, len(array) - 1
+#         while l < r:
+#             iSum = array[i] + array[l] + array[r]
+#             if  iSum == targetSum:
+#                 if [array[i], array[l], array[r]] not in output:
+#                     output.append([array[i], array[l], array[r]])
+#                 l += 1
+#                 r -= 1
+#             elif iSum < targetSum:
+#                 l += 1
+#             elif iSum > targetSum:
+#                 r -= 1
 
-    return output
+#     return output
             
 
-numList = [-4, -4, -4, -1, 0, 2, 4, 5]
-threeNumberSum(numList, 0)
+# numList = [-4, -4, -4, -1, 0, 2, 4, 5]
+# threeNumberSum(numList, 0)
 
 # #-------------------------------------------------------------------------------
 # # #  Find Three largest numbers
@@ -850,27 +850,27 @@ threeNumberSum(numList, 0)
 
 #     return smallPair
 
-def smallestDifference(arrayOne, arrayTwo):
-    arrayOne.sort()
-    arrayTwo.sort()
-    small, smallPair, idx1, idx2 = float('inf'), [], 0, 0
-    while idx1 < len(arrayOne) and idx2 < len(arrayTwo):
-        curr_Sum = abs(arrayOne[idx1] - arrayTwo[idx2])
-        if abs(arrayOne[idx1] - arrayTwo[idx2]) < small:
-            small = abs(arrayOne[idx1] - arrayTwo[idx2])
-            smallPair = [arrayOne[idx1], arrayTwo[idx2]]
-        if arrayOne[idx1] > arrayTwo[idx2]:
-            idx2 +=1
-        else:
-            idx += 1
+# def smallestDifference(arrayOne, arrayTwo):
+#     arrayOne.sort()
+#     arrayTwo.sort()
+#     small, smallPair, idx1, idx2 = float('inf'), [], 0, 0
+#     while idx1 < len(arrayOne) and idx2 < len(arrayTwo):
+#         curr_Sum = abs(arrayOne[idx1] - arrayTwo[idx2])
+#         if abs(arrayOne[idx1] - arrayTwo[idx2]) < small:
+#             small = abs(arrayOne[idx1] - arrayTwo[idx2])
+#             smallPair = [arrayOne[idx1], arrayTwo[idx2]]
+#         if arrayOne[idx1] > arrayTwo[idx2]:
+#             idx2 +=1
+#         else:
+#             idx += 1
 
-    return smallPair
+#     return smallPair
 
 
-a = [10, 0, 20, 25, 2000]
-b = [26, 134, 135, 15, 17]
+# a = [10, 0, 20, 25, 2000]
+# b = [26, 134, 135, 15, 17]
 
-print(smallestDifference(a,b))
+# print(smallestDifference(a,b))
 
         
 # #-------------------------------------------------------------------------------
@@ -1066,14 +1066,60 @@ print(smallestDifference(a,b))
 
 
 # #-------------------------------------------------------------------------------
-# #  
+# #  Array of Products
+
+#brute force O(n^2) time | O(n) space
+# def arrayOfProducts(array):
+#     ans = []
+#     for i in range(len(array)):
+#         running = 1
+#         for num in (array[:i] + array[i+1:]):
+#             running *= num
+#         ans.append(running)
+#     return ans
+
+# #most efficient
+# def arrayOfProducts(array):
+#     ans = [1 for _ in range(len(array))]
+
+#     running = 1
+#     for i in range(len(array)):
+#         ans[i] = running
+#         running *= array[i]
+    
+#     running = 1
+#     for i in reversed(range(len(array))):
+#         ans[i] *= running
+#         running *= array[i]
+    
+#     return ans
 
 
-
+# x = [5, 1, 4, 2]
+# arrayOfProducts(x)
 # #-------------------------------------------------------------------------------
-# # 
+# # first duplicate value
+# my best, their second best
+# def firstDuplicateValue(array):
+#     have = set()
+#     for item in array:
+#         if item in have:
+#             return item
+#         have.add(item)
+#     return -1
+
+# their best
+# def firstDuplicateValue(array):
+#     for item in array:
+#         absVal = abs(item)
+#         if absVal - 1 < 0:
+#             return absVal
+#         array[absVal - 1] *= -1
+#     return -1
 
 
+# x = [2, 1, 5, 2, 3, 3, 4]
+# firstDuplicateValue(x)
 # #-------------------------------------------------------------------------------
 
 # #  
