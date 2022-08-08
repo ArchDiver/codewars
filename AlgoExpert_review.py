@@ -1143,7 +1143,61 @@ def main(prog):
 #   ]
 # mergeOverlappingIntervals(x)
 # #-------------------------------------------------------------------------------
-# # 
+# # # Skilled with Adam
+# # Can you see this?
+
+# l = [1, 2, 3]
+
+# d = {x: x + 1 for x in l}
+
+# # Write me a function that will take in a string and return another string
+# #   with all the letters in each word reversed (but the words in the original order still).
+# #   e.g. "Hello world" -> "olleH dlrow"
+
+# #Adam can you see this?
+
+
+# def justLetter(string):
+#     wordList =  string.split(" ")
+#     for index, word in enumerate(wordList):
+#         newWord = word[::-1]
+#         wordList[index] = newWord
+
+#     final = " ".join(wordList)
+#     return final
+    
+    
+# def justLetter(string):
+#     return " ".join([word[::-1] for word in string.split(" ")])
+
+def justLetterOnly(string):
+    """This version only flips letters. It won't effect numbers"""
+    ans, word = '', []
+    for val in string:
+        if val.isalpha():
+            word.insert(0, val)
+        else:
+            ans += ''.join(word) + val
+            word = []
+    
+    return ans
+
+def justLetterNum(string):
+    """This version flips letters AND numbers. In case there is leet code."""
+    ans, word = '', []
+    for val in string:
+        if val.isalpha() or val.isnumeric():
+            word.insert(0, val)
+        else:
+            ans += ''.join(word) + val
+            word = []
+    
+    return ans
+
+
+
+print(justLetter("Hello  world!"))
+print(justLetterNum("He110  !W0R1*"))
 
 
 # #-------------------------------------------------------------------------------
