@@ -1170,38 +1170,63 @@ def main(prog):
 # def justLetter(string):
 #     return " ".join([word[::-1] for word in string.split(" ")])
 
-def justLetterOnly(string):
-    """This version only flips letters. It won't effect numbers"""
-    ans, word = '', []
-    for val in string:
-        if val.isalpha():
-            word.insert(0, val)
-        else:
-            ans += ''.join(word) + val
-            word = []
+# def justLetterOnly(string):
+#     """This version only flips letters. It won't effect numbers"""
+#     ans, word = '', []
+#     for val in string:
+#         if val.isalpha():
+#             word.insert(0, val)
+#         else:
+#             ans += ''.join(word) + val
+#             word = []
     
-    return ans
+#     return ans
 
-def justLetterNum(string):
-    """This version flips letters AND numbers. In case there is leet code."""
-    ans, word = '', []
-    for val in string:
-        if val.isalpha() or val.isnumeric():
-            word.insert(0, val)
-        else:
-            ans += ''.join(word) + val
-            word = []
+# def justLetterNum(string):
+#     """This version flips letters AND numbers. In case there is leet code."""
+#     ans, word = '', []
+#     for val in string:
+#         if val.isalpha() or val.isnumeric():
+#             word.insert(0, val)
+#         else:
+#             ans += ''.join(word) + val
+#             word = []
     
-    return ans
+#     return ans
 
 
 
-print(justLetter("Hello  world!"))
-print(justLetterNum("He110  !W0R1*"))
+# print(justLetter("Hello  world!"))
+# print(justLetterNum("He110  !W0R1*"))
 
 
 # #-------------------------------------------------------------------------------
-# #  
+# #  skilled interview with Joel 
+# class Node:
+# 	value: int
+#   left: Node
+#   right: Node
+  
+#   def __init__(self, value):
+#   	self.value = value
+#     self.left = None
+#     self.right = None
+    
+#   def isTargetInTree(self, target) -> bool:
+#   		if target == self.value:
+#         return True
+
+#       elif target > self.value:
+#       	if self.right == None:
+#         	return False
+#         else:
+#         	return isTargetInTree(self.right, target)
+
+#       elif target < self.value:
+#       	if self.left == None:
+#         	return False
+#         else:
+#         	return isTargetInTree(self.left, target)    
 
 
 
