@@ -57,7 +57,7 @@
 
 # # Branch Sums---------------------------------------------------------------------------------------------
 # This is the class input root. Do not edit it.
-#Only if you are inporting the tree
+#Only if you are importing the tree
 # class BinaryTree:
 #     def __init__(self, value):
 #         self.value = value
